@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3072664F-D2E9-4C4B-B208-F88EA470ADCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RMS_Project</RootNamespace>
+    <AssemblyName>RMS Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\mxngk\Downloads\Noxius-UIBypass-main\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCRUD_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCRUD_Item.Designer.cs">
+      <DependentUpon>frmCRUD_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCRUD_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCRUD_Stock.Designer.cs">
+      <DependentUpon>frmCRUD_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCRUD_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCRUD_User.Designer.cs">
+      <DependentUpon>frmCRUD_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFinance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFinance.Designer.cs">
+      <DependentUpon>frmFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItems.Designer.cs">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrders.Designer.cs">
+      <DependentUpon>frmOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStocks.Designer.cs">
+      <DependentUpon>frmStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BillingHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BillingHeader.Designer.cs">
+      <DependentUpon>UC_BillingHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BillingItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BillingItem.Designer.cs">
+      <DependentUpon>UC_BillingItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CartItem.Designer.cs">
+      <DependentUpon>UC_CartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Item.Designer.cs">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ItemAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ItemAction.Designer.cs">
+      <DependentUpon>UC_ItemAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Item_Stock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Item_Stock.Designer.cs">
+      <DependentUpon>UC_Item_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_UserAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_UserAccount.Designer.cs">
+      <DependentUpon>UC_UserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Users.Designer.cs">
+      <DependentUpon>UC_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Total.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Total.Designer.cs">
+      <DependentUpon>UC_Total.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCRUD_Item.resx">
+      <DependentUpon>frmCRUD_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCRUD_Stock.resx">
+      <DependentUpon>frmCRUD_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCRUD_User.resx">
+      <DependentUpon>frmCRUD_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFinance.resx">
+      <DependentUpon>frmFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItems.resx">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrders.resx">
+      <DependentUpon>frmOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStocks.resx">
+      <DependentUpon>frmStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BillingHeader.resx">
+      <DependentUpon>UC_BillingHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BillingItem.resx">
+      <DependentUpon>UC_BillingItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_CartItem.resx">
+      <DependentUpon>UC_CartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Item.resx">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ItemAction.resx">
+      <DependentUpon>UC_ItemAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Item_Stock.resx">
+      <DependentUpon>UC_Item_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_UserAccount.resx">
+      <DependentUpon>UC_UserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Users.resx">
+      <DependentUpon>UC_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Total.resx">
+      <DependentUpon>UC_Total.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\logins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-cross-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-4\icons8-cross-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-3\icons8-cross-50-WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-male-user-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-dots-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\money-notes-receiving-cambodian-riel-color-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\KHQR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\no_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-trash-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-3\icons8-trash-50 WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-4\icons8-minus-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\Chicken Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-bread-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-4\icons8-bread-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-3\icons8-bread-50 -White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-4\icons8-trash-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-qr-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-qr-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-create-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-microsoft-excel-2019-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-print-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-pdf-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\The Identified.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-beverage-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-milkshake-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-juice-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-juice-bottle-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-snack-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-cutlery-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-breakfast-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\Sales POS Icon-2\icons8-promotion-50.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
