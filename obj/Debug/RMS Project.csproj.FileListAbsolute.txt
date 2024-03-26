@@ -1,0 +1,241 @@
+D:\RMS Project\bin\Debug\RMS Project.exe.config
+D:\RMS Project\bin\Debug\RMS Project.exe
+D:\RMS Project\bin\Debug\RMS Project.pdb
+D:\RMS Project\obj\Debug\RMS Project.csproj.AssemblyReference.cache
+D:\RMS Project\obj\Debug\RMS_Project.Properties.Resources.resources
+D:\RMS Project\obj\Debug\RMS Project.csproj.GenerateResource.cache
+D:\RMS Project\obj\Debug\RMS Project.csproj.CoreCompileInputs.cache
+D:\RMS Project\obj\Debug\RMS Project.exe
+D:\RMS Project\obj\Debug\RMS Project.pdb
+D:\RMS Project\bin\Debug\Guna.UI2.dll
+D:\RMS Project\obj\Debug\RMS Proj.DBDA976B.Up2Date
+D:\RMS Project\obj\Debug\RMS_Project.frmMainMenu.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmDashboard.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_Total.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmOrders.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_CartItem.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmLogin.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_UserAccount.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmItems.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_ItemAction.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmFinance.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmUsers.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmCRUD_User.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmCRUD_Item.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_Item.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_Users.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmReport.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmStocks.resources
+D:\RMS Project\obj\Debug\RMS_Project.frmInvoice.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_BillingHeader.resources
+D:\RMS Project\obj\Debug\RMS_Project.UC_BillingItem.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\RMS Project.exe.config
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\RMS Project.exe
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\RMS Project.pdb
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Guna.UI2.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.csproj.AssemblyReference.cache
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Item.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Stock.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmCRUD_User.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmDashboard.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmFinance.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmInvoice.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmItems.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmLogin.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmMainMenu.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmOrders.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmReport.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmStocks.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.frmUsers.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.Properties.Resources.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_BillingHeader.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_BillingItem.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_CartItem.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_Item.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_ItemAction.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_Item_Stock.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_UserAccount.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_Users.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS_Project.UC_Total.resources
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.csproj.GenerateResource.cache
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.csproj.CoreCompileInputs.cache
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.csproj.CopyComplete
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.exe
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.pdb
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ClosedXML.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ClosedXML.Parser.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ExcelNumberFormat.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itextsharp.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\RBush.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\SixLabors.Fonts.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Buffers.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.IO.Packaging.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Memory.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ClosedXML.pdb
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ClosedXML.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\ExcelNumberFormat.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itextsharp.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\RBush.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\SixLabors.Fonts.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Buffers.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.IO.Packaging.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Memory.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.barcodes.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.commons.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.forms.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.io.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.kernel.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.layout.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.pdfa.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.pdfua.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.sign.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.styledxmlparser.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.svg.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.ValueTuple.dll
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.barcodes.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.commons.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.forms.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.io.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.kernel.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.layout.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.pdfa.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.pdfua.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.sign.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.styledxmlparser.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\itext.svg.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Newtonsoft.Json.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\System.ValueTuple.xml
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.csproj.AssemblyReference.cache
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.csproj.SuggestedBindingRedirects.cache
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Item.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Stock.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmCRUD_User.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmDashboard.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmFinance.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmInvoice.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmItems.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmLogin.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmMainMenu.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmOrders.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmReport.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmStocks.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.frmUsers.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.Properties.Resources.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_BillingHeader.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_BillingItem.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_CartItem.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_Item.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_ItemAction.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_Item_Stock.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_UserAccount.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_Users.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS_Project.UC_Total.resources
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.csproj.GenerateResource.cache
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.csproj.CoreCompileInputs.cache
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.exe
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.pdb
+D:\year4\OOAD\RMS-Project\bin\Debug\RMS Project.exe.config
+D:\year4\OOAD\RMS-Project\bin\Debug\RMS Project.exe
+D:\year4\OOAD\RMS-Project\bin\Debug\RMS Project.pdb
+D:\year4\OOAD\RMS-Project\bin\Debug\BouncyCastle.Crypto.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\ClosedXML.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\ClosedXML.Parser.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\DocumentFormat.OpenXml.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\ExcelNumberFormat.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Guna.UI2.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.barcodes.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.bouncy-castle-connector.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.commons.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.forms.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.io.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.kernel.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.layout.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.pdfa.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.pdfua.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.sign.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.styledxmlparser.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.svg.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\itextsharp.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Options.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\Newtonsoft.Json.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\RBush.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\SixLabors.Fonts.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Buffers.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.IO.Packaging.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Memory.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Numerics.Vectors.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\System.ValueTuple.dll
+D:\year4\OOAD\RMS-Project\bin\Debug\ClosedXML.pdb
+D:\year4\OOAD\RMS-Project\bin\Debug\ClosedXML.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\DocumentFormat.OpenXml.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\ExcelNumberFormat.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.barcodes.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.bouncy-castle-connector.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.commons.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.forms.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.io.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.kernel.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.layout.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.pdfa.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.pdfua.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.sign.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.styledxmlparser.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itext.svg.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\itextsharp.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Options.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\Newtonsoft.Json.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\RBush.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\SixLabors.Fonts.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Buffers.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.IO.Packaging.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Memory.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Numerics.Vectors.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\year4\OOAD\RMS-Project\bin\Debug\System.ValueTuple.xml
+D:\year4\OOAD\RMS-Project\obj\Debug\RMS Project.csproj.CopyComplete
