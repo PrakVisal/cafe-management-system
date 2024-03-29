@@ -11,12 +11,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using RMS_Project.Business_Layer;
+using RMS_Project.Class;
 
 namespace RMS_Project
 {
+    
     public partial class frmCRUD_Item : Form
     {
-        private const string connectionString = "Data Source=LAPTOP-ALHRF6DV\\SQLEXPRESS;Initial Catalog=ManagementSystem;Trusted_Connection=True;";
+        private ItemManager itemManager;
+
+        //private const string connectionString = "Data Source=LAPTOP-ALHRF6DV\\SQLEXPRESS;Initial Catalog=ManagementSystem;Trusted_Connection=True;";
         private byte[] imageData;
         private FlowLayoutPanel flowLayoutPanel1;
         private bool isUpdateMode = false;
@@ -25,7 +30,10 @@ namespace RMS_Project
         public frmCRUD_Item(string itemName, string price, string description, Image image, int productId)
         {
             InitializeComponent();
-            Console.WriteLine($"Item Name: {itemName}, Price: {price}, Description: {description}, Product ID: {productId}");
+
+            itemManager = new ItemManager(DBConnection.path);
+
+            //Console.WriteLine($"Item Name: {itemName}, Price: {price}, Description: {description}, Product ID: {productId}");
             txtName.Text = itemName;
             txtPrice.Text = price.ToString();
             txtDescription.Text = description;
@@ -35,27 +43,33 @@ namespace RMS_Project
             isUpdateMode = true;
             PopulateCategoryComboBox();
             FillCategoryComboBox(productId);
+
+        }
+
+        public frmCRUD_Item(string title)
+        {
+            InitializeComponent();
+
+            itemManager = new ItemManager(DBConnection.path);
+  
+            if (title.Equals("New Item"))
+            {
+                btnDelete.Visible = false;
+                lblProductID.Visible = false;
+                txtProductID.Visible = false;
+            }
         }
 
         private void FillCategoryComboBox(int productId)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Fetch and set the category for the existing product
+                string category = itemManager.GetProductCategory(productId);
+                if (!string.IsNullOrEmpty(category))
                 {
-                    connection.Open();
-                    string query = "SELECT c.FoodCategoryName " +
-                                   "FROM tbProduct p " +
-                                   "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID " +
-                                   "WHERE p.ProductID = @ProductId";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@ProductId", productId);
-                    string category = command.ExecuteScalar()?.ToString();
-                    if (!string.IsNullOrEmpty(category))
-                    {
-                        cboCategory.SelectedItem = category;
-                        cboCategory.Enabled = false; // Optionally disable the ComboBox
-                    }
+                    cboCategory.SelectedItem = category;
+                    cboCategory.Enabled = false; // Optionally disable the ComboBox
                 }
             }
             catch (Exception ex)
@@ -64,19 +78,6 @@ namespace RMS_Project
             }
         }
 
-
-        public frmCRUD_Item(string title)
-        {
-            InitializeComponent();
-
-            if (title.Equals("New Item"))
-            {
-                btnDelete.Visible = false;
-                lblProductID.Visible = false;
-                txtProductID.Visible = false;
-                isUpdateMode = false;
-            }
-        }
 
         private bool ValidateInput()
         {
@@ -97,7 +98,6 @@ namespace RMS_Project
             }
 
             return true;
-
 
         }
 
@@ -141,88 +141,7 @@ namespace RMS_Project
         }
        
 
-        private bool InsertProductToDatabase(string itemName, string category, decimal price, string description, byte[] image)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string insertQuery = "INSERT INTO tbProduct " +
-                        "(ProductName, Price, Description, FoodCategoryID, Image) VALUES (@ProductName, @Price, @Description," +
-                        "(SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @Category), @Image)";
-
-                    SqlCommand command = new SqlCommand(insertQuery, connection);
-                    command.Parameters.AddWithValue("@ProductName", itemName);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@Description", description);
-                    command.Parameters.AddWithValue("@Category", category);
-                    command.Parameters.AddWithValue("@Image", image);
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-                return false;
-            }
-        }
-
-
-        private bool UpdateProductInDatabase(string itemName, string category, decimal price, string description, byte[] image, int productId)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string updateQuery = "UPDATE tbProduct SET " +
-                        "ProductName = @ProductName, Price = @Price, Description = @Description, " +
-                        "FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @Category), " +
-                        "Image = @Image WHERE ProductID = @ProductID";
-
-                    Console.WriteLine("Update Query: " + updateQuery);
-                    Console.WriteLine("Product ID: " + productId);
-                    Console.WriteLine("Item Name: " + itemName);
-                    Console.WriteLine("Category: " + category);
-                    Console.WriteLine("Price: " + price);
-                    Console.WriteLine("Description: " + description);
-                    // Omit logging image byte array due to potential size
-
-                    SqlCommand command = new SqlCommand(updateQuery, connection);
-                    command.Parameters.AddWithValue("@ProductName", itemName);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@Description", description);
-                    command.Parameters.AddWithValue("@Category", category);
-                    command.Parameters.AddWithValue("@Image", image);
-                    command.Parameters.AddWithValue("@ProductID", productId);
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        // Product updated successfully
-                        return true;
-                    }
-                    else
-                    {
-                        // No rows were affected, indicate update failure
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log the error message
-                Console.WriteLine("Error updating product: " + ex.Message);
-                // Display a message box with the error
-                MessageBox.Show("An error occurred while updating the product. Please check the logs for more information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Return false to indicate update failure
-                return false;
-            }
-        }
-
-
+        
         public class ProductDeletedEventArgs : EventArgs
         {
             public int ProductId { get; }
@@ -239,28 +158,6 @@ namespace RMS_Project
         protected virtual void OnProductDeleted(ProductDeletedEventArgs e)
         {
             ProductDeleted?.Invoke(this, e);
-        }
-
-        private bool DeleteProductFromDatabase(int productId)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string deleteQuery = "DELETE FROM tbProduct WHERE ProductID = @ProductId";
-                    SqlCommand command = new SqlCommand(deleteQuery, connection);
-                    command.Parameters.AddWithValue("@ProductId", productId);
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-                return false;
-            }
-
         }
 
         
@@ -296,7 +193,7 @@ namespace RMS_Project
             // Update the product in the database
             if (isUpdateMode)
             {
-                if (UpdateProductInDatabase(itemName, category, price, description, imageData, productIdToUpdate))
+                if (itemManager.UpdateProduct(itemName, category, price, description, imageData, productIdToUpdate))
                 {
                     MessageBox.Show("Product updated successfully!");
                     OnProductUpdated(EventArgs.Empty); // Notify frmItems.cs that the product is updated
@@ -310,7 +207,7 @@ namespace RMS_Project
             else
             {
                 // Insert new product into the database
-                if (InsertProductToDatabase(itemName, category, price, description, imageData))
+                if (itemManager.InsertProduct(itemName, category, price, description, imageData))
                 {
                     MessageBox.Show("Product added successfully!");
                     OnProductUpdated(EventArgs.Empty); // Notify frmItems.cs that a new product is added
@@ -344,7 +241,7 @@ namespace RMS_Project
             int productIdToDelete = int.Parse(txtProductID.Text);
 
             // Delete the product from the database
-            if (DeleteProductFromDatabase(productIdToDelete))
+            if (itemManager.DeleteProduct(productIdToDelete))
             {
                 MessageBox.Show("Product deleted successfully!");
                 // Notify the parent form (frmItems) that a product has been deleted

@@ -88,6 +88,7 @@
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "Angkor";
             this.btnAccount.TextOffset = new System.Drawing.Point(5, 0);
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click_1);
             // 
             // txtSearchProduct
             // 

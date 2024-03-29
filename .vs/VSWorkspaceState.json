@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Business Layer",
+    "\\Presentation Layer",
+    "\\Presentation Layer\\UI",
+    "\\Presentation Layer\\User Control"
   ],
+  "SelectedNode": "\\Presentation Layer\\UI\\frmCRUD_User.cs",
   "PreviewInSolutionExplorer": false
 }

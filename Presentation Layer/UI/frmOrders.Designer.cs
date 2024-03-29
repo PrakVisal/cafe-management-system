@@ -55,10 +55,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblGrandTotalRiel = new System.Windows.Forms.Label();
+            this.lblGrandTotalDollor = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
@@ -76,13 +76,14 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Controls.Add(this.txtSearchProduct);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1584, 119);
+            this.panel1.Size = new System.Drawing.Size(1584, 95);
             this.panel1.TabIndex = 5;
             // 
             // btnAccount
@@ -108,6 +109,7 @@
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "Angkor";
             this.btnAccount.TextOffset = new System.Drawing.Point(5, 0);
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // txtSearchProduct
             // 
@@ -145,9 +147,9 @@
             this.guna2Panel1.Controls.Add(this.pnlBanner);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 119);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 95);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1048, 922);
+            this.guna2Panel1.Size = new System.Drawing.Size(1048, 946);
             this.guna2Panel1.TabIndex = 6;
             // 
             // flowLayoutPanel2
@@ -158,7 +160,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 290);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(40, 10, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 632);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 656);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // guna2Panel2
@@ -473,10 +475,10 @@
             this.guna2Panel3.Controls.Add(this.guna2ContainerControl2);
             this.guna2Panel3.Controls.Add(this.guna2ContainerControl1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(1048, 119);
+            this.guna2Panel3.Location = new System.Drawing.Point(1048, 95);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Padding = new System.Windows.Forms.Padding(0, 23, 20, 23);
-            this.guna2Panel3.Size = new System.Drawing.Size(536, 922);
+            this.guna2Panel3.Size = new System.Drawing.Size(536, 946);
             this.guna2Panel3.TabIndex = 7;
             // 
             // guna2ContainerControl2
@@ -488,10 +490,10 @@
             this.guna2ContainerControl2.Controls.Add(this.label10);
             this.guna2ContainerControl2.Controls.Add(this.label9);
             this.guna2ContainerControl2.Controls.Add(this.label5);
-            this.guna2ContainerControl2.Controls.Add(this.label11);
-            this.guna2ContainerControl2.Controls.Add(this.label8);
-            this.guna2ContainerControl2.Controls.Add(this.label7);
-            this.guna2ContainerControl2.Controls.Add(this.label6);
+            this.guna2ContainerControl2.Controls.Add(this.lblGrandTotalRiel);
+            this.guna2ContainerControl2.Controls.Add(this.lblGrandTotalDollor);
+            this.guna2ContainerControl2.Controls.Add(this.lblTax);
+            this.guna2ContainerControl2.Controls.Add(this.lblSubTotal);
             this.guna2ContainerControl2.Controls.Add(this.label4);
             this.guna2ContainerControl2.Controls.Add(this.label3);
             this.guna2ContainerControl2.CustomizableEdges.TopLeft = false;
@@ -499,7 +501,7 @@
             this.guna2ContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ContainerControl2.Location = new System.Drawing.Point(0, 430);
             this.guna2ContainerControl2.Name = "guna2ContainerControl2";
-            this.guna2ContainerControl2.Size = new System.Drawing.Size(516, 469);
+            this.guna2ContainerControl2.Size = new System.Drawing.Size(516, 493);
             this.guna2ContainerControl2.TabIndex = 1;
             this.guna2ContainerControl2.Text = "guna2ContainerControl2";
             // 
@@ -527,6 +529,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(443, 60);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Place An Order";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // pnlPayment
             // 
@@ -651,57 +654,57 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Tax";
             // 
-            // label11
+            // lblGrandTotalRiel
             // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(202, 254);
-            this.label11.Name = "label11";
-            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label11.Size = new System.Drawing.Size(280, 28);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "៛559,240";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrandTotalRiel.BackColor = System.Drawing.Color.White;
+            this.lblGrandTotalRiel.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotalRiel.ForeColor = System.Drawing.Color.Black;
+            this.lblGrandTotalRiel.Location = new System.Drawing.Point(202, 254);
+            this.lblGrandTotalRiel.Name = "lblGrandTotalRiel";
+            this.lblGrandTotalRiel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblGrandTotalRiel.Size = new System.Drawing.Size(280, 28);
+            this.lblGrandTotalRiel.TabIndex = 2;
+            this.lblGrandTotalRiel.Text = "៛0";
+            this.lblGrandTotalRiel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // lblGrandTotalDollor
             // 
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(202, 212);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(280, 28);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "$136.40";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrandTotalDollor.BackColor = System.Drawing.Color.White;
+            this.lblGrandTotalDollor.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotalDollor.ForeColor = System.Drawing.Color.Black;
+            this.lblGrandTotalDollor.Location = new System.Drawing.Point(202, 212);
+            this.lblGrandTotalDollor.Name = "lblGrandTotalDollor";
+            this.lblGrandTotalDollor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblGrandTotalDollor.Size = new System.Drawing.Size(280, 28);
+            this.lblGrandTotalDollor.TabIndex = 2;
+            this.lblGrandTotalDollor.Text = "$0.00";
+            this.lblGrandTotalDollor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // lblTax
             // 
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(202, 131);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(280, 28);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "$5.20";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTax.BackColor = System.Drawing.Color.White;
+            this.lblTax.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTax.ForeColor = System.Drawing.Color.Black;
+            this.lblTax.Location = new System.Drawing.Point(202, 131);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTax.Size = new System.Drawing.Size(280, 28);
+            this.lblTax.TabIndex = 2;
+            this.lblTax.Text = "$0.00";
+            this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lblSubTotal
             // 
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(202, 86);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(280, 28);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "$131.20";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubTotal.BackColor = System.Drawing.Color.White;
+            this.lblSubTotal.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblSubTotal.Location = new System.Drawing.Point(202, 86);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblSubTotal.Size = new System.Drawing.Size(280, 28);
+            this.lblSubTotal.TabIndex = 2;
+            this.lblSubTotal.Text = "$0.00";
+            this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -768,6 +771,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1584, 1041);
             this.Controls.Add(this.guna2Panel3);
@@ -788,6 +792,7 @@
             this.pnlPayment.ResumeLayout(false);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -815,18 +820,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTax;
+        private System.Windows.Forms.Label lblSubTotal;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGrandTotalDollor;
         private Guna.UI2.WinForms.Guna2ContainerControl pnlPayment;
         private Guna.UI2.WinForms.Guna2Button btnKHQR;
         private Guna.UI2.WinForms.Guna2Button btnCash;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblGrandTotalRiel;
         public System.Windows.Forms.FlowLayoutPanel pnlCartItem;
         //private UC_Items uC_Items1;
         //private UC_Items uC_Items2;

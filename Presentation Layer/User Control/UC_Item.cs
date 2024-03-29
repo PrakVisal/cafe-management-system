@@ -47,8 +47,7 @@ namespace RMS_Project
         {
             InitializeComponent();
         }
-        public event EventHandler BtnUC_ItemClick;
-
+    
         public UC_Item(int productId, string productName, decimal price, string description, Image image, string category)
         {
             InitializeComponent();
@@ -71,7 +70,7 @@ namespace RMS_Project
             Category = category;
 
         }
-
+        public event EventHandler BtnUC_ItemClick;
         private void btnUC_Item_Click(object sender, EventArgs e)
         {
 

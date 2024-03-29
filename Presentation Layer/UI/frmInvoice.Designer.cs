@@ -45,10 +45,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblGrandTotalRiel = new System.Windows.Forms.Label();
+            this.lblGrandTotalDollar = new System.Windows.Forms.Label();
+            this.lblTotalTax = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,8 +58,8 @@
             this.pnlBank = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblAbaAccountName = new System.Windows.Forms.Label();
             this.ptrQRCode = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblAbaAccountName = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -209,10 +209,10 @@
             this.guna2ContainerControl1.Controls.Add(this.label5);
             this.guna2ContainerControl1.Controls.Add(this.label4);
             this.guna2ContainerControl1.Controls.Add(this.label3);
-            this.guna2ContainerControl1.Controls.Add(this.label9);
-            this.guna2ContainerControl1.Controls.Add(this.label8);
-            this.guna2ContainerControl1.Controls.Add(this.label7);
-            this.guna2ContainerControl1.Controls.Add(this.label6);
+            this.guna2ContainerControl1.Controls.Add(this.lblGrandTotalRiel);
+            this.guna2ContainerControl1.Controls.Add(this.lblGrandTotalDollar);
+            this.guna2ContainerControl1.Controls.Add(this.lblTotalTax);
+            this.guna2ContainerControl1.Controls.Add(this.lblSubTotal);
             this.guna2ContainerControl1.Controls.Add(this.label11);
             this.guna2ContainerControl1.Controls.Add(this.label10);
             this.guna2ContainerControl1.Controls.Add(this.label2);
@@ -253,49 +253,49 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Total Tax";
             // 
-            // label9
+            // lblGrandTotalRiel
             // 
-            this.label9.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(586, 118);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(199, 34);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "៛2,211,294";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrandTotalRiel.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotalRiel.Location = new System.Drawing.Point(586, 118);
+            this.lblGrandTotalRiel.Name = "lblGrandTotalRiel";
+            this.lblGrandTotalRiel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblGrandTotalRiel.Size = new System.Drawing.Size(199, 34);
+            this.lblGrandTotalRiel.TabIndex = 0;
+            this.lblGrandTotalRiel.Text = "៛2,211,294";
+            this.lblGrandTotalRiel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // lblGrandTotalDollar
             // 
-            this.label8.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(586, 83);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(199, 34);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "$539.34";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrandTotalDollar.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotalDollar.Location = new System.Drawing.Point(586, 83);
+            this.lblGrandTotalDollar.Name = "lblGrandTotalDollar";
+            this.lblGrandTotalDollar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblGrandTotalDollar.Size = new System.Drawing.Size(199, 34);
+            this.lblGrandTotalDollar.TabIndex = 0;
+            this.lblGrandTotalDollar.Text = "$539.34";
+            this.lblGrandTotalDollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // lblTotalTax
             // 
-            this.label7.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(586, 46);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(199, 34);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "$5.34";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalTax.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTax.Location = new System.Drawing.Point(586, 46);
+            this.lblTotalTax.Name = "lblTotalTax";
+            this.lblTotalTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTotalTax.Size = new System.Drawing.Size(199, 34);
+            this.lblTotalTax.TabIndex = 0;
+            this.lblTotalTax.Text = "$5.34";
+            this.lblTotalTax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lblSubTotal
             // 
-            this.label6.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(586, 16);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(199, 34);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "$534.00";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubTotal.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(586, 16);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblSubTotal.Size = new System.Drawing.Size(199, 34);
+            this.lblSubTotal.TabIndex = 0;
+            this.lblSubTotal.Text = "$534.00";
+            this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label11
             // 
@@ -330,10 +330,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SF Pro Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(39, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 23);
+            this.label1.Size = new System.Drawing.Size(183, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Payment Summary";
             // 
@@ -385,35 +385,36 @@
             // guna2Panel5
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel5.Controls.Add(this.lblAbaAccountName);
             this.guna2Panel5.Controls.Add(this.ptrQRCode);
+            this.guna2Panel5.Controls.Add(this.lblAbaAccountName);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel5.Location = new System.Drawing.Point(935, 328);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(969, 713);
             this.guna2Panel5.TabIndex = 2;
             // 
+            // ptrQRCode
+            // 
+            this.ptrQRCode.BorderRadius = 20;
+            this.ptrQRCode.Image = ((System.Drawing.Image)(resources.GetObject("ptrQRCode.Image")));
+            this.ptrQRCode.ImageLocation = "";
+            this.ptrQRCode.ImageRotate = 0F;
+            this.ptrQRCode.Location = new System.Drawing.Point(180, 18);
+            this.ptrQRCode.Name = "ptrQRCode";
+            this.ptrQRCode.Size = new System.Drawing.Size(648, 593);
+            this.ptrQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrQRCode.TabIndex = 6;
+            this.ptrQRCode.TabStop = false;
+            // 
             // lblAbaAccountName
             // 
-            this.lblAbaAccountName.Font = new System.Drawing.Font("SF Pro Display", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbaAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbaAccountName.Location = new System.Drawing.Point(174, 642);
             this.lblAbaAccountName.Name = "lblAbaAccountName";
             this.lblAbaAccountName.Size = new System.Drawing.Size(654, 43);
             this.lblAbaAccountName.TabIndex = 5;
             this.lblAbaAccountName.Text = "ABA Account Name";
             this.lblAbaAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ptrQRCode
-            // 
-            this.ptrQRCode.BorderRadius = 20;
-            this.ptrQRCode.Image = ((System.Drawing.Image)(resources.GetObject("ptrQRCode.Image")));
-            this.ptrQRCode.ImageRotate = 0F;
-            this.ptrQRCode.Location = new System.Drawing.Point(180, 18);
-            this.ptrQRCode.Name = "ptrQRCode";
-            this.ptrQRCode.Size = new System.Drawing.Size(648, 593);
-            this.ptrQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptrQRCode.TabIndex = 4;
-            this.ptrQRCode.TabStop = false;
             // 
             // frmInvoice
             // 
@@ -466,10 +467,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblGrandTotalRiel;
+        private System.Windows.Forms.Label lblGrandTotalDollar;
+        private System.Windows.Forms.Label lblTotalTax;
+        private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
@@ -479,7 +480,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label lblAbaAccountName;
-        private Guna.UI2.WinForms.Guna2PictureBox ptrQRCode;
         public System.Windows.Forms.FlowLayoutPanel pnlnvoiceItem;
+        private Guna.UI2.WinForms.Guna2PictureBox ptrQRCode;
     }
 }

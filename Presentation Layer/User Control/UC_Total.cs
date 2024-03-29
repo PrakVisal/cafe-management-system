@@ -22,12 +22,12 @@ namespace RMS_Project
             get { return lblValue.Text; }
             set { lblValue.Text = value; }
         }
+
         public Label TitleLabel
         {
             get { return lblTitle; }
         }
-
-        
+      
         public Label ValueLabel
         {
             get { return lblValue; }

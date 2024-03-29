@@ -53,11 +53,7 @@ namespace RMS_Project
             int quantity = int.Parse(txtQty.Text);
             int initialStockCount = int.Parse(lblQty.Text);
 
-            if (quantity > initialStockCount)
-            {
-                MessageBox.Show("Quantity entered cannot be greater than the initial stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
 
             // Ensure foodCategoryID is valid
             if (foodCategoryID == -1)
@@ -138,6 +134,7 @@ namespace RMS_Project
 
            
             ucItemStock.UpdateQtyLabel(lblQty.Text);
+            this.Close();
         }
 
         // Convert image to byte array
@@ -240,14 +237,14 @@ namespace RMS_Project
                 {
                     txtUnitPrice.Text = stockInData.Rows[0]["UnitPrice"].ToString();
                     txtPrice.Text = stockInData.Rows[0]["Amount"].ToString();
-                    string foodCategoryValue = stockInData.Rows[0]["FoodCategory"].ToString();
-                    if (cboCateggory.Items.Contains(foodCategoryValue))
+                    cboCateggory.Text = stockInData.Rows[0]["FoodCategory"].ToString();
+                    if (cboCateggory.Items.Contains(cboCateggory.Text))
                     {
-                        cboCateggory.SelectedItem = foodCategoryValue;
+                        cboCateggory.SelectedItem = cboCateggory.Text;
                     }
                     else
                     {
-                        MessageBox.Show($"The value '{foodCategoryValue}' is not found in the combobox items.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"The value '{cboCateggory.Text}' is not found in the combobox items.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     dtpExpiration.Value = DateTime.Now;
                     txtSafetyAlert.Text = "1";

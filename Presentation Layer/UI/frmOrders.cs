@@ -11,16 +11,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS_Project.Business_Layer;
+using RMS_Project.Presentation_Layer.UI;
+using System.Drawing.Printing;
 
 namespace RMS_Project
 {
     public partial class frmOrders : Form
     {
         private Guna2Button currentButton;
+        private decimal subTotal = 0.00m;
         public frmOrders()
         {
             InitializeComponent();
             btnAll.Click += btnAll_Click;
+            btnAccount.Text = SharedData.CurrentUsername;
+        
         }
         
         private void ActiveButton(object btnsender)
@@ -63,34 +69,50 @@ namespace RMS_Project
 
         private void LoadProducts()
         {
-            string query = "SELECT ProductName, Price, Description, Image, FoodCategoryName " +
-                           "FROM tbProduct " +
-                           "INNER JOIN tbFoodCategory ON tbProduct.FoodCategoryID = tbFoodCategory.FoodCategoryID";
+            DataTable productsTable = OrderManager.GetProducts();
 
-            using (SqlConnection connection = new SqlConnection(DBConnection.path))
+            foreach (DataRow row in productsTable.Rows)
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    string productName = reader["ProductName"].ToString();
-                    decimal price = Convert.ToDecimal(reader["Price"]);
-                    string description = reader["Description"].ToString();
-                    byte[] imageData = (byte[])reader["Image"];
-                    Image image = Image.FromStream(new System.IO.MemoryStream(imageData));
-                    string category = reader["FoodCategoryName"].ToString();
+                string productName = row["ProductName"].ToString();
+                decimal price = Convert.ToDecimal(row["Price"]);
+                string description = row["Description"].ToString();
+                byte[] imageData = (byte[])row["Image"];
+                Image image = Image.FromStream(new System.IO.MemoryStream(imageData));
+                string category = row["FoodCategoryName"].ToString();
 
-
-                    UC_Item ucItem = new UC_Item(productName, price, description, image, category);
-                    ucItem.BtnUC_ItemClick += (sender, e) => AddToCart(ucItem);
-                    ucItem.ItemName = productName;
-                    ucItem.Label1Text = price.ToString();
-                    ucItem.PictureBoxImage = image;
-                    flowLayoutPanel2.Controls.Add(ucItem);
-                }
+                UC_Item ucItem = new UC_Item(productName, price, description, image, category);
+                ucItem.BtnUC_ItemClick += (sender, e) => AddToCart(ucItem);
+                ucItem.ItemName = productName;
+                ucItem.Label1Text = price.ToString();
+                ucItem.PictureBoxImage = image;
+                flowLayoutPanel2.Controls.Add(ucItem);
             }
         }
+
+        public void CalculateSubTotal()
+        {
+            subTotal = 0.00m;
+
+            foreach (UC_CartItem cartItem in pnlCartItem.Controls.OfType<UC_CartItem>())
+            {
+                subTotal += cartItem.TxtAmount * cartItem.LblPriceText;
+            }
+            lblSubTotal.Text = "$" + subTotal.ToString();
+            decimal taxRate = 0.00m;
+            lblTax.Text = "$" + taxRate.ToString();
+            decimal grandTotalDollor = subTotal + (taxRate * subTotal);
+            lblGrandTotalDollor.Text = "$" + grandTotalDollor.ToString("F2");
+            decimal dollarToRiel = 4100;
+            decimal grandTotalRiel = grandTotalDollor * dollarToRiel;
+            int grandToTalRielToInt = Convert.ToInt32(grandTotalRiel);
+            lblGrandTotalRiel.Text = grandToTalRielToInt.ToString() + " Riel";
+        }
+
+        public void RecalculateSubTotal()
+        {
+            CalculateSubTotal();
+        }
+
         private void AddToCart(UC_Item ucItem)
         {
             UC_CartItem existingCartItem = pnlCartItem.Controls.OfType<UC_CartItem>()
@@ -105,21 +127,31 @@ namespace RMS_Project
                 cartItem.TxtAmount = 1;
                 cartItem.LblPriceText = decimal.Parse(ucItem.Label1Text);
                 pnlCartItem.Controls.Add(cartItem);
+                cartItem.DeleteButtonClick += (s, args) => RemoveCartItem(cartItem);
+                RecalculateSubTotal();
 
             }
 
-            /*  CartItem newItem = new CartItem
-              {
-                  LabelName = ucItem.ItemName,
-                  LblPriceText = decimal.Parse(ucItem.Label1Text),
-                  TxtAmount = 1
-              };
-
-              UC_CartItem cartItem = new UC_CartItem();
-              cartItem.Item = newItem;
-              pnlCartItem.Controls.Add(cartItem); */
-
         }
+
+        private void LoadCartItemProduct()
+        {
+            foreach (UC_CartItem existingCartItem in pnlCartItem.Controls.OfType<UC_CartItem>())
+            {
+                UC_CartItem cartItem = existingCartItem;
+                cartItem.DeleteButtonClick += (s, args) => RemoveCartItem(cartItem);
+            }
+        }
+
+        private void RemoveCartItem(UC_CartItem cartItem)
+        {
+            this.pnlCartItem.Controls.Remove(cartItem);
+            cartItem.Dispose(); // Dispose the UC_CartItem instance
+            RecalculateSubTotal();
+        }
+
+
+
 
         private void ShowAllItems()
         {
@@ -132,6 +164,39 @@ namespace RMS_Project
                 }
             }
         }
+
+        private void PrintReceipt()
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
+        }
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string header = Receipt.HeaderReceipt();
+            string body = "";
+            foreach (UC_CartItem cartItem in pnlCartItem.Controls)
+            {
+                if (cartItem.LabelName == "BBQ spicy")
+                    body += $"{cartItem.LabelName}\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{cartItem.LblPriceText * cartItem.TxtAmount}\n";
+                else
+
+                    body += $"{cartItem.LabelName}\t\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{cartItem.LblPriceText * cartItem.TxtAmount}\n";
+            }
+            string footer = Receipt.FooterReceipt(subTotal);
+            string receiptText = header + "DESCRIPTION\tUNIT PRICE\tQTY\tAMOUNT\n\n" + body + "\n" + footer;
+            // Define font and brush
+            Font font = new Font("Arial", 20, FontStyle.Bold);
+            Brush brush = Brushes.Black;
+            // Draw receipt text on the PrintPageEventArgs
+            e.Graphics.DrawString(receiptText, font, brush, 50, 50);
+        }
+
+
+        
+
 
         private void btnBeverages_Click(object sender, EventArgs e)
         {
@@ -178,11 +243,25 @@ namespace RMS_Project
         private void btnCash_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
+            frmCashPayment frmcash = new frmCashPayment(lblSubTotal.Text, lblTax.Text, 
+                lblGrandTotalDollor.Text, lblGrandTotalRiel.Text);
+            frmcash.ShowDialog();
         }
-
+        frmInvoice invoiceForm = new frmInvoice();
         private void btnKHQR_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
+            using (var frmKHQR = new frmKHQRPayment(invoiceForm, lblSubTotal.Text, lblTax.Text, lblGrandTotalDollor.Text, lblGrandTotalRiel.Text))
+            {
+                frmKHQR.ShowDialog(); // Show frmKHQRPayment as a dialog
+
+
+                // Retrieve the selected image path after frmKHQRPayment is closed
+                string selectedImagePath = frmKHQR.SelectedImagePath;
+                // Set the QR code image in frmInvoice.cs
+                invoiceForm.SetQRCodeImage(selectedImagePath);
+                
+            }
         }
 
         private void btnMeat_Click(object sender, EventArgs e)
@@ -200,6 +279,7 @@ namespace RMS_Project
         private void frmOrders_Load(object sender, EventArgs e)
         {
             LoadProducts();
+            LoadCartItemProduct();
         }
 
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)
@@ -222,6 +302,18 @@ namespace RMS_Project
                     }
                 }
             }
+
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            FormHelper.AccountButton_Click(sender, e);
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            //InsertOrderIntoDatabase();
+            PrintReceipt();
 
         }
     }

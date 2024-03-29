@@ -20,6 +20,13 @@ namespace RMS_Project
             set { lblName.Text = value; }
         }
 
+        public Image PictureBoxImage
+        {
+            get { return ptrImage.Image; }
+            set { ptrImage.Image = value; }
+        }
+
+
         public decimal LblPriceText
         {
             get { return decimal.Parse(lblPrice.Text); }
@@ -29,12 +36,18 @@ namespace RMS_Project
             }
         }
 
+
         public int TxtAmount
         {
             get { return int.Parse(txtAmount.Text); }
-            set { txtAmount.Text = value.ToString(); }
+            set
+            {
+                txtAmount.Text = value.ToString();
+                UpdateSubTotal();
+            }
+
         }
-     
+
 
         public class ItemAddedEventArgs : EventArgs
         {
@@ -61,11 +74,22 @@ namespace RMS_Project
             ptrImage.Image = img;
         }
 
+
+        private void UpdateSubTotal()
+        {
+            /* frmOrders parentForm = this.ParentForm as frmOrders;
+             if (parentForm != null)
+             {
+                 parentForm.RecalculateSubTotal();
+             } */
+            /* method 2 */
+            frmOrders parentForm = this.ParentForm as frmOrders;
+            parentForm?.RecalculateSubTotal();
+        }
+
         public void IncreaseQuantity()
         {
-            int currentQuantity = int.Parse(txtAmount.Text);
-            currentQuantity++;
-            txtAmount.Text = currentQuantity.ToString();
+            TxtAmount++;
         }
 
         private void guna2ContainerControl1_Click(object sender, EventArgs e)
@@ -81,14 +105,16 @@ namespace RMS_Project
 
         private void btnIncrease_Click_1(object sender, EventArgs e)
         {
-            TxtAmount++;
+            IncreaseQuantity();
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            this.Parent.Controls.Remove(this);
-            this.Dispose();
+            DeleteButtonClick?.Invoke(this, e);
         }
+        public event EventHandler DeleteButtonClick;
+
+
     }
 }
 

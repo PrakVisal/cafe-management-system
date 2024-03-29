@@ -51,7 +51,7 @@ namespace RMS_Project
 
         private void btnUC_User_Click(object sender, EventArgs e)
         {
-            frmCRUD_User frmCRUD_User = new frmCRUD_User();
+            frmCRUD_User frmCRUD_User = new frmCRUD_User(user);
             frmCRUD_User.ShowDialog(); 
         }
     }

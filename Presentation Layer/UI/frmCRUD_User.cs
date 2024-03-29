@@ -10,13 +10,15 @@ using System.Windows.Forms;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.VisualBasic.ApplicationServices;
 using RMS_Project.Business_Layer;
+using User = RMS_Project.Business_Layer.User;
+using ImageConverter = RMS_Project.Business_Layer.ImageConverter;
 
 namespace RMS_Project
 {
     public partial class frmCRUD_User : Form
     {
-        RMS_Project.Business_Layer.User user = null;
-        public frmCRUD_User()
+        User user = null;
+        public frmCRUD_User(User user)
         {
             InitializeComponent();
 
@@ -28,7 +30,7 @@ namespace RMS_Project
             txtPassword.Text = user.Password;
             cboRole.Text = user.Role;
             cboStatus.Text = user.Status ? "Active" : "Inactive";
-            ptrImage.Image = Business_Layer.ImageConverter.ConvertByteArrayToImage(user.Image);
+            ptrImage.Image = ImageConverter.ConvertByteArrayToImage(user.Image);
         }
         public frmCRUD_User(string title)
         {
@@ -73,13 +75,15 @@ namespace RMS_Project
             {
                 if (lblTitle.Text == "Add New User")
                 {
-                    RMS_Project.Business_Layer.User user = CreateUser();
+                    User user = CreateUser();
                     UserManager.AddUser(user);
                     MessageBox.Show("User added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    RMS_Project.Business_Layer.User user = UpdateUser();
+                    MessageBox.Show("Before UpdateUser");
+                    User user = UpdateUser();
+                    MessageBox.Show("After UpdateUser");
                     UserManager.UpdateUser(user);
                     MessageBox.Show("User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -116,7 +120,7 @@ namespace RMS_Project
             }
         }
 
-        private RMS_Project.Business_Layer.User CreateUser()
+        private User CreateUser()
         {
             try
             {
@@ -125,7 +129,7 @@ namespace RMS_Project
                 string password = txtPassword.Text;
                 string role = cboRole.Text;
                 bool status = (cboStatus.Text.Equals("Active", StringComparison.OrdinalIgnoreCase)) ? true : false;
-                byte[] imageBytes = Business_Layer.ImageConverter.ConvertImageToBytes(ptrImage);
+                byte[] imageBytes = ImageConverter.ConvertImageToBytes(ptrImage);
 
                 // Check if a user with the same username already exists
                 if (UserManager.UserExists(username))
@@ -133,7 +137,7 @@ namespace RMS_Project
                     throw new Exception("A user with this username already exists.");
                 }
 
-                return new RMS_Project.Business_Layer.User
+                return new User
                 {
                     Fullname = fullname,
                     Username = username,
@@ -149,7 +153,7 @@ namespace RMS_Project
             }
         }
 
-        private RMS_Project.Business_Layer.User UpdateUser()
+        private User UpdateUser()
         {
             try
             {
@@ -158,10 +162,10 @@ namespace RMS_Project
                 string password = txtPassword.Text;
                 string role = cboRole.Text;
                 bool status = (cboStatus.Text.Equals("Active", StringComparison.OrdinalIgnoreCase)) ? true : false;
-                byte[] imageBytes = Business_Layer.ImageConverter.ConvertImageToBytes(ptrImage);
+                byte[] imageBytes = ImageConverter.ConvertImageToBytes(ptrImage);
 
 
-                RMS_Project.Business_Layer.User user = new RMS_Project.Business_Layer.User
+                User user = new User
                 {
                     UserID = this.user.UserID,
                     Fullname = fullname,

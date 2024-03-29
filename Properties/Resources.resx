@@ -124,6 +124,7 @@
   <data name="icons8-male-user-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-male-user-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  
   <data name="icons8-trolley-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-3\icons8-trolley-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,9 +152,6 @@
   <data name="icons8-logout-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-logout-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-trash-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-trash-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-milkshake-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-milkshake-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,11 +161,17 @@
   <data name="no_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\no_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-trash-50 WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-3\icons8-trash-50 WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-bread-50 -White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-3\icons8-bread-50 -White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-dots-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-dots-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-promotion-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-promotion-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="money-notes-receiving-cambodian-riel-color-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\money-notes-receiving-cambodian-riel-color-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +185,8 @@
   <data name="icons8-cutlery-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-cutlery-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-breakfast-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-breakfast-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-product-50-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-3\icons8-product-50-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-trash-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-trash-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +194,8 @@
   <data name="icons8-search-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-search-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-trash-50 WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-3\icons8-trash-50 WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-juice-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-juice-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KHQR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\KHQR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,17 +206,20 @@
   <data name="icons8-print-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-print-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Chicken Banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\Chicken Banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-male-user-503" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-male-user-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-trolley-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-trolley-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-dollar-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-dollar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-bread-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-4\icons8-bread-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-product-50-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-3\icons8-product-50-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-pdf-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-pdf-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +227,11 @@
   <data name="icons8-male-user-502" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-4\icons8-male-user-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-close-window-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-close-window-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-minus-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-4\icons8-minus-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-trash-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-trash-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-cross-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-cross-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,14 +239,14 @@
   <data name="icons8-add-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-4\icons8-add-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-minus-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-4\icons8-minus-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-riel-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-riel-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\logins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-juice-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-juice-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-add-shopping-cart-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-add-shopping-cart-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-clear-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-clear-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +257,8 @@
   <data name="icons8-beverage-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-beverage-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Chicken Banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\Chicken Banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-close-window-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-close-window-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-trash-502" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-4\icons8-trash-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,14 +284,15 @@
   <data name="icons8-product-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-product-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
   <data name="icons8-document-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-document-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-bread-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-bread-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-add-shopping-cart-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-add-shopping-cart-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-breakfast-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\Sales POS Icon-2\icons8-breakfast-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-juice-bottle-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-juice-bottle-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,7 +300,10 @@
   <data name="icons8-snack-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Sales POS Icon-2\icons8-snack-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-promotion-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\Sales POS Icon-2\icons8-promotion-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usd1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="riel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\riel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

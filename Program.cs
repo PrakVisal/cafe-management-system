@@ -36,11 +36,14 @@ namespace RMS_Project
             // Run the loginForm on a separate thread
             Thread loginThread = new Thread(() =>
             {
-                Application.Run(loginForm);
+               Application.Run(loginForm);
             });
+
             loginThread.Start();
 
+            
             // Run the invoiceForm on the main thread
+
             Application.Run(invoiceForm);
         }
     }

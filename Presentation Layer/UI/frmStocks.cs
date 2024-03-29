@@ -21,7 +21,8 @@ namespace RMS_Project
         {
             InitializeComponent();
             txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
-            
+            btnAccount.Text = SharedData.CurrentUsername;
+
         }
 
         private void LoadStockItems()
@@ -83,10 +84,10 @@ namespace RMS_Project
             // Open frmCRUD_Stock form
             UC_Item_Stock clickedItem = (UC_Item_Stock)sender;
             string itemName = clickedItem.ItemName;
-            Image itemImage = clickedItem.ItemImage; // Assuming UC_Item_Stock has a property called ItemImage
-            int stockCount = 0; // Assuming you have the stock count available here
-            double unitPrice = 0.0; // Assuming you have the unit price available here
-            string foodCategory = ""; // Assuming you have the food category available here
+            Image itemImage = clickedItem.ItemImage; 
+            int stockCount = 0; 
+            double unitPrice = 0.0; 
+            string foodCategory = "Others"; 
             OpenCRUDStockForm(itemName, itemImage, stockCount, unitPrice, foodCategory);
         }
 
@@ -176,9 +177,11 @@ namespace RMS_Project
             }
         }
 
-        
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            FormHelper.AccountButton_Click(sender, e);
 
-
+        }
     }
 
 }

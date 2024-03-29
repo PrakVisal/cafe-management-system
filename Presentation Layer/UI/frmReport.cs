@@ -9,18 +9,21 @@ using iTextSharp.text;
 using System.IO;
 using iText.Layout.Properties;
 using System.Drawing.Printing;
+using RMS_Project.Business_Layer;
 
 namespace RMS_Project
 {
     public partial class frmReport : Form
     {
-        private const string connectionString = "Data Source=LAPTOP-ALHRF6DV\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
-
+        
+        private ReportManager reportManager;
         public frmReport()
         {
             InitializeComponent();
-
+            btnAccount.Text = SharedData.CurrentUsername;
+            reportManager = new ReportManager();
         }
+        
 
         private void frmReport_Load(object sender, EventArgs e)
         {
@@ -29,66 +32,40 @@ namespace RMS_Project
 
         private void LoadInvoiceList()
         {
-            string query = "SELECT o.OrderDate as InvoiceDate, o.CustomerID, " +
-                "  o.TotalRiel, o.TotalDollar,pm.PaymentMethod as PaymentMethod FROM  " +
-                "  tbOrder o INNER JOIN tbPaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID;";
-            LoadDataToDataGridView(query);
+            DataTable dataTable = reportManager.GetInvoiceList();
+            LoadDataToDataGridView(dataTable);
         }
 
         private void LoadStockInReport()
         {
-            string query = "SELECT DISTINCT StockName, StockIn, UnitPrice, Amount, Date FROM tbStockIn";
-            LoadDataToDataGridView(query);
+            DataTable dataTable = reportManager.GetStockInReport();
+            LoadDataToDataGridView(dataTable);
         }
 
         private void LoadStockOutReport()
         {
-            string query = "SELECT DISTINCT StockName, StockOut, UnitPrice, Amount, Date FROM tbStockOut";
-            LoadDataToDataGridView(query);   
+            DataTable dataTable = reportManager.GetStockOutReport();
+            LoadDataToDataGridView(dataTable);
         }
 
         private void LoadStockCountReport()
         {
-            string query = "SELECT DISTINCT StockName, StockCount, UnitPrice, Amount FROM tbStockCount";
-            LoadDataToDataGridView(query);
+            DataTable dataTable = reportManager.GetStockCountReport();
+            LoadDataToDataGridView(dataTable);
         }
 
         private void LoadStockAlertReport()
         {
-            string query = "SELECT StockName, StockCount, " +
-                           "CASE WHEN StockCount = 1 THEN 'Nearly Out of stock!' ELSE 'In stock' END AS AlertMessage " +
-                           "FROM tbStockCount";
-            LoadDataToDataGridView(query);
+            DataTable dataTable = reportManager.GetStockAlertReport();
+            LoadDataToDataGridView(dataTable);
         }
 
-        private void LoadDataToDataGridView(string query)
+        private void LoadDataToDataGridView(DataTable dataTable)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    // Clear existing columns
-                    dgv.Columns.Clear();
-
-                    // Add columns with specified names
-                    //foreach (string columnName in columnNames)
-                    //{
-                    //    dgv.Columns.Add(columnName, columnName);
-                   // }
-
-                    // Set AutoSizeMode for each column
-                    foreach (DataGridViewColumn column in dgv.Columns)
-                    {
-                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    }
-
-                    dgv.DataSource = dataTable;
-                    dgv.Refresh(); // Refresh the DataGridView
-                }
+                dgv.DataSource = dataTable;
+                CustomizeDataGridViewAppearance();
             }
             catch (Exception ex)
             {
@@ -332,6 +309,11 @@ namespace RMS_Project
             {
                 MessageBox.Show("Error printing: " + ex.Message, "Print Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAccount_Click_1(object sender, EventArgs e)
+        {
+            FormHelper.AccountButton_Click(sender, e);
         }
     }
 
