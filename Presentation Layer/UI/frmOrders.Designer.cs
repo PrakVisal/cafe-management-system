@@ -231,7 +231,6 @@
             this.btnMeat.Text = "Meat";
             this.btnMeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMeat.TextOffset = new System.Drawing.Point(10, 0);
-            this.btnMeat.Click += new System.EventHandler(this.btnMeat_Click);
             // 
             // btnAll
             // 
@@ -264,7 +263,7 @@
             this.btnAll.Text = "All";
             this.btnAll.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAll.TextOffset = new System.Drawing.Point(10, 0);
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click_1);
             // 
             // btnBeverages
             // 
@@ -574,7 +573,7 @@
             this.btnKHQR.Text = "KHQR";
             this.btnKHQR.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKHQR.TextOffset = new System.Drawing.Point(4, 23);
-            this.btnKHQR.Click += new System.EventHandler(this.btnKHQR_Click);
+            this.btnKHQR.Click += new System.EventHandler(this.btnKHQR_Click_1);
             // 
             // btnCash
             // 
@@ -606,7 +605,7 @@
             this.btnCash.Text = "Cash";
             this.btnCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCash.TextOffset = new System.Drawing.Point(0, 20);
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click_1);
             // 
             // guna2Separator1
             // 
@@ -780,7 +779,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrders";
             this.Text = "frmOrders";
-            this.Load += new System.EventHandler(this.frmOrders_Load);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrders_FormClosed);
             this.panel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);

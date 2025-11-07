@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace RMS_Project
@@ -13,38 +12,43 @@ namespace RMS_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Create instances of the forms
-            frmLogin loginForm = new frmLogin();
-            frmInvoice invoiceForm = new frmInvoice();
-
             // Determine which screen is primary
             var primaryScreen = Screen.AllScreens.FirstOrDefault(s => s.Primary);
             var secondaryScreen = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
 
+            // Create and configure login form
+            frmLogin loginForm = new frmLogin();
             if (primaryScreen != null)
             {
                 loginForm.StartPosition = FormStartPosition.CenterScreen;
                 loginForm.Location = primaryScreen.WorkingArea.Location;
             }
 
+            // Create and configure invoice form
+            frmInvoice invoiceForm = new frmInvoice();
             if (secondaryScreen != null)
             {
                 invoiceForm.StartPosition = FormStartPosition.Manual;
                 invoiceForm.Location = secondaryScreen.WorkingArea.Location;
             }
-
-            // Run the loginForm on a separate thread
-            Thread loginThread = new Thread(() =>
+            else
             {
-               Application.Run(loginForm);
-            });
+                // If no secondary screen, position it offset from primary
+                invoiceForm.StartPosition = FormStartPosition.Manual;
+                if (primaryScreen != null)
+                {
+                    invoiceForm.Location = new System.Drawing.Point(
+                        primaryScreen.WorkingArea.Right - invoiceForm.Width - 20,
+                        primaryScreen.WorkingArea.Top + 20);
+                }
+            }
 
-            loginThread.Start();
+            // Show both forms on the main UI thread
+            loginForm.Show();
+            invoiceForm.Show();
 
-            
-            // Run the invoiceForm on the main thread
-
-            Application.Run(invoiceForm);
+            // Run the application message loop on the main thread
+            Application.Run();
         }
     }
 }

@@ -185,7 +185,7 @@
             this.Name = "frmStocks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStocks";
-            this.Load += new System.EventHandler(this.frmStocks_Load);
+            this.Load += new System.EventHandler(this.frmStocks_Load_1);
             this.pnlBanner.ResumeLayout(false);
             this.pnlBanner.PerformLayout();
             this.panel1.ResumeLayout(false);

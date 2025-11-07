@@ -35,13 +35,11 @@
             this.btnNewUsers = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlUser = new System.Windows.Forms.FlowLayoutPanel();
-            //this.uC_Users19 = new RMS_Project.UC_Users();
             this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.pnlUser.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,14 +74,14 @@
             this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
             this.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
-            this.cboRole.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRole.Font = new System.Drawing.Font("Poppins", 12F);
             this.cboRole.ForeColor = System.Drawing.Color.Black;
             this.cboRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
             this.cboRole.ItemHeight = 40;
             this.cboRole.Items.AddRange(new object[] {
             "All",
             "Staff",
-            "Manager",
+            "Stock Manager",
             "Admin"});
             this.cboRole.ItemsAppearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRole.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
@@ -96,6 +94,7 @@
             this.cboRole.StartIndex = 0;
             this.cboRole.TabIndex = 10;
             this.cboRole.Tag = "Role";
+            this.cboRole.SelectedIndexChanged += new System.EventHandler(this.cboRole_SelectedIndexChanged);
             // 
             // btnNewUsers
             // 
@@ -140,15 +139,6 @@
             this.pnlUser.Size = new System.Drawing.Size(1584, 839);
             this.pnlUser.TabIndex = 0;
             // 
-            // uC_Users19
-            // 
-            //this.uC_Users19.BackColor = System.Drawing.Color.Transparent;
-            //this.uC_Users19.Location = new System.Drawing.Point(50, 20);
-            //this.uC_Users19.Margin = new System.Windows.Forms.Padding(10);
-            //this.uC_Users19.Name = "uC_Users19";
-            //this.uC_Users19.Size = new System.Drawing.Size(228, 274);
-            //this.uC_Users19.TabIndex = 18;
-            // 
             // btnAccount
             // 
             this.btnAccount.BorderRadius = 20;
@@ -171,6 +161,7 @@
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "Angkor";
             this.btnAccount.TextOffset = new System.Drawing.Point(5, 0);
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // txtSearchProduct
             // 
@@ -198,6 +189,7 @@
             this.txtSearchProduct.Size = new System.Drawing.Size(956, 58);
             this.txtSearchProduct.TabIndex = 4;
             this.txtSearchProduct.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // panel1
             // 
@@ -224,7 +216,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
-            this.pnlUser.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

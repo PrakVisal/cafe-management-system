@@ -34,7 +34,7 @@
             this.btnAccount = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnNewItem = new Guna.UI2.WinForms.Guna2Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlItem = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cboFilterCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
@@ -76,6 +76,7 @@
             this.txtSearchProduct.Size = new System.Drawing.Size(956, 58);
             this.txtSearchProduct.TabIndex = 4;
             this.txtSearchProduct.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged_1);
             // 
             // btnAccount
             // 
@@ -130,16 +131,16 @@
             this.btnNewItem.Text = "New Item";
             this.btnNewItem.Click += new System.EventHandler(this.btnNewItem_Click);
             // 
-            // flowLayoutPanel1
+            // pnlItem
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 167);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 30, 30, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(90, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1584, 874);
-            this.flowLayoutPanel1.TabIndex = 8;
+            this.pnlItem.AutoScroll = true;
+            this.pnlItem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlItem.Location = new System.Drawing.Point(0, 167);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(0, 30, 30, 0);
+            this.pnlItem.Name = "pnlItem";
+            this.pnlItem.Padding = new System.Windows.Forms.Padding(90, 0, 0, 0);
+            this.pnlItem.Size = new System.Drawing.Size(1584, 874);
+            this.pnlItem.TabIndex = 8;
             // 
             // label1
             // 
@@ -186,7 +187,7 @@
             this.cboFilterCategory.StartIndex = 0;
             this.cboFilterCategory.TabIndex = 9;
             this.cboFilterCategory.Tag = "Role";
-            this.cboFilterCategory.SelectedIndexChanged += new System.EventHandler(this.cboFilterCategory_SelectedIndexChanged_1);
+            this.cboFilterCategory.SelectedIndexChanged += new System.EventHandler(this.cboFilterCategory_SelectedIndexChanged);
             // 
             // frmItems
             // 
@@ -195,14 +196,13 @@
             this.ClientSize = new System.Drawing.Size(1584, 1041);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboFilterCategory);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pnlItem);
             this.Controls.Add(this.btnNewItem);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmItems";
             this.Text = "frmItems";
-            this.Load += new System.EventHandler(this.frmItems_Load_1);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,7 +215,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAccount;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Button btnNewItem;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnlItem;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchProduct;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cboFilterCategory;

@@ -84,18 +84,11 @@ namespace RMS_Project
             // Open frmCRUD_Stock form
             UC_Item_Stock clickedItem = (UC_Item_Stock)sender;
             string itemName = clickedItem.ItemName;
-            Image itemImage = clickedItem.ItemImage; 
-            int stockCount = 0; 
-            double unitPrice = 0.0; 
-            string foodCategory = "Others"; 
+            Image itemImage = clickedItem.ItemImage;
+            int stockCount = 0;
+            double unitPrice = 0.0;
+            string foodCategory = "Others";
             OpenCRUDStockForm(itemName, itemImage, stockCount, unitPrice, foodCategory);
-        }
-
-
-        private void frmStocks_Load(object sender, EventArgs e)
-        {
-            LoadStockItems();
-            
         }
 
         private void cboRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,6 +174,16 @@ namespace RMS_Project
         {
             FormHelper.AccountButton_Click(sender, e);
 
+        }
+
+        private void frmStocks_Load_1(object sender, EventArgs e)
+        {
+            LoadStockItems();
+        }
+        public void ReloadStockControls()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            LoadStockItems();
         }
     }
 

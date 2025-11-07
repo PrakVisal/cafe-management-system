@@ -11,7 +11,7 @@ namespace RMS_Project.Class
 {
     public class CRUDStockManager
     {
-        
+
 
         public class StockDetails
         {
@@ -32,20 +32,21 @@ namespace RMS_Project.Class
                 UnitPrice = unitPrice;
                 FoodCategory = foodCategory;
                 ExpirationDate = expirationDate;
-                Photo = photo; 
+                Photo = photo;
                 Amount = amount;
                 FoodCategoryID = foodCategoryID;
             }
         }
 
-        public static DataTable GetStockInDataForItem(string itemName)
+
+        public static DataTable GetStockForItem(string itemName)
         {
-            DataTable stockInData = new DataTable();
+            DataTable stockData = new DataTable();
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
-                string query = "SELECT UnitPrice, Amount, FoodCategory, Date " +
-                               "FROM tbStockIn " +
+                string query = "SELECT UnitPrice, Amount, FoodCategory " +
+                               "FROM tbStockCount " +
                                "WHERE StockName = @ItemName";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -54,36 +55,12 @@ namespace RMS_Project.Class
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
-                        adapter.Fill(stockInData);
+                        adapter.Fill(stockData);
                     }
                 }
             }
-            stockInData.Columns.Add("SafetyAlert", typeof(int)).DefaultValue = 1;
-            return stockInData;
-        }
-
-        public static DataTable GetStockOutDataForItem(string itemName)
-        {
-            DataTable stockOutData = new DataTable();
-
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                string query = "SELECT UnitPrice, Amount, FoodCategory, Date " +
-                               "FROM tbStockOut " +
-                               "WHERE StockName = @ItemName";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ItemName", itemName);
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(stockOutData);
-                    }
-                }
-            }
-            stockOutData.Columns.Add("SafetyAlert", typeof(int)).DefaultValue = 1;
-            return stockOutData;
+            stockData.Columns.Add("SafetyAlert", typeof(int)).DefaultValue = 1;
+            return stockData;
         }
 
         public static int GetStockCountForItem(string itemName)
@@ -112,7 +89,7 @@ namespace RMS_Project.Class
 
         public static void SaveStock(StockDetails stockDetails, bool isStockIn, int initialStockCount)
         {
-           
+
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -135,7 +112,7 @@ namespace RMS_Project.Class
 
                     command.ExecuteNonQuery();
                 }
-               
+
 
 
                 // Update tbStockCount
@@ -148,7 +125,7 @@ namespace RMS_Project.Class
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 string tableName = "tbStockCount";
-               
+
                 int newStockCount = isStockIn ? initialStockCount + quantity : initialStockCount - quantity;
 
                 string updateQuery = $"UPDATE {tableName} SET StockCount = @NewStockCount WHERE StockName = @StockName";

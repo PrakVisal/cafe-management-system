@@ -13,8 +13,10 @@ namespace RMS_Project.Presentation_Layer.UI
 {
     public partial class frmCashPayment : Form
     {
+        frmInvoice invoiceForm = new frmInvoice();
         public frmCashPayment(string subTotal, string tax, string totalDollar, string totalRiel)
         {
+
             InitializeComponent();
 
             txtSubTotal.Text = subTotal;
@@ -27,14 +29,18 @@ namespace RMS_Project.Presentation_Layer.UI
         {
             this.Close();
         }
-        decimal usdAmount, rielAmount;
-        decimal chargeRiel = 0, chargeDollar = 0;
+        decimal usdAmount;
+        decimal  rielAmount;
+        decimal chargeRiel = 0;
+        decimal chargeDollar = 0;
         private void InsertOrderIntoDatabase()
         {
             DateTime orderDate = DateTime.Now;
             decimal totalRiel = decimal.Parse(txtTotalRiel.Text.Split(' ')[0]);
             decimal totalDollar = decimal.Parse(txtTotalDollar.Text.Split('$')[1]);
 
+            //totalDollar is total in dollar
+            //
             
             // Parse USD amount, default to 0 if parsing fails
             decimal.TryParse(txtUSDAmount.Text, out usdAmount);
@@ -45,14 +51,21 @@ namespace RMS_Project.Presentation_Layer.UI
            
             if (decimal.TryParse(txtUSDAmount.Text, out decimal usd) && decimal.TryParse(txtRielAmount.Text, out decimal riel))
             {
-                chargeRiel = (riel + (usd * 4000)) - (totalDollar * 4000);
+
+                if (txtRielAmount.Text == "0")
+                {
+                    chargeRiel = (riel + (usd * 4000)) - (totalDollar * 4000);
+                }
+                else
+                {
+                    chargeRiel = (riel + (usd * 4000)) - (totalDollar * 4100);
+                }
                 chargeDollar = 0.00m;
                 txtChangeDollar.Text = "0.00";
                 txtChangeRiel.Text = chargeRiel.ToString();
             }
 
             int payment = 1;
-            // Save the order using OrderManager
             OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar , payment );
         }
 
@@ -60,7 +73,26 @@ namespace RMS_Project.Presentation_Layer.UI
         private void btnSave_Click(object sender, EventArgs e)
         {
             InsertOrderIntoDatabase();
-            this.Close();
+            //this.Close();
+
+            if (invoiceForm != null)
+            {
+                invoiceForm = GetForm<frmInvoice>();
+                invoiceForm.lblRecievedRiel.Text = "Riel " + txtRielAmount.Text;
+                invoiceForm.lblRecievedDollar.Text = "$" + decimal.Parse(txtUSDAmount.Text).ToString("0.00");
+                invoiceForm.lblChange.Text = "Riel " + chargeRiel.ToString("0");
+            }
+        }
+        public T GetForm<T>() where T : Form
+        {
+            try
+            {
+                return Application.OpenForms.OfType<T>().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return default;
+            }
         }
 
         private void txtUSDAmount_TextChanged(object sender, EventArgs e)
@@ -68,14 +100,20 @@ namespace RMS_Project.Presentation_Layer.UI
             if (decimal.TryParse(txtUSDAmount.Text, out decimal usd) && decimal.TryParse(txtRielAmount.Text, out decimal riel))
             {
                 // Calculate the chargeRiel and assign it to txtChangeRiel.Text
-                chargeRiel = (riel + (usd * 4000)) - (decimal.Parse(txtTotalDollar.Text) * 4000) ;
+                if (txtRielAmount.Text == "0")
+                {
+                    chargeRiel = (riel + (usd * 4000)) - (decimal.Parse(txtTotalDollar.Text) * 4000);
+                }
+                else
+                {
+                    chargeRiel = (riel + (usd * 4000)) - (decimal.Parse(txtTotalDollar.Text) * 4100);
+                }
                 txtChangeRiel.Text = chargeRiel.ToString();
 
                 txtChangeDollar.Text = "0.00";
             }
             else
-            {
-                // Handle invalid input, for example, you can set the text to empty or display a message to the user
+            {             
                 txtChangeRiel.Text = "";
             }
 

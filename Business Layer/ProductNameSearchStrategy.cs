@@ -10,7 +10,7 @@ namespace RMS_Project.Business_Layer
     public class ProductNameSearchStrategy: IStrategyItem
     {
 
-        public bool FilterItems(UC_Item item, string criterion)
+        public bool FilterItems(UC_ItemAction item, string criterion)
         {
             string itemName = item.ItemName.ToLower();
             return itemName.Contains(criterion);

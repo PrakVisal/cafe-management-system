@@ -56,6 +56,7 @@
             this.rdoStockOUT = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rdoStockIN = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2ContainerControl3 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNewQty = new System.Windows.Forms.Label();
             this.btnIncrement = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnDecrement = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -63,7 +64,6 @@
             this.lblOldQty = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2ContainerControl1.SuspendLayout();
@@ -147,7 +147,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Tag = "Save";
             this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // btnClear
             // 
@@ -171,7 +171,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Tag = "Cancel";
             this.btnClear.Text = "Clear";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // guna2ContainerControl1
             // 
@@ -507,6 +507,16 @@
             this.guna2ContainerControl3.TabIndex = 19;
             this.guna2ContainerControl3.Text = "guna2ContainerControl3";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(205, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblNewQty
             // 
             this.lblNewQty.BackColor = System.Drawing.Color.Transparent;
@@ -536,7 +546,7 @@
             this.btnIncrement.Size = new System.Drawing.Size(50, 50);
             this.btnIncrement.TabIndex = 17;
             this.btnIncrement.UseTransparentBackground = true;
-            this.btnIncrement.Click += new System.EventHandler(this.btnIncrement_Click);
+            this.btnIncrement.Click += new System.EventHandler(this.btnIncrement_Click_1);
             // 
             // btnDecrement
             // 
@@ -556,7 +566,7 @@
             this.btnDecrement.Size = new System.Drawing.Size(50, 50);
             this.btnDecrement.TabIndex = 17;
             this.btnDecrement.UseTransparentBackground = true;
-            this.btnDecrement.Click += new System.EventHandler(this.btnDecrement_Click);
+            this.btnDecrement.Click += new System.EventHandler(this.btnDecrement_Click_1);
             // 
             // txtQty
             // 
@@ -615,16 +625,6 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(205, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmCRUD_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,7 +639,7 @@
             this.Name = "frmCRUD_Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCRUD_Stock";
-            this.Load += new System.EventHandler(this.frmCRUD_Stock_Load);
+            this.Load += new System.EventHandler(this.frmCRUD_Stock_Load_1);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);

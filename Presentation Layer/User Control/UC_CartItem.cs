@@ -8,25 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS_Project.Business_Layer;
+using ImageConverter = RMS_Project.Business_Layer.ImageConverter;
+using System.Runtime.CompilerServices;
+
 
 namespace RMS_Project
 {
     public partial class UC_CartItem : UserControl
     {
+        private frmInvoice invoiceForm = null;
+        private readonly Item item;
 
-        public string LabelName
+        public int ItemId { get; }
+        public int ItemAmount
         {
-            get { return lblName.Text; }
-            set { lblName.Text = value; }
+            get => Convert.ToInt32(txtAmount.Text);
+            set => txtAmount.Text = value.ToString();
         }
-
-        public Image PictureBoxImage
-        {
-            get { return ptrImage.Image; }
-            set { ptrImage.Image = value; }
-        }
-
-
         public decimal LblPriceText
         {
             get { return decimal.Parse(lblPrice.Text); }
@@ -36,7 +35,6 @@ namespace RMS_Project
             }
         }
 
-
         public int TxtAmount
         {
             get { return int.Parse(txtAmount.Text); }
@@ -44,77 +42,96 @@ namespace RMS_Project
             {
                 txtAmount.Text = value.ToString();
                 UpdateSubTotal();
+                UpdateBillingItemQuantity(value);
+
             }
 
         }
-
-
-        public class ItemAddedEventArgs : EventArgs
+        public string LabelName
         {
-            public string ItemName { get; }
-            public int Quantity { get; }
-            public decimal Price { get; }
+            get { return lblName.Text; }
+            set { lblName.Text = value; }
+        }
 
-            public ItemAddedEventArgs(string itemName, int quantity, decimal price)
+        public UC_CartItem(frmInvoice frmInvoice, Item item)
+        {
+            InitializeComponent();
+            this.item = item;
+            this.invoiceForm = frmInvoice;
+
+            ItemId = item.ItemID;
+            InitializeUI();
+        }
+
+        private void InitializeUI()
+        {
+            lblName.Text = item.ItemName;
+            lblPrice.Text = item.ItemPrice.ToString();
+            txtAmount.Text = "1";
+
+            if (item.itemImage != null)
             {
-                ItemName = itemName;
-                Quantity = quantity;
-                Price = price;
+                ptrImage.Image = ImageConverter.ConvertByteArrayToImage(item.itemImage);
+            }
+            else
+            {
+                ptrImage.Image = Properties.Resources.no_image;
             }
         }
-        public UC_CartItem()
+        
+        private void btnDecreease_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-        }
-        public UC_CartItem(string name, string price, Image img)
-        {
-            InitializeComponent();
-            lblName.Text = name;
-            lblPrice.Text = price;
-            ptrImage.Image = img;
-        }
+            if (TxtAmount > 1)
+                TxtAmount--;          
 
-
-        private void UpdateSubTotal()
-        {
-            /* frmOrders parentForm = this.ParentForm as frmOrders;
-             if (parentForm != null)
-             {
-                 parentForm.RecalculateSubTotal();
-             } */
-            /* method 2 */
-            frmOrders parentForm = this.ParentForm as frmOrders;
-            parentForm?.RecalculateSubTotal();
         }
-
-        public void IncreaseQuantity()
+            
+        private void btnIncrease_Click_1(object sender, EventArgs e)
         {
             TxtAmount++;
         }
-
-        private void guna2ContainerControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDecreease_Click_1(object sender, EventArgs e)
-        {
-            if (TxtAmount > 1)
-                TxtAmount--;
-        }
-
-        private void btnIncrease_Click_1(object sender, EventArgs e)
-        {
-            IncreaseQuantity();
-        }
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        public void btnDelete_Click_1(object sender, EventArgs e)
         {
             DeleteButtonClick?.Invoke(this, e);
         }
+
         public event EventHandler DeleteButtonClick;
 
+        private void UpdateBillingItemQuantity(int quantity)
+        {
+            try
+            {
+                if (invoiceForm != null)
+                {
+                    UC_BillingItem billingItem = invoiceForm.pnlnvoiceItem.Controls
+                    .OfType<UC_BillingItem>()
+                    .FirstOrDefault(bi => bi.ItemId == item.ItemID);
 
+                    if (billingItem != null)
+                    {
+                        billingItem.ItemAmount = quantity;
+                        billingItem.TotalPrice = quantity * decimal.Parse(lblPrice.Text);
+                        invoiceForm.CalculateSubTotal();
+                    }
+                    else
+                    {
+                        MessageBox.Show("billing item is null");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           
+        }
+        
+        private void UpdateSubTotal()
+        {
+            frmOrders parentForm = this.ParentForm as frmOrders;
+            parentForm?.CalculateSubTotal();
+           
+        }      
     }
 }
-

@@ -22,144 +22,98 @@ namespace RMS_Project
 {
     public partial class frmItems : Form
     {
-
         private IStrategyItem filterStrategy;
-        private ItemManager itemManager;
-
         public frmItems()
-        {
+        {            
             InitializeComponent();
+            LoadData();
             cboFilterCategory.SelectedIndex = 0;
-            txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
+            txtSearchProduct.TextChanged += txtSearchProduct_TextChanged_1;
             filterStrategy = new CategoryFilterStrategy();
-            itemManager = new ItemManager(DBConnection.path);
             btnAccount.Text = SharedData.CurrentUsername;
         }
 
         private void btnNewItem_Click(object sender, EventArgs e)
         {
-            frmCRUD_Item frm = new frmCRUD_Item("New Item");
+            frmCRUD_Item frm = new frmCRUD_Item("Add New Item");
+            frm.FormClosed += frmItems_FormClosed;
             frm.ShowDialog();
         }
-
-        private void LoadProducts()
+        private void frmItems_FormClosed(object sender, FormClosedEventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
-
-            // Load all items from the database
-            List<ItemManager.ItemData> items = itemManager.GetItems();
-
-            // Display all items
-            DisplayItems(items);
+            LoadData();
         }
-
-        private void DisplayItems(List<ItemManager.ItemData> items)
+        private void LoadData()
         {
-            foreach (var item in items)
+            
+            pnlItem.Controls.Clear();
+
+            // Get the list of users from the database
+            List<Item> items = ItemManager.ReadItem();
+
+            // Check if users list is not null or empty
+            if (items != null && items.Any())
             {
-                UC_Item ucItem = new UC_Item(item.ProductId, item.ProductName, item.Price, item.Description, item.Image, item.Category);
-                flowLayoutPanel1.Controls.Add(ucItem);
-                ucItem.BtnUC_ItemClick += UC_Item_Click;
-            }
-        }
-
-        public class ProductUpdatedEventArgs : EventArgs
-        {
-            public string ItemName { get; }
-            public decimal Price { get; }
-            public string Description { get; }
-            public byte[] ImageData { get; }
-            public int ProductId { get; }
-
-            public ProductUpdatedEventArgs(string itemName, decimal price, string description, byte[] imageData, int productId)
-            {
-                ItemName = itemName;
-                Price = price;
-                Description = description;
-                ImageData = imageData;
-                ProductId = productId;
-            }
-
-        }
-
-        private void Frm_ProductUpdated(object sender, EventArgs e)
-        {
-            if (e is ProductUpdatedEventArgs productEventArgs)
-            {
-                UC_Item ucItemToUpdate = flowLayoutPanel1.Controls.OfType<UC_Item>().FirstOrDefault(item => item.ProductId == productEventArgs.ProductId);
-
-                if (ucItemToUpdate != null)
-                {
-                    // Update the UC_Item control with the new details
-                    ucItemToUpdate.ItemName = productEventArgs.ItemName;
-                    ucItemToUpdate.Label1Text = $"{productEventArgs.Price:C}";
-                    ucItemToUpdate.LabelDescription = productEventArgs.Description;
-                    ucItemToUpdate.PictureBoxImage = Image.FromStream(new MemoryStream(productEventArgs.ImageData));
+                foreach (Item item in items)
+                {                 
+                    UC_ItemAction uc = new UC_ItemAction(item);                  
+                    pnlItem.Controls.Add(uc);
                 }
             }
+            else
+            {               
+                MessageBox.Show("No items found in the database.");
+            }
         }
-
-        private void UC_Item_Click(object sender, EventArgs e)
+        public void ReloadItemControls()
         {
-            UC_Item clickedItem = (UC_Item)sender;
-            int productId = clickedItem.ProductId;
-            frmCRUD_Item frm = new frmCRUD_Item(clickedItem.ItemName, clickedItem.Label1Text, clickedItem.LabelDescription, clickedItem.PictureBoxImage, productId);
-            frm.ProductUpdated += Frm_ProductUpdated; // Subscribe to the event
-            frm.ShowDialog();
-           
+            LoadData();
         }
+        
 
-        public void ReloadUserControls()
+        private void txtSearchProduct_TextChanged_1(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear(); // Clear existing user controls
-            LoadProducts(); 
+            filterStrategy = new ProductNameSearchStrategy();
+            //  FilterItems(txtSearchProduct.Text.Trim().ToLower());
+            string searchText = txtSearchProduct.Text.Trim().ToLower();
+            FilterItems(searchText);
+
         }
 
-        private void frmItems_Load_1(object sender, EventArgs e)
-        {
-            LoadProducts();
-        }
-
-        private void cboFilterCategory_SelectedIndexChanged_1(object sender, EventArgs e)
-
+        private void cboFilterCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCategory = cboFilterCategory.SelectedItem.ToString();
             if (selectedCategory == "All")
             {
-                filterStrategy = null; // No filtering needed
+                filterStrategy = null; 
             }
             else
             {
                 filterStrategy = new CategoryFilterStrategy();
             }
+           
             FilterItems(selectedCategory);
-        }
 
-        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-            filterStrategy = new ProductNameSearchStrategy();
-            FilterItems(txtSearchProduct.Text.Trim().ToLower());
-        }
-
-        private void FilterItems(string criterion)
-        {
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control is UC_Item ucItem)
-                {
-                    // Determine whether the item meets the filtering criterion
-                    bool meetsCriterion = filterStrategy == null || filterStrategy.FilterItems(ucItem, criterion);
-                    ucItem.Visible = meetsCriterion; // Set visibility based on the result
-                }
-            }
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             FormHelper.AccountButton_Click(sender, e);
         }
+        private void FilterItems(string criterion)
+        {
+            foreach (Control control in pnlItem.Controls)
+            {
+                if (control is UC_ItemAction ucActionItem)
+                {
+                    // Determine whether the item meets the filtering criterion
+                    bool meetsCriterion = filterStrategy == null || filterStrategy.FilterItems(ucActionItem, criterion);
+                    ucActionItem.Visible = meetsCriterion; // Set visibility based on the result
+                }
+            }
+        }
+
     }
 }
 
 
-   

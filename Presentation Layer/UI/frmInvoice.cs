@@ -9,37 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Guna.UI2.WinForms;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 
 namespace RMS_Project
 {
     public partial class frmInvoice : Form
     {
+        public frmInvoice InvoiceForm { get; set; }
         public frmInvoice()
         {
             InitializeComponent();
             LoadPaymentImage();
+            
         }
-        public void SetQRCodeImage(string imagePath)
-        {
-            try
-            {
-                if (File.Exists(imagePath))
-                {
-                    Image image = Image.FromFile(imagePath);
-                    SetImageOnUIThread(image);
-                }
-                else
-                {
-                    MessageBox.Show($"Image file not found: {imagePath}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-
-
         private void SetImageOnUIThread(Image image)
         {
             if (ptrQRCode.InvokeRequired)
@@ -53,7 +35,6 @@ namespace RMS_Project
                 ptrQRCode.Image = image;
             }
         }
-
         
         private void LoadPaymentImage()
         {
@@ -63,7 +44,40 @@ namespace RMS_Project
             // Set the image on the UI thread
             SetImageOnUIThread(yourImage);
         }
+        private decimal subTotal = 0.00m;
+
+        public void CalculateSubTotal()
+        {
+            subTotal = 0.00m;
+
+            foreach (UC_BillingItem billingItem in pnlnvoiceItem.Controls.OfType<UC_BillingItem>())
+            {
+                subTotal += billingItem.TotalPrice;
+            }
+            lblSubTotal.Text = "$" + subTotal.ToString();
+            decimal taxRate = 0.00m;
+            lblTotalTax.Text = "$" + taxRate.ToString();
+            decimal grandTotalDollor = subTotal + (taxRate * subTotal);
+            lblGrandTotalDollar.Text = "$" + grandTotalDollor.ToString("F2");
+            decimal dollarToRiel = 4100;
+            decimal grandTotalRiel = grandTotalDollor * dollarToRiel;
+            int grandToTalRielToInt = Convert.ToInt32(grandTotalRiel);
+            lblGrandTotalRiel.Text = grandToTalRielToInt.ToString() + " Riel";
+        }
+
+        
+        public void RemoveBillingItem(int itemId)
+        {
+            UC_BillingItem billingItemToRemove = pnlnvoiceItem.Controls
+                .OfType<UC_BillingItem>()
+                .FirstOrDefault(bi => bi.ItemId == itemId);
+
+            if (billingItemToRemove != null)
+            {
+                pnlnvoiceItem.Controls.Remove(billingItemToRemove);
+                // Recalculate subtotal after removing the item
+                CalculateSubTotal();
+            }
+        }
     }
-   
-    
 }

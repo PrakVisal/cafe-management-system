@@ -93,7 +93,7 @@
             this.btnUCItems.Size = new System.Drawing.Size(291, 117);
             this.btnUCItems.TabIndex = 13;
             this.btnUCItems.UseTransparentBackground = true;
-            this.btnUCItems.Click += new System.EventHandler(this.btnUCItems_Click);
+            this.btnUCItems.Click += new System.EventHandler(this.btnUCItems_Click_1);
             // 
             // lblQty
             // 

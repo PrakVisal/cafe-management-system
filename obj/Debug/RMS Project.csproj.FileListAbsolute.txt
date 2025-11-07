@@ -243,3 +243,220 @@ C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Proje
 C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\obj\Debug\RMS Project.pdb
 C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Resources\usd1.png
 C:\Users\siv naysim\source\repos\SeangMengKheang\RMS-Project\bin\Debug\Resources\riel1.png
+D:\RMS-Project\bin\Debug\Resources\usd1.png
+D:\RMS-Project\bin\Debug\Resources\riel1.png
+D:\RMS-Project\bin\Debug\RMS Project.exe.config
+D:\RMS-Project\bin\Debug\RMS Project.exe
+D:\RMS-Project\bin\Debug\RMS Project.pdb
+D:\RMS-Project\bin\Debug\BouncyCastle.Crypto.dll
+D:\RMS-Project\bin\Debug\ClosedXML.dll
+D:\RMS-Project\bin\Debug\ClosedXML.Parser.dll
+D:\RMS-Project\bin\Debug\DocumentFormat.OpenXml.dll
+D:\RMS-Project\bin\Debug\ExcelNumberFormat.dll
+D:\RMS-Project\bin\Debug\Guna.UI2.dll
+D:\RMS-Project\bin\Debug\itext.barcodes.dll
+D:\RMS-Project\bin\Debug\itext.bouncy-castle-connector.dll
+D:\RMS-Project\bin\Debug\itext.commons.dll
+D:\RMS-Project\bin\Debug\itext.forms.dll
+D:\RMS-Project\bin\Debug\itext.io.dll
+D:\RMS-Project\bin\Debug\itext.kernel.dll
+D:\RMS-Project\bin\Debug\itext.layout.dll
+D:\RMS-Project\bin\Debug\itext.pdfa.dll
+D:\RMS-Project\bin\Debug\itext.pdfua.dll
+D:\RMS-Project\bin\Debug\itext.sign.dll
+D:\RMS-Project\bin\Debug\itext.styledxmlparser.dll
+D:\RMS-Project\bin\Debug\itext.svg.dll
+D:\RMS-Project\bin\Debug\itextsharp.dll
+D:\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Options.dll
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\RMS-Project\bin\Debug\Newtonsoft.Json.dll
+D:\RMS-Project\bin\Debug\RBush.dll
+D:\RMS-Project\bin\Debug\SixLabors.Fonts.dll
+D:\RMS-Project\bin\Debug\System.Buffers.dll
+D:\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RMS-Project\bin\Debug\System.IO.Packaging.dll
+D:\RMS-Project\bin\Debug\System.Memory.dll
+D:\RMS-Project\bin\Debug\System.Numerics.Vectors.dll
+D:\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RMS-Project\bin\Debug\System.ValueTuple.dll
+D:\RMS-Project\bin\Debug\ClosedXML.pdb
+D:\RMS-Project\bin\Debug\ClosedXML.xml
+D:\RMS-Project\bin\Debug\DocumentFormat.OpenXml.xml
+D:\RMS-Project\bin\Debug\ExcelNumberFormat.xml
+D:\RMS-Project\bin\Debug\itext.barcodes.xml
+D:\RMS-Project\bin\Debug\itext.bouncy-castle-connector.xml
+D:\RMS-Project\bin\Debug\itext.commons.xml
+D:\RMS-Project\bin\Debug\itext.forms.xml
+D:\RMS-Project\bin\Debug\itext.io.xml
+D:\RMS-Project\bin\Debug\itext.kernel.xml
+D:\RMS-Project\bin\Debug\itext.layout.xml
+D:\RMS-Project\bin\Debug\itext.pdfa.xml
+D:\RMS-Project\bin\Debug\itext.pdfua.xml
+D:\RMS-Project\bin\Debug\itext.sign.xml
+D:\RMS-Project\bin\Debug\itext.styledxmlparser.xml
+D:\RMS-Project\bin\Debug\itext.svg.xml
+D:\RMS-Project\bin\Debug\itextsharp.xml
+D:\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Options.xml
+D:\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\RMS-Project\bin\Debug\Newtonsoft.Json.xml
+D:\RMS-Project\bin\Debug\RBush.xml
+D:\RMS-Project\bin\Debug\SixLabors.Fonts.xml
+D:\RMS-Project\bin\Debug\System.Buffers.xml
+D:\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RMS-Project\bin\Debug\System.IO.Packaging.xml
+D:\RMS-Project\bin\Debug\System.Memory.xml
+D:\RMS-Project\bin\Debug\System.Numerics.Vectors.xml
+D:\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RMS-Project\bin\Debug\System.ValueTuple.xml
+D:\RMS-Project\obj\Debug\RMS Project.csproj.AssemblyReference.cache
+D:\RMS-Project\obj\Debug\RMS Project.csproj.SuggestedBindingRedirects.cache
+D:\RMS-Project\obj\Debug\RMS_Project.Presentation_Layer.UI.frmCashPayment.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Item.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Stock.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmCRUD_User.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmDashboard.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmFinance.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmInvoice.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmItems.resources
+D:\RMS-Project\obj\Debug\RMS_Project.Presentation_Layer.UI.frmKHQRPayment.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmLogin.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmMainMenu.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmOrders.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmReport.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmStocks.resources
+D:\RMS-Project\obj\Debug\RMS_Project.frmUsers.resources
+D:\RMS-Project\obj\Debug\RMS_Project.Properties.Resources.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_BillingHeader.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_BillingItem.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_CartItem.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_Item.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_ItemAction.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_Item_Stock.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_UserAccount.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_Users.resources
+D:\RMS-Project\obj\Debug\RMS_Project.UC_Total.resources
+D:\RMS-Project\obj\Debug\RMS Project.csproj.GenerateResource.cache
+D:\RMS-Project\obj\Debug\RMS Project.csproj.CoreCompileInputs.cache
+D:\RMS-Project\obj\Debug\RMS Project.csproj.CopyComplete
+D:\RMS-Project\obj\Debug\RMS Project.exe
+D:\RMS-Project\obj\Debug\RMS Project.pdb
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.exe.config
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.exe
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.pdb
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Resources\usd1.png
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Resources\riel1.png
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RMS Project.exe.config
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RMS Project.exe
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RMS Project.pdb
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ClosedXML.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ClosedXML.Parser.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ExcelNumberFormat.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.barcodes.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.commons.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.forms.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.io.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.kernel.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.layout.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.pdfa.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.pdfua.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.sign.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.styledxmlparser.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.svg.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itextsharp.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RBush.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\SixLabors.Fonts.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.IO.Packaging.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ClosedXML.pdb
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ClosedXML.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\ExcelNumberFormat.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.barcodes.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.commons.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.forms.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.io.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.kernel.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.layout.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.pdfa.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.pdfua.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.sign.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.styledxmlparser.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itext.svg.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\itextsharp.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RBush.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\SixLabors.Fonts.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.IO.Packaging.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.Presentation_Layer.UI.frmCashPayment.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Item.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmCRUD_Stock.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmCRUD_User.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmDashboard.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmFinance.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmInvoice.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmItems.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.Presentation_Layer.UI.frmKHQRPayment.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmLogin.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmMainMenu.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmOrders.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmReport.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmStocks.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.frmUsers.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.Properties.Resources.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_BillingHeader.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_BillingItem.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_CartItem.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_Item.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_ItemAction.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_Item_Stock.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_UserAccount.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_Users.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS_Project.UC_Total.resources
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.csproj.GenerateResource.cache
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Proj.DBDA976B.Up2Date

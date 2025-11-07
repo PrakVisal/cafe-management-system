@@ -151,6 +151,7 @@
             this.txtTotalRiel.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtTotalRiel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalRiel.Location = new System.Drawing.Point(198, 204);
+            this.txtTotalRiel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTotalRiel.Name = "txtTotalRiel";
             this.txtTotalRiel.PasswordChar = '\0';
             this.txtTotalRiel.PlaceholderText = "";
@@ -175,6 +176,7 @@
             this.txtTotalDollar.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtTotalDollar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalDollar.Location = new System.Drawing.Point(198, 162);
+            this.txtTotalDollar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTotalDollar.Name = "txtTotalDollar";
             this.txtTotalDollar.PasswordChar = '\0';
             this.txtTotalDollar.PlaceholderText = "";
@@ -199,6 +201,7 @@
             this.txtTax.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax.Location = new System.Drawing.Point(198, 90);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTax.Name = "txtTax";
             this.txtTax.PasswordChar = '\0';
             this.txtTax.PlaceholderText = "";
@@ -223,6 +226,7 @@
             this.txtSubTotal.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubTotal.Location = new System.Drawing.Point(198, 48);
+            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.PasswordChar = '\0';
             this.txtSubTotal.PlaceholderText = "";
@@ -314,12 +318,13 @@
             this.txtRielAmount.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtRielAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRielAmount.Location = new System.Drawing.Point(198, 90);
+            this.txtRielAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtRielAmount.Name = "txtRielAmount";
             this.txtRielAmount.PasswordChar = '\0';
             this.txtRielAmount.PlaceholderText = "";
             this.txtRielAmount.SelectedText = "";
             this.txtRielAmount.Size = new System.Drawing.Size(200, 36);
-            this.txtRielAmount.TabIndex = 1;
+            this.txtRielAmount.TabIndex = 2;
             // 
             // txtUSDAmount
             // 
@@ -336,6 +341,7 @@
             this.txtUSDAmount.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtUSDAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUSDAmount.Location = new System.Drawing.Point(198, 48);
+            this.txtUSDAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtUSDAmount.Name = "txtUSDAmount";
             this.txtUSDAmount.PasswordChar = '\0';
             this.txtUSDAmount.PlaceholderText = "";
@@ -430,6 +436,7 @@
             this.txtChangeRiel.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtChangeRiel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtChangeRiel.Location = new System.Drawing.Point(198, 90);
+            this.txtChangeRiel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtChangeRiel.Name = "txtChangeRiel";
             this.txtChangeRiel.PasswordChar = '\0';
             this.txtChangeRiel.PlaceholderText = "";
@@ -454,6 +461,7 @@
             this.txtChangeDollar.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.txtChangeDollar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtChangeDollar.Location = new System.Drawing.Point(198, 48);
+            this.txtChangeDollar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtChangeDollar.Name = "txtChangeDollar";
             this.txtChangeDollar.PasswordChar = '\0';
             this.txtChangeDollar.PlaceholderText = "";

@@ -12,72 +12,182 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using RMS_Project.Business_Layer;
+using ImageConverter = RMS_Project.Business_Layer.ImageConverter;
 using RMS_Project.Class;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace RMS_Project
 {
-    
+
     public partial class frmCRUD_Item : Form
     {
+        Item item = null;
         private ItemManager itemManager;
-
-        //private const string connectionString = "Data Source=LAPTOP-ALHRF6DV\\SQLEXPRESS;Initial Catalog=ManagementSystem;Trusted_Connection=True;";
-        private byte[] imageData;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private bool isUpdateMode = false;
-        private int productIdToUpdate = -1;
-
-        public frmCRUD_Item(string itemName, string price, string description, Image image, int productId)
+        public frmCRUD_Item(Item item)
         {
             InitializeComponent();
 
-            itemManager = new ItemManager(DBConnection.path);
+            foreach (ItemCategory category in ItemCategoryManager.ReadItemCategory())
+                cboCategory.Items.Add(category.CategoryName);
 
-            //Console.WriteLine($"Item Name: {itemName}, Price: {price}, Description: {description}, Product ID: {productId}");
-            txtName.Text = itemName;
-            txtPrice.Text = price.ToString();
-            txtDescription.Text = description;
-            txtProductID.Text = productId.ToString(); // Display ProductID in TextBox
-            ptrImage.Image = image;
-            productIdToUpdate = productId;
-            isUpdateMode = true;
-            PopulateCategoryComboBox();
-            FillCategoryComboBox(productId);
+            this.item = item;
+            txtProductID.Text = item.ItemID.ToString();
+            txtName.Text = item.ItemName;
+            txtPrice.Text = item.ItemPrice.ToString();
+            txtDescription.Text = item.ItemDescription;
+            cboCategory.SelectedIndex = cboCategory.FindStringExact(item.ItemCategory);
+            ptrImage.Image = ImageConverter.ConvertByteArrayToImage(item.itemImage);
+
+            txtProductID.Enabled = false;
+            lblTitle.Text = "Edit Item";
+
 
         }
-
         public frmCRUD_Item(string title)
         {
             InitializeComponent();
 
-            itemManager = new ItemManager(DBConnection.path);
-  
-            if (title.Equals("New Item"))
+            if (title.Equals("Add New Item"))
             {
+                txtProductID.Enabled = false;
                 btnDelete.Visible = false;
-                lblProductID.Visible = false;
-                txtProductID.Visible = false;
             }
+
+            txtProductID.Text = Convert.ToString(ItemManager.ReadItemID() + 1);
+
+            foreach (ItemCategory category in ItemCategoryManager.ReadItemCategory())
+                cboCategory.Items.Add(category.CategoryName);
+
+            lblTitle.Text = title;
         }
 
-        private void FillCategoryComboBox(int productId)
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+       
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             try
             {
-                // Fetch and set the category for the existing product
-                string category = itemManager.GetProductCategory(productId);
-                if (!string.IsNullOrEmpty(category))
+                if (!ValidateInput())
                 {
-                    cboCategory.SelectedItem = category;
-                    cboCategory.Enabled = false; // Optionally disable the ComboBox
+                    return;
                 }
+                if (lblTitle.Text == "Add New Item")
+                {
+                    Item item = CreateItem();
+                    ItemManager.AddItem(item);
+                    MessageBox.Show("Item added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                    byte[] itemImage = ImageConverter.ConvertImageToBytes(ptrImage);
+                    if (cboCategory.SelectedItem.ToString() == "Others")
+                    {
+                        // Create stock entry if category is "Others"
+                        if (CreateStockManager.CreateStockEntry(txtName.Text, decimal.Parse(txtPrice.Text), itemImage))
+                        {
+                            MessageBox.Show("Stock entry created successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to create stock entry.");
+                        }
+                    }
+                    this.Close(); 
+                }
+                else
+                {
+                    Item item = UpdateItem();
+                    ItemManager.UpdateItem(item);
+                    MessageBox.Show("Item updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.Close(); return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while retrieving the category: " + ex.Message);
+                MessageBox.Show("An error occurred while saving the item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            frmItems parentForm = Application.OpenForms["frmItems"] as frmItems;
+            parentForm?.ReloadItemControls();
+            this.Close();
+
+        }
+        private Item CreateItem()
+        {
+            try
+            {
+                string itemName = txtName.Text;
+                decimal itemPrice = Convert.ToDecimal(txtPrice.Text);
+                string itemDescription = txtDescription.Text;
+                string itemCategory = cboCategory.SelectedItem.ToString();
+                //byte[] itemImage = ConvertImageToByteArray(ptrImage.Image);
+                byte[] itemImage = ImageConverter.ConvertImageToBytes(ptrImage);
+
+                return new Item
+                {
+                    ItemName = itemName,
+                    ItemPrice = itemPrice,
+                    ItemDescription = itemDescription,
+                    ItemCategory = itemCategory,
+                    itemImage = itemImage
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while creating the item: " + ex.Message);
             }
         }
 
+        private Item UpdateItem()
+        {
+            try
+            {
+                int itemID = Convert.ToInt32(txtProductID.Text);
+                string itemName = txtName.Text;
+                decimal itemPrice = Convert.ToDecimal(txtPrice.Text);
+                string itemDescription = txtDescription.Text;
+                string itemCategory = cboCategory.SelectedItem.ToString();
+                //byte[] itemImage = ConvertImageToByteArray(ptrImage.Image);
+                byte[] itemImage = ImageConverter.ConvertImageToBytes(ptrImage);
+
+                return new Item
+                {
+                    ItemID = itemID,
+                    ItemName = itemName,
+                    ItemPrice = itemPrice,
+                    ItemDescription = itemDescription,
+                    ItemCategory = itemCategory,
+                    itemImage = itemImage
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while creating the item: " + ex.Message);
+            }
+        }
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(
+                "Are you sure you want to delete this user?",
+                "Delete User",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    ItemManager.DeleteItem(item.ItemID);
+                    MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while deleting the user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private bool ValidateInput()
         {
@@ -100,47 +210,54 @@ namespace RMS_Project
             return true;
 
         }
-
-        private void PopulateCategoryComboBox()
+        public static byte[] ConvertImageToByteArray(Image image)
         {
-            cboCategory.Items.Add("Choose Category");
-            cboCategory.Items.Add("Beverages");
-            cboCategory.Items.Add("Frappes");
-            cboCategory.Items.Add("Juices");
-            cboCategory.Items.Add("Meats");
-            cboCategory.Items.Add("Snacks");
-            cboCategory.Items.Add("Others");
-            cboCategory.Items.Add("Promotion Set");
-            cboCategory.SelectedIndex = 0;
-        }
-
-       
-        private byte[] ConvertImageToByteArray(Image image)
-        {
-            try
+            if (image == null)
             {
-                using (MemoryStream ms = new MemoryStream())
+                throw new ArgumentException("Invalid image parameter");
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                try
                 {
-                    // Save the image to the memory stream in JPEG format
-                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    // Save the image to the memory stream in PNG format
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     // Return the byte array representation of the image
                     return ms.ToArray();
                 }
+                catch (Exception ex)
+                {
+                    // Handle any specific exceptions or log the error as needed
+                    throw new Exception("Error converting image to byte array", ex);
+                }
             }
-            catch (Exception ex)
-            {
-                // If an error occurs during image conversion, return null
-                MessageBox.Show("Error converting image to byte array: " + ex.Message);
-                return null;
-            }
-        }
+        }      
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private async void btnImage_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-       
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\"; // Set initial directory
+            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
 
+            DialogResult result = await Task.Run(() => ofd.ShowDialog(this));
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    // Load the image using Image.FromFile to handle potential errors
+                    using (Image img = Image.FromFile(ofd.FileName))
+                    {
+                        ptrImage.Image = new Bitmap(img);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading image: " + ex.Message);
+                }
+            }
+        }
         
         public class ProductDeletedEventArgs : EventArgs
         {
@@ -160,7 +277,7 @@ namespace RMS_Project
             ProductDeleted?.Invoke(this, e);
         }
 
-        
+
         public event EventHandler ProductUpdated;
 
         // Call this event when the product is updated
@@ -168,125 +285,6 @@ namespace RMS_Project
         {
             ProductUpdated?.Invoke(this, e);
         }
-
-
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-
-            if (!ValidateInput())
-            {
-                return;
-            }
-
-            // Retrieve updated product details
-            string itemName = txtName.Text.Trim();
-            string cleanedPriceText = new string(txtPrice.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
-            if (!decimal.TryParse(txtPrice.Text.Trim(), out decimal price))
-            {
-                MessageBox.Show("Price must be a valid number.");
-                return;
-            }
-            string description = txtDescription.Text.Trim();
-            string category = cboCategory.SelectedItem.ToString();
-            byte[] imageData = ConvertImageToByteArray(ptrImage.Image);
-
-            // Update the product in the database
-            if (isUpdateMode)
-            {
-                if (itemManager.UpdateProduct(itemName, category, price, description, imageData, productIdToUpdate))
-                {
-                    MessageBox.Show("Product updated successfully!");
-                    OnProductUpdated(EventArgs.Empty); // Notify frmItems.cs that the product is updated
-                    this.Close(); // Close the form after updating
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update product.");
-                }
-            }
-            else
-            {
-                // Insert new product into the database
-                if (itemManager.InsertProduct(itemName, category, price, description, imageData))
-                {
-                    MessageBox.Show("Product added successfully!");
-                    OnProductUpdated(EventArgs.Empty); // Notify frmItems.cs that a new product is added
-                    this.Close(); // Close the form after adding
-                    if (category == "Others")
-                    {
-                        // Create stock entry if category is "Others"
-                        if (CreateStockManager.CreateStockEntry(itemName, price, imageData, category))
-                        {
-                            MessageBox.Show("Stock entry created successfully!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to create stock entry.");
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add product.");
-                }
-            }
-            frmItems parentForm = Application.OpenForms["frmItems"] as frmItems;
-            parentForm?.ReloadUserControls();
-            this.Close();
-        }
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
-        {
-
-            int productIdToDelete = int.Parse(txtProductID.Text);
-
-            // Delete the product from the database
-            if (itemManager.DeleteProduct(productIdToDelete))
-            {
-                MessageBox.Show("Product deleted successfully!");
-                // Notify the parent form (frmItems) that a product has been deleted
-                OnProductDeleted(new ProductDeletedEventArgs(productIdToDelete));
-                this.Close(); // Close the form after deleting
-            }
-            else
-            {
-                MessageBox.Show("Failed to delete product.");
-            }
-            frmItems parentForm = Application.OpenForms["frmItems"] as frmItems;
-            parentForm?.ReloadUserControls();
-            this.Close();
-        }
-
-        private async void btnImage_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"D:\year4\OOAD\RMS-Project\RMS Photo"; // Set initial directory
-            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
-
-            DialogResult result = await Task.Run(() => ofd.ShowDialog(this));
-            if (result == DialogResult.OK)
-            {
-                //ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                //ptrImage.ImageLocation = ofd.FileName;
-                try
-                {
-                    ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    // Load the image using Image.FromFile to handle potential errors
-                    using (Image img = Image.FromFile(ofd.FileName))
-                    {
-                        ptrImage.Image = new Bitmap(img);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading image: " + ex.Message);
-                }
-            }
-        }
-
-        private void frmCRUD_Item_Load_1(object sender, EventArgs e)
-        {
-            txtProductID.Enabled = false;
-        }
+      
     }
 }

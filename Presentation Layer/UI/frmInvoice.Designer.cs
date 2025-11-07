@@ -36,11 +36,11 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblRecievedRiel = new System.Windows.Forms.Label();
+            this.lblRecievedDollar = new System.Windows.Forms.Label();
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -127,11 +127,11 @@
             this.guna2ContainerControl2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ContainerControl2.BorderRadius = 10;
             this.guna2ContainerControl2.Controls.Add(this.label14);
-            this.guna2ContainerControl2.Controls.Add(this.label13);
+            this.guna2ContainerControl2.Controls.Add(this.lblChange);
             this.guna2ContainerControl2.Controls.Add(this.label17);
             this.guna2ContainerControl2.Controls.Add(this.label12);
-            this.guna2ContainerControl2.Controls.Add(this.label16);
-            this.guna2ContainerControl2.Controls.Add(this.label15);
+            this.guna2ContainerControl2.Controls.Add(this.lblRecievedRiel);
+            this.guna2ContainerControl2.Controls.Add(this.lblRecievedDollar);
             this.guna2ContainerControl2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.guna2ContainerControl2.Location = new System.Drawing.Point(60, 231);
             this.guna2ContainerControl2.Name = "guna2ContainerControl2";
@@ -149,16 +149,16 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Change";
             // 
-            // label13
+            // lblChange
             // 
-            this.label13.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(595, 90);
-            this.label13.Name = "label13";
-            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label13.Size = new System.Drawing.Size(199, 34);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "៛700";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblChange.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChange.Location = new System.Drawing.Point(595, 90);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblChange.Size = new System.Drawing.Size(199, 34);
+            this.lblChange.TabIndex = 0;
+            this.lblChange.Text = "Riel 0";
+            this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
@@ -180,27 +180,27 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Recieved ($)";
             // 
-            // label16
+            // lblRecievedRiel
             // 
-            this.label16.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(595, 53);
-            this.label16.Name = "label16";
-            this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label16.Size = new System.Drawing.Size(199, 34);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "៛80,000";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRecievedRiel.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecievedRiel.Location = new System.Drawing.Point(595, 53);
+            this.lblRecievedRiel.Name = "lblRecievedRiel";
+            this.lblRecievedRiel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblRecievedRiel.Size = new System.Drawing.Size(199, 34);
+            this.lblRecievedRiel.TabIndex = 0;
+            this.lblRecievedRiel.Text = "Riel 0";
+            this.lblRecievedRiel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label15
+            // lblRecievedDollar
             // 
-            this.label15.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(595, 19);
-            this.label15.Name = "label15";
-            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label15.Size = new System.Drawing.Size(199, 34);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "$520.00";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRecievedDollar.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecievedDollar.Location = new System.Drawing.Point(595, 19);
+            this.lblRecievedDollar.Name = "lblRecievedDollar";
+            this.lblRecievedDollar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblRecievedDollar.Size = new System.Drawing.Size(199, 34);
+            this.lblRecievedDollar.TabIndex = 0;
+            this.lblRecievedDollar.Text = "$0.00";
+            this.lblRecievedDollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2ContainerControl1
             // 
@@ -261,7 +261,7 @@
             this.lblGrandTotalRiel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblGrandTotalRiel.Size = new System.Drawing.Size(199, 34);
             this.lblGrandTotalRiel.TabIndex = 0;
-            this.lblGrandTotalRiel.Text = "៛2,211,294";
+            this.lblGrandTotalRiel.Text = "Riel 0";
             this.lblGrandTotalRiel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblGrandTotalDollar
@@ -272,7 +272,7 @@
             this.lblGrandTotalDollar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblGrandTotalDollar.Size = new System.Drawing.Size(199, 34);
             this.lblGrandTotalDollar.TabIndex = 0;
-            this.lblGrandTotalDollar.Text = "$539.34";
+            this.lblGrandTotalDollar.Text = "$0.00";
             this.lblGrandTotalDollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTotalTax
@@ -283,7 +283,7 @@
             this.lblTotalTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTotalTax.Size = new System.Drawing.Size(199, 34);
             this.lblTotalTax.TabIndex = 0;
-            this.lblTotalTax.Text = "$5.34";
+            this.lblTotalTax.Text = "$0.00";
             this.lblTotalTax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSubTotal
@@ -294,7 +294,7 @@
             this.lblSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblSubTotal.Size = new System.Drawing.Size(199, 34);
             this.lblSubTotal.TabIndex = 0;
-            this.lblSubTotal.Text = "$534.00";
+            this.lblSubTotal.Text = "$0.00";
             this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label11
@@ -458,11 +458,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -476,11 +473,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel pnlBank;
+        public Guna.UI2.WinForms.Guna2Panel pnlBank;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label lblAbaAccountName;
         public System.Windows.Forms.FlowLayoutPanel pnlnvoiceItem;
-        private Guna.UI2.WinForms.Guna2PictureBox ptrQRCode;
+        public Guna.UI2.WinForms.Guna2PictureBox ptrQRCode;
+        public System.Windows.Forms.Label lblChange;
+        public System.Windows.Forms.Label lblRecievedRiel;
+        public System.Windows.Forms.Label lblRecievedDollar;
     }
 }

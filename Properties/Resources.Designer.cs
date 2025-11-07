@@ -613,6 +613,16 @@ namespace RMS_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KHR_QR {
+            get {
+                object obj = ResourceManager.GetObject("KHR_QR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logins {
             get {
                 object obj = ResourceManager.GetObject("logins", resourceCulture);
@@ -646,6 +656,16 @@ namespace RMS_Project.Properties {
         internal static System.Drawing.Bitmap no_image {
             get {
                 object obj = ResourceManager.GetObject("no_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QR_USD {
+            get {
+                object obj = ResourceManager.GetObject("QR_USD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

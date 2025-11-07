@@ -81,9 +81,8 @@ namespace RMS_Project
                 }
                 else
                 {
-                    MessageBox.Show("Before UpdateUser");
+                    
                     User user = UpdateUser();
-                    MessageBox.Show("After UpdateUser");
                     UserManager.UpdateUser(user);
                     MessageBox.Show("User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

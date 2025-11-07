@@ -165,15 +165,7 @@
             this.cboCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
             this.cboCategory.ItemHeight = 30;
             this.cboCategory.Items.AddRange(new object[] {
-            "Choose Category",
-            "Beverages",
-            "Breakfast",
-            "Frappe",
-            "Meat",
-            "Juice",
-            "Others",
-            "Snack",
-            "Promotion Set"});
+            "Choose Category"});
             this.cboCategory.ItemsAppearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
             this.cboCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
@@ -368,7 +360,7 @@
             this.btnImage.Size = new System.Drawing.Size(250, 255);
             this.btnImage.TabIndex = 5;
             this.btnImage.UseTransparentBackground = true;
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click_1);
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // lblProductID
             // 
@@ -432,7 +424,6 @@
             this.Name = "frmCRUD_Item";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCRUD_Item";
-            this.Load += new System.EventHandler(this.frmCRUD_Item_Load_1);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);

@@ -9,9 +9,9 @@ namespace RMS_Project.Business_Layer
 {
     public class CategoryFilterStrategy: IStrategyItem
     {
-        public bool FilterItems(UC_Item item, string criterion)
+        public bool FilterItems(UC_ItemAction item, string criterion)
         {
-            return string.Equals(item.Category, criterion, StringComparison.OrdinalIgnoreCase);
+            return string.Equals(item.ItemCategory, criterion, StringComparison.OrdinalIgnoreCase);
         }
 
     }

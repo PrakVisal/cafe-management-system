@@ -8,7 +8,7 @@ namespace RMS_Project.Business_Layer
 {
     public interface IStrategyItem
     {
-        bool FilterItems(UC_Item item, string criterion);
+        bool FilterItems(UC_ItemAction item, string criterion);
     }
 }
 

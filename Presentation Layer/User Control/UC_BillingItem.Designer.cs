@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblItemName = new System.Windows.Forms.Label();
+            this.lblUnitPrice = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
             this.guna2ContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,11 +41,11 @@
             // 
             this.guna2ContainerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.guna2ContainerControl1.BorderRadius = 6;
-            this.guna2ContainerControl1.Controls.Add(this.label2);
-            this.guna2ContainerControl1.Controls.Add(this.label6);
-            this.guna2ContainerControl1.Controls.Add(this.label5);
-            this.guna2ContainerControl1.Controls.Add(this.label3);
-            this.guna2ContainerControl1.Controls.Add(this.label1);
+            this.guna2ContainerControl1.Controls.Add(this.lblItemName);
+            this.guna2ContainerControl1.Controls.Add(this.lblUnitPrice);
+            this.guna2ContainerControl1.Controls.Add(this.lblTotalPrice);
+            this.guna2ContainerControl1.Controls.Add(this.lblQty);
+            this.guna2ContainerControl1.Controls.Add(this.lblNo);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2ContainerControl1.Name = "guna2ContainerControl1";
@@ -53,64 +53,65 @@
             this.guna2ContainerControl1.TabIndex = 0;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
-            // label2
+            // lblItemName
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(128, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 35);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "សាច់ចង្កាក់";
+            this.lblItemName.BackColor = System.Drawing.Color.Transparent;
+            this.lblItemName.Font = new System.Drawing.Font("!Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemName.ForeColor = System.Drawing.Color.Black;
+            this.lblItemName.Location = new System.Drawing.Point(128, 12);
+            this.lblItemName.Name = "lblItemName";
+            this.lblItemName.Size = new System.Drawing.Size(291, 35);
+            this.lblItemName.TabIndex = 2;
+            this.lblItemName.Text = "សាច់ចង្កាក់";
             // 
-            // label5
+            // lblUnitPrice
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(746, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "$4.50";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblUnitPrice.Location = new System.Drawing.Point(579, 16);
+            this.lblUnitPrice.Name = "lblUnitPrice";
+            this.lblUnitPrice.Size = new System.Drawing.Size(150, 25);
+            this.lblUnitPrice.TabIndex = 3;
+            this.lblUnitPrice.Text = "$1.50";
+            this.lblUnitPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblTotalPrice
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(455, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPrice.Location = new System.Drawing.Point(746, 16);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(150, 25);
+            this.lblTotalPrice.TabIndex = 3;
+            this.lblTotalPrice.Text = "$4.50";
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblQty
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(71, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "1111";
+            this.lblQty.BackColor = System.Drawing.Color.Transparent;
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQty.ForeColor = System.Drawing.Color.Black;
+            this.lblQty.Location = new System.Drawing.Point(455, 16);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(80, 25);
+            this.lblQty.TabIndex = 5;
+            this.lblQty.Text = "3";
+            this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.lblQty.TextChanged += new System.EventHandler(this.lblQty_TextChanged);
             // 
-            // label6
+            // lblNo
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(579, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "$1.50";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.ForeColor = System.Drawing.Color.Black;
+            this.lblNo.Location = new System.Drawing.Point(3, 15);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNo.Size = new System.Drawing.Size(71, 25);
+            this.lblNo.TabIndex = 6;
+            this.lblNo.Text = "1111";
             // 
             // UC_BillingItem
             // 
@@ -128,10 +129,10 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lblItemName;
+        private System.Windows.Forms.Label lblTotalPrice;
+        public System.Windows.Forms.Label lblQty;
+        private System.Windows.Forms.Label lblNo;
+        public System.Windows.Forms.Label lblUnitPrice;
     }
 }

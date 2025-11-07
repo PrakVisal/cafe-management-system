@@ -34,10 +34,10 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptrImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2ContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ContainerControl1
@@ -49,7 +49,7 @@
             this.guna2ContainerControl1.Controls.Add(this.lblDescription);
             this.guna2ContainerControl1.Controls.Add(this.lblPrice);
             this.guna2ContainerControl1.Controls.Add(this.lblItemName);
-            this.guna2ContainerControl1.Controls.Add(this.guna2PictureBox1);
+            this.guna2ContainerControl1.Controls.Add(this.ptrImage);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2ContainerControl1.Name = "guna2ContainerControl1";
@@ -116,15 +116,15 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(13, 15);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(85, 79);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            this.ptrImage.BorderRadius = 10;
+            this.ptrImage.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.ptrImage.ImageRotate = 0F;
+            this.ptrImage.Location = new System.Drawing.Point(13, 15);
+            this.ptrImage.Name = "guna2PictureBox1";
+            this.ptrImage.Size = new System.Drawing.Size(85, 79);
+            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrImage.TabIndex = 0;
+            this.ptrImage.TabStop = false;
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.Size = new System.Drawing.Size(300, 152);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.guna2ContainerControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblItemName;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox ptrImage;
         private Guna.UI2.WinForms.Guna2Button btnUC_Item;
         private System.Windows.Forms.Label label2;
     }

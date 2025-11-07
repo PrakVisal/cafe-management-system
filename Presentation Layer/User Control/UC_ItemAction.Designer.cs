@@ -32,12 +32,12 @@
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.btnUC_Item = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptrImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ContainerControl1
@@ -45,10 +45,10 @@
             this.guna2ContainerControl1.BorderRadius = 10;
             this.guna2ContainerControl1.Controls.Add(this.btnUC_Item);
             this.guna2ContainerControl1.Controls.Add(this.lblDescription);
-            this.guna2ContainerControl1.Controls.Add(this.label2);
-            this.guna2ContainerControl1.Controls.Add(this.label1);
+            this.guna2ContainerControl1.Controls.Add(this.lblStatus);
+            this.guna2ContainerControl1.Controls.Add(this.lblPrice);
             this.guna2ContainerControl1.Controls.Add(this.lblItemName);
-            this.guna2ContainerControl1.Controls.Add(this.guna2PictureBox1);
+            this.guna2ContainerControl1.Controls.Add(this.ptrImage);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2ContainerControl1.Name = "guna2ContainerControl1";
@@ -90,27 +90,27 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(214, 103);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(121, 36);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Status";
+            this.lblStatus.BackColor = System.Drawing.Color.White;
+            this.lblStatus.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblStatus.Location = new System.Drawing.Point(214, 103);
+            this.lblStatus.Name = "label2";
+            this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblStatus.Size = new System.Drawing.Size(121, 36);
+            this.lblStatus.TabIndex = 6;
+            this.lblStatus.Text = "Status";
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("SF Pro Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 36);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "$50.50";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPrice.BackColor = System.Drawing.Color.White;
+            this.lblPrice.Font = new System.Drawing.Font("SF Pro Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblPrice.Location = new System.Drawing.Point(7, 104);
+            this.lblPrice.Name = "label1";
+            this.lblPrice.Size = new System.Drawing.Size(142, 36);
+            this.lblPrice.TabIndex = 6;
+            this.lblPrice.Text = "$50.50";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblItemName
             // 
@@ -126,15 +126,15 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(13, 15);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(85, 79);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
+            this.ptrImage.BorderRadius = 10;
+            this.ptrImage.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.ptrImage.ImageRotate = 0F;
+            this.ptrImage.Location = new System.Drawing.Point(13, 15);
+            this.ptrImage.Name = "guna2PictureBox1";
+            this.ptrImage.Size = new System.Drawing.Size(85, 79);
+            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrImage.TabIndex = 4;
+            this.ptrImage.TabStop = false;
             // 
             // UC_ItemAction
             // 
@@ -147,7 +147,7 @@
             this.Size = new System.Drawing.Size(338, 152);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.guna2ContainerControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,10 +156,10 @@
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblItemName;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox ptrImage;
         private Guna.UI2.WinForms.Guna2Button btnUC_Item;
     }
 }

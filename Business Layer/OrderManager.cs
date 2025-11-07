@@ -56,7 +56,7 @@ namespace RMS_Project.Business_Layer
                     // Check if the data was inserted successfully
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("inserted into the database successfully.");
+                        //MessageBox.Show("inserted into the database successfully.");
                     }
                     else
                     {

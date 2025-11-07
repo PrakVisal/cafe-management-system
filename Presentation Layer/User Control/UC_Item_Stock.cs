@@ -39,7 +39,7 @@ namespace RMS_Project
 
         public double UnitPrice { get; set; }
 
-        private void btnUCItems_Click(object sender, EventArgs e)
+        private void btnUCItems_Click_1(object sender, EventArgs e)
         {
             // Trigger the ItemClicked event when the button is clicked
             ItemClicked?.Invoke(this, EventArgs.Empty);

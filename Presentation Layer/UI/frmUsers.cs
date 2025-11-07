@@ -17,6 +17,8 @@ namespace RMS_Project
         {
             InitializeComponent();
             LoadData();
+            btnAccount.Text = SharedData.CurrentUsername;
+            txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
         }
 
         private void btnNewUsers_Click(object sender, EventArgs e)
@@ -60,6 +62,23 @@ namespace RMS_Project
             }
         }
 
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            FormHelper.AccountButton_Click(sender, e);
+        }
 
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+
+
+            string searchText = txtSearchProduct.Text.Trim();
+
+            
+        }
+
+        private void cboRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

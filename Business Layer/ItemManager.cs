@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RMS_Project.Class;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,160 +13,195 @@ namespace RMS_Project.Business_Layer
 {
     public class ItemManager
     {
-        private string connectionString;
-
-        public ItemManager(string dbConnectionString)
+        public static void AddItem(Item item)
         {
-            connectionString = dbConnectionString;
-        }
-        public List<ItemData> GetItems()
-        {
-            List<ItemData> items = new List<ItemData>();
+            string query = "INSERT INTO tbProduct " +
+                "(ProductName, Price, Description, FoodCategoryID, Image) " +
+                "VALUES (@ProductName, @Price, @Description, " +
+                "(SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategoryName), " +
+                "@Image)";
 
-            string query = "SELECT p.ProductID, p.ProductName, p.Price, p.Description, p.Image, c.FoodCategoryName " +
-                   "FROM tbProduct p " +
-                   "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID";
+            /*  string insertStock = "INSERT INTO tbStockCount " +
+                  "(StockName, StockCount, UnitPrice, Amount, Photo, FoodCategoryID, FoodCategory) " +
+                  "VALUES (@ProductName, 0, @Price, 0, @Image, " +
+                  "(SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategory), " +
+                  "@FoodCategory)"; */
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    int productId = Convert.ToInt32(reader["ProductID"]);
-                    string productName = reader["ProductName"].ToString();
-                    decimal price = Convert.ToDecimal(reader["Price"]);
-                    string description = reader["Description"].ToString();
-                    byte[] imageData = (byte[])reader["Image"];
-                    Image image = Image.FromStream(new MemoryStream(imageData));
-                    string category = reader["FoodCategoryName"].ToString();
+                    command.Parameters.AddWithValue("@ProductName", item.ItemName);
+                    command.Parameters.AddWithValue("@Price", item.ItemPrice);
+                    command.Parameters.AddWithValue("@Description", item.ItemDescription);
+                    command.Parameters.AddWithValue("@FoodCategoryName", item.ItemCategory);
+                    command.Parameters.AddWithValue("@Image", item.itemImage);
 
-                    items.Add(new ItemData(productId, productName, price, description, image, category));
+                    command.ExecuteNonQuery();
+                }
+
+                /*
+                using (SqlCommand command = new SqlCommand(insertStock, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductName", item.ItemName);
+                    command.Parameters.AddWithValue("@Price", item.ItemPrice);
+                    command.Parameters.AddWithValue("@Image", item.itemImage);
+                    command.Parameters.AddWithValue("@FoodCategory", item.ItemCategory);
+
+                    command.ExecuteNonQuery();
+                } */
+            }
+        }
+
+        public static List<Item> ReadItem()
+        {
+            List<Item> items = new List<Item>();
+            string query = "SELECT p.ProductID, p.ProductName, p.Price, p.Description, p.Image, c.FoodCategoryName " +
+                       "FROM tbProduct p " +
+                       "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Item item = new Item
+                        {
+                            ItemID = Convert.ToInt32(reader["ProductID"]),
+                            ItemName = reader["ProductName"].ToString(),
+                            ItemPrice = Convert.ToDecimal(reader["Price"]),
+                            ItemDescription = reader["Description"].ToString(),
+                            ItemCategory = reader["FoodCategoryName"].ToString(),
+                            itemImage = (byte[])reader["Image"]
+                        };
+                        items.Add(item);
+                    }
                 }
             }
-
             return items;
         }
-        public class ItemData
+        public static List<Item> ReadItemToOrder()
         {
-            public int ProductId { get; set; }
-            public string ProductName { get; set; }
-            public decimal Price { get; set; }
-            public string Description { get; set; }
-            public Image Image { get; set; }
-            public string Category { get; set; }
+            List<Item> items = new List<Item>();
+            string query = "SELECT p.ProductID, p.ProductName, p.Price, p.Description, p.Image, c.FoodCategoryName " +
+                       "FROM tbProduct p " +
+                       "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID where p.FoodCategoryID != 7";
 
-            public ItemData(int productId, string productName, decimal price, string description, Image image, string category)
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
-                ProductId = productId;
-                ProductName = productName;
-                Price = price;
-                Description = description;
-                Image = image;
-                Category = category;
-            }
-        }
-
-        public string GetProductCategory(int productId)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    string query = "SELECT c.FoodCategoryName " +
-                                   "FROM tbProduct p " +
-                                   "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID " +
-                                   "WHERE p.ProductID = @ProductId";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@ProductId", productId);
-                    return command.ExecuteScalar()?.ToString();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Item item = new Item
+                        {
+                            ItemID = Convert.ToInt32(reader["ProductID"]),
+                            ItemName = reader["ProductName"].ToString(),
+                            ItemPrice = Convert.ToDecimal(reader["Price"]),
+                            ItemDescription = reader["Description"].ToString(),
+                            ItemCategory = reader["FoodCategoryName"].ToString(),
+                            itemImage = (byte[])reader["Image"]
+                        };
+                        items.Add(item);
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-                return null;
-            }
+            return items;
         }
-        public bool InsertProduct(string itemName, string category, decimal price, string description, byte[] image)
+        public static int ReadItemID()
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string insertQuery = "INSERT INTO tbProduct " +
-                        "(ProductName, Price, Description, FoodCategoryID, Image) VALUES (@ProductName, @Price, @Description," +
-                        "(SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @Category), @Image)";
+            int itemId = 0;
+            string query = "SELECT IDENT_CURRENT('tbProduct') AS CurrentProductID";
 
-                    SqlCommand command = new SqlCommand(insertQuery, connection);
-                    command.Parameters.AddWithValue("@ProductName", itemName);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@Description", description);
-                    command.Parameters.AddWithValue("@Category", category);
-                    command.Parameters.AddWithValue("@Image", image);
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
+                    {
+                        itemId = Convert.ToInt32(result);
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-                return false;
-            }
+
+            return itemId;
         }
 
-        public bool UpdateProduct(string itemName, string category, decimal price, string description, byte[] image, int productId)
+        public static void UpdateItem(Item item)
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string updateQuery = "UPDATE tbProduct SET " +
-                        "ProductName = @ProductName, Price = @Price, Description = @Description, " +
-                        "FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @Category), " +
-                        "Image = @Image WHERE ProductID = @ProductID";
+            string productQuery = "UPDATE tbProduct SET " +
+                "ProductName = @ProductName, Price = @Price, Description = @Description,  " +
+                "FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategoryName), " +
+                "Image = @Image WHERE ProductID = @ProductID";
 
-                    SqlCommand command = new SqlCommand(updateQuery, connection);
-                    command.Parameters.AddWithValue("@ProductName", itemName);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@Description", description);
-                    command.Parameters.AddWithValue("@Category", category);
-                    command.Parameters.AddWithValue("@Image", image);
-                    command.Parameters.AddWithValue("@ProductID", productId);
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
+
+            string stockCountQuery = "UPDATE tbStockCount " +
+                "SET StockName = @ProductName, UnitPrice = @Price, Photo = @Image," +
+                " FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategoryName)," +
+                " FoodCategory = @FoodCategoryName " +
+                "WHERE FoodCategoryID = 7";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
-                return false;
+                using (SqlCommand productCommand = new SqlCommand(productQuery, connection))
+                {
+                    productCommand.Parameters.AddWithValue("@ProductID", item.ItemID);
+                    productCommand.Parameters.AddWithValue("@ProductName", item.ItemName);
+                    productCommand.Parameters.AddWithValue("@Price", item.ItemPrice);
+                    productCommand.Parameters.AddWithValue("@Description", item.ItemDescription);
+                    productCommand.Parameters.AddWithValue("@FoodCategoryName", item.ItemCategory);
+                    productCommand.Parameters.AddWithValue("@Image", item.itemImage);
+
+                    productCommand.ExecuteNonQuery();
+                }
+
+
+                using (SqlCommand stockCountCommand = new SqlCommand(stockCountQuery, connection))
+                {
+
+                    stockCountCommand.Parameters.AddWithValue("@ProductName", item.ItemName);
+                    stockCountCommand.Parameters.AddWithValue("@Price", item.ItemPrice);
+                    stockCountCommand.Parameters.AddWithValue("@FoodCategoryName", item.ItemCategory);
+                    stockCountCommand.Parameters.AddWithValue("@Image", item.itemImage);
+
+                    stockCountCommand.ExecuteNonQuery();
+                }
+
+
+
             }
         }
-
-        public bool DeleteProduct(int productId)
+        public static void DeleteItem(int itemID)
         {
-            try
+            string query = "DELETE FROM tbProduct WHERE ProductID = @ProductID";
+            string deleteStockQuery = "DELETE FROM tbStockCount WHERE StockName = " +
+                "(SELECT ProductName FROM tbProduct WHERE ProductID = @ProductID)";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand deleteStockCommand = new SqlCommand(deleteStockQuery, connection))
                 {
-                    connection.Open();
-                    string deleteQuery = "DELETE FROM tbProduct WHERE ProductID = @ProductId";
-                    SqlCommand command = new SqlCommand(deleteQuery, connection);
-                    command.Parameters.AddWithValue("@ProductId", productId);
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    MessageBox.Show("Reach Command delete tbStockCount");
+                    deleteStockCommand.Parameters.AddWithValue("@ProductID", itemID);
+                    deleteStockCommand.ExecuteNonQuery();
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-                return false;
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    MessageBox.Show("Reach Command delete tbProduct");
+                    command.Parameters.AddWithValue("@ProductID", itemID);
+                    command.ExecuteNonQuery();
+                }
+
+
             }
         }
+
+
     }
 }

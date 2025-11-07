@@ -44,98 +44,6 @@ namespace RMS_Project
             ucItemStock.QtyLabel = lblQty;
 
         }
-        
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            string foodCategory = cboCateggory.SelectedItem?.ToString();
-            int foodCategoryID = GetFoodCategoryID(foodCategory);
-            int quantity = int.Parse(txtQty.Text);
-            int initialStockCount = int.Parse(lblQty.Text);
-
-            
-
-            // Ensure foodCategoryID is valid
-            if (foodCategoryID == -1)
-            {
-                MessageBox.Show("Food category not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-          
-            // Validate if quantity is entered
-            if (string.IsNullOrWhiteSpace(txtQty.Text))
-            {
-                MessageBox.Show("Please enter a quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            
-            if (quantity <= 0)
-            {
-                MessageBox.Show("Please enter a valid quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Check if a stock type (Stock In or Stock Out) is selected
-            if (!rdoStockIN.Checked && !rdoStockOUT.Checked)
-            {
-                MessageBox.Show("Please select a stock type.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            byte[] photoByteArray = ImageToByteArray(ptrImage.Image);
-            decimal amount = int.Parse(txtQty.Text) * decimal.Parse(txtUnitPrice.Text);
-
-
-            // Create an instance of StockDetails with the necessary data
-            StockDetails stockDetails = new StockDetails(
-                ItemName, // Assuming ItemName is accessible in this context
-                int.Parse(txtQty.Text), // Assuming txtQty contains the quantity
-                decimal.Parse(txtUnitPrice.Text), // Assuming txtUnitPrice contains the unit price
-                cboCateggory.SelectedItem.ToString(), // Assuming cboCateggory contains the selected category
-                dtpExpiration.Value, // Assuming dtpExpiration contains the selected expiration date
-                photoByteArray ,// Pass the photo byte array to the constructor
-                amount,
-                foodCategoryID
-            );
-
-            bool isStockIn = rdoStockIN.Checked;
-            CRUDStockManager.SaveStock(stockDetails, isStockIn, initialStockCount);
-
-            // Determine stock type and save data accordingly
-            if (rdoStockIN.Checked)
-            {
-                // Save data to tbStockIn
-                stockDetails.UnitPrice = decimal.Parse(txtUnitPrice.Text);
-                stockDetails.Amount = stockDetails.UnitPrice * quantity; // Calculate amount
-                stockDetails.Photo = ImageToByteArray(ptrImage.Image);
-                
-                
-                CRUDStockManager.UpdateStockCount(ItemName, initialStockCount, quantity, isStockIn);
-            }
-            else if (rdoStockOUT.Checked)
-            {
-                // Save data to tbStockOut
-                stockDetails.UnitPrice = decimal.Parse(txtPrice.Text); // Assuming txtPrice is used for unit price in Stock Out
-                stockDetails.Amount = stockDetails.UnitPrice * quantity; // Calculate amount
-                stockDetails.Photo = ImageToByteArray(ptrImage.Image);
-               
-                if (initialStockCount < 0)
-                {
-                    MessageBox.Show("Insufficient stock quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                CRUDStockManager.UpdateStockCount(ItemName, initialStockCount, quantity, isStockIn);
-            }
-            int newStockCount = CRUDStockManager.GetStockCount(ItemName);
-            lblQty.Text = newStockCount.ToString();
-
-            MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-           
-            ucItemStock.UpdateQtyLabel(lblQty.Text);
-            this.Close();
-        }
 
         // Convert image to byte array
         private byte[] ImageToByteArray(Image image)
@@ -167,51 +75,10 @@ namespace RMS_Project
             throw new Exception("Category ID not found for " + foodCategory);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnDecrement_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtQty.Text))
-            {
-                MessageBox.Show("Please enter a quantity in the textbox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int qty = int.Parse(txtQty.Text);
-            if (qty > 0)
-            {
-                txtQty.Text = (--qty).ToString();
-            }
-        }
-
-        private void btnIncrement_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtQty.Text))
-            {
-                MessageBox.Show("Please enter a quantity in the textbox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int qty = int.Parse(txtQty.Text);
-            txtQty.Text = (++qty).ToString();
-        }
-        
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtUnitPrice.Text = "";
-            txtPrice.Text = "";
-            cboCateggory.Text = "";
-            txtSafetyAlert.Text = "";
-            txtQty.Text = "";
-        }
-
         private void rdoStockIN_CheckedChanged_1(object sender, EventArgs e)
         {
             PopulateControlsBasedOnRadioButtons();
-           UpdateNewQty();
+            UpdateNewQty();
         }
 
         private void rdoStockOUT_CheckedChanged_1(object sender, EventArgs e)
@@ -232,7 +99,7 @@ namespace RMS_Project
                 txtSafetyAlert.Enabled = false;
 
                 // Populate controls with values from tbStockIn
-                DataTable stockInData = CRUDStockManager.GetStockInDataForItem(ItemName);
+                DataTable stockInData = CRUDStockManager.GetStockForItem(ItemName);
                 if (stockInData.Rows.Count > 0)
                 {
                     txtUnitPrice.Text = stockInData.Rows[0]["UnitPrice"].ToString();
@@ -260,7 +127,7 @@ namespace RMS_Project
                 txtSafetyAlert.Enabled = false;
 
                 // Populate controls with values from tbStockOut
-                DataTable stockOutData = CRUDStockManager.GetStockOutDataForItem(ItemName);
+                DataTable stockOutData = CRUDStockManager.GetStockForItem(ItemName);
                 if (stockOutData.Rows.Count > 0)
                 {
                     txtUnitPrice.Text = stockOutData.Rows[0]["UnitPrice"].ToString();
@@ -269,22 +136,9 @@ namespace RMS_Project
                     dtpExpiration.Value = DateTime.Now;
                     txtSafetyAlert.Text = "1";
                 }
-                
+
             }
         }
-
-        private void frmCRUD_Stock_Load(object sender, EventArgs e)
-        {
-            lblItemName.Text = ItemName;
-            ptrImage.Image = ItemImage;
-            lblQty.Text = StockCount.ToString();
-
-            StockCount = CRUDStockManager.GetStockCountForItem(ItemName);
-            lblQty.Text = StockCount.ToString();
-            PopulateControlsBasedOnRadioButtons();
-                
-        }
-
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
             UpdateNewQty();
@@ -292,7 +146,6 @@ namespace RMS_Project
 
         private void UpdateNewQty()
         {
-            
             try
             {
                 int quantity;
@@ -337,14 +190,150 @@ namespace RMS_Project
                 // Handle the exception (e.g., log the error, display a message box)
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
-
-          
         }
 
-       
+        private void btnDecrement_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQty.Text))
+            {
+                MessageBox.Show("Please enter a quantity in the textbox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            int qty = int.Parse(txtQty.Text);
+            if (qty > 0)
+            {
+                txtQty.Text = (--qty).ToString();
+            }
+        }
+
+        private void btnIncrement_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQty.Text))
+            {
+                MessageBox.Show("Please enter a quantity in the textbox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int qty = int.Parse(txtQty.Text);
+            txtQty.Text = (++qty).ToString();
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            txtUnitPrice.Text = "";
+            txtPrice.Text = "";
+            cboCateggory.Text = "";
+            txtSafetyAlert.Text = "";
+            txtQty.Text = "";
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            string foodCategory = cboCateggory.SelectedItem?.ToString();
+            int foodCategoryID = GetFoodCategoryID(foodCategory);
+            int quantity = int.Parse(txtQty.Text);
+            int initialStockCount = int.Parse(lblQty.Text);
+
+            // Ensure foodCategoryID is valid
+            if (foodCategoryID == -1)
+            {
+                MessageBox.Show("Food category not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate if quantity is entered
+            if (string.IsNullOrWhiteSpace(txtQty.Text))
+            {
+                MessageBox.Show("Please enter a quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (quantity <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if a stock type (Stock In or Stock Out) is selected
+            if (!rdoStockIN.Checked && !rdoStockOUT.Checked)
+            {
+                MessageBox.Show("Please select a stock type.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            byte[] photoByteArray = ImageToByteArray(ptrImage.Image);
+            decimal amount = int.Parse(txtQty.Text) * decimal.Parse(txtUnitPrice.Text);
+
+
+            // Create an instance of StockDetails with the necessary data
+            StockDetails stockDetails = new StockDetails(
+                ItemName, // Assuming ItemName is accessible in this context
+                int.Parse(txtQty.Text), // Assuming txtQty contains the quantity
+                decimal.Parse(txtUnitPrice.Text), // Assuming txtUnitPrice contains the unit price
+                cboCateggory.SelectedItem.ToString(), // Assuming cboCateggory contains the selected category
+                dtpExpiration.Value, // Assuming dtpExpiration contains the selected expiration date
+                photoByteArray,// Pass the photo byte array to the constructor
+                amount,
+                foodCategoryID
+            );
+
+            bool isStockIn = rdoStockIN.Checked;
+            CRUDStockManager.SaveStock(stockDetails, isStockIn, initialStockCount);
+
+            // Determine stock type and save data accordingly
+            if (rdoStockIN.Checked)
+            {
+                // Save data to tbStockIn
+                stockDetails.UnitPrice = decimal.Parse(txtUnitPrice.Text);
+                stockDetails.Amount = stockDetails.UnitPrice * quantity; // Calculate amount
+                stockDetails.Photo = ImageToByteArray(ptrImage.Image);
+
+
+                CRUDStockManager.UpdateStockCount(ItemName, initialStockCount, quantity, isStockIn);
+            }
+            else if (rdoStockOUT.Checked)
+            {
+                // Save data to tbStockOut
+                stockDetails.UnitPrice = decimal.Parse(txtPrice.Text); // Assuming txtPrice is used for unit price in Stock Out
+                stockDetails.Amount = stockDetails.UnitPrice * quantity; // Calculate amount
+                stockDetails.Photo = ImageToByteArray(ptrImage.Image);
+
+                if (initialStockCount < 0)
+                {
+                    MessageBox.Show("Insufficient stock quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                CRUDStockManager.UpdateStockCount(ItemName, initialStockCount, quantity, isStockIn);
+            }
+            int newStockCount = CRUDStockManager.GetStockCount(ItemName);
+            lblQty.Text = newStockCount.ToString();
+
+            MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            ucItemStock.UpdateQtyLabel(lblQty.Text);
+            frmStocks parentForm = Application.OpenForms["frmStocks"] as frmStocks;
+            parentForm?.ReloadStockControls();
+           
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmCRUD_Stock_Load_1(object sender, EventArgs e)
+        {
+            lblItemName.Text = ItemName;
+            ptrImage.Image = ItemImage;
+            lblQty.Text = StockCount.ToString();
+
+            StockCount = CRUDStockManager.GetStockCountForItem(ItemName);
+            lblQty.Text = StockCount.ToString();
+            PopulateControlsBasedOnRadioButtons();
+        }
     }
 }
 

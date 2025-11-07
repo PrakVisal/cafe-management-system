@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RMS_Project.Business_Layer
 {
@@ -28,6 +29,7 @@ namespace RMS_Project.Business_Layer
                 catch (Exception ex)
                 {
                     // Handle any specific exceptions or log the error as needed
+                    //MessageBox.Show("Error converting image to byte array: " + ex.Message);
                     throw new Exception("Error converting image to byte array", ex);
                 }
             }
@@ -37,7 +39,8 @@ namespace RMS_Project.Business_Layer
         {
             if (data == null || data.Length == 0)
             {
-                throw new ArgumentException("Invalid byte array parameter");
+                // Return null so callers can decide how to handle missing images
+                return null;
             }
 
             using (MemoryStream ms = new MemoryStream(data))
@@ -48,8 +51,8 @@ namespace RMS_Project.Business_Layer
                 }
                 catch (Exception ex)
                 {
-                    // Handle any specific exceptions or log the error as needed
-                    throw new Exception("Error converting byte array to image", ex);
+                    System.Diagnostics.Debug.WriteLine($"ConvertByteArrayToImage error: {ex.Message}");
+                    return null;
                 }
             }
         }

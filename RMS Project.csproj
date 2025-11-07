@@ -277,6 +277,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -293,17 +294,22 @@
     <Compile Include="Business Layer\CreateStockManager.cs" />
     <Compile Include="Business Layer\DashboardManager.cs" />
     <Compile Include="Business Layer\DBConnection.cs" />
+    <Compile Include="Business Layer\DeleteStocManager.cs" />
     <Compile Include="Business Layer\FinanceManager.cs" />
     <Compile Include="Business Layer\FormHelper.cs" />
     <Compile Include="Business Layer\ImageConverter.cs" />
     <Compile Include="Business Layer\CRUDStockManager.cs" />
     <Compile Include="Business Layer\IStrategyItem.cs" />
+    <Compile Include="Business Layer\Item.cs" />
+    <Compile Include="Business Layer\ItemCategory.cs" />
+    <Compile Include="Business Layer\ItemCategoryManager.cs" />
     <Compile Include="Business Layer\ItemManager.cs" />
     <Compile Include="Business Layer\OrderManager.cs" />
     <Compile Include="Business Layer\ProductNameSearchStrategy.cs" />
     <Compile Include="Business Layer\Receipt.cs" />
     <Compile Include="Business Layer\ReportManager.cs" />
     <Compile Include="Business Layer\SharedData.cs" />
+    <Compile Include="Business Layer\Stock.cs" />
     <Compile Include="Business Layer\StockManager.cs" />
     <Compile Include="Business Layer\User.cs" />
     <Compile Include="Business Layer\UserAccountClickedEventArgs.cs" />
@@ -670,6 +676,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Icon\Payment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QR_USD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KHR_QR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

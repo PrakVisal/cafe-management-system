@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace RMS_Project.Business_Layer
 {
@@ -17,7 +18,7 @@ namespace RMS_Project.Business_Layer
             loginForm.Show();
 
             // Close the current form
-            Form currentForm = (Form)((Button)sender).FindForm();
+            Form currentForm = (Form)((Guna2Button)sender).FindForm();
             currentForm.Close();
 
 

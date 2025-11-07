@@ -143,7 +143,7 @@
             this.btnDecreease.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDecreease.Size = new System.Drawing.Size(40, 40);
             this.btnDecreease.TabIndex = 3;
-            this.btnDecreease.Click += new System.EventHandler(this.btnDecreease_Click_1);
+            this.btnDecreease.Click += new System.EventHandler(this.btnDecreease_Click);
             // 
             // lblPrice
             // 

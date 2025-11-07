@@ -7,8 +7,9 @@ namespace RMS_Project
     {
         private const string connectionString = "Data Source=LAPTOP-ALHRF6DV\\SQLEXPRESS;Initial Catalog=ManagementSystem;Trusted_Connection=True;";
 
-        public static bool CreateStockEntry(string productName, decimal unitPrice, byte[] photo, string foodCategory)
+        public static bool CreateStockEntry(string productName, decimal unitPrice, byte[] photo)
         {
+            string foodCategory = "Others";
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
