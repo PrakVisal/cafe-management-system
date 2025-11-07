@@ -94,28 +94,44 @@ namespace RMS_Project
             }
         }
 
-        private async void btnUC_User_Click(object sender, EventArgs e)
+        private void btnUC_User_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"D:\"; // Set initial directory
-            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
-
-            DialogResult result = await Task.Run(() => ofd.ShowDialog(this));
-            if (result == DialogResult.OK)
+            // Ensure this runs on the UI thread
+            if (this.InvokeRequired)
             {
-                try
+                this.Invoke(new Action(() => btnUC_User_Click(sender, e)));
+                return;
+            }
+
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.InitialDirectory = @"D:\"; // Set initial directory
+                ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
+
+                // ShowDialog must be called on the UI thread
+                // Use null as owner to avoid cross-thread issues, or use this if we're on UI thread
+                DialogResult result = ofd.ShowDialog(this);
+                if (result == DialogResult.OK)
                 {
-                    ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    // Load the image using Image.FromFile to handle potential errors
-                    using (Image img = Image.FromFile(ofd.FileName))
+                    try
                     {
-                        ptrImage.Image = new Bitmap(img);
+                        ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                        // Load the image using Image.FromFile to handle potential errors
+                        using (Image img = Image.FromFile(ofd.FileName))
+                        {
+                            ptrImage.Image = new Bitmap(img);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading image: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening file dialog: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
