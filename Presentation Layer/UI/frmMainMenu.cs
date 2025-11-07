@@ -24,6 +24,8 @@ namespace RMS_Project
             // Hide Account label and separator (login feature removed)
             label1.Visible = false;
             guna2Separator1.Visible = false;
+            // Hide Finances button (feature removed)
+            btnFinances.Visible = false;
         }
 
         public static frmMainMenu Instance //add new
@@ -172,43 +174,10 @@ namespace RMS_Project
             }
         }
 
-        private frmFinance finance;
+        // Finances feature removed
         private void btnFinances_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            try
-            {
-                if (finance == null || finance.IsDisposed)
-                {
-                    // Dispose of the previous form
-                    var oldForm = this.pnlSubForm.Controls[0] as Form;
-                    if (oldForm != null)
-                    {
-                        oldForm.Dispose();
-                    }
-
-                    // Check if the control still exists before trying to remove it
-                    if (this.pnlSubForm.Controls.Count > 0)
-                    {
-                        this.pnlSubForm.Controls.RemoveAt(0);
-                    }
-
-                    finance = new frmFinance() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    pnlSubForm.BringToFront();
-                    this.pnlSubForm.Controls.Add(finance);
-                    this.pnlSubForm.Tag = finance;
-                    finance.Show();
-                }
-                else
-                {
-                    // If the form is not disposed, bring it to the front
-                    finance.BringToFront();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Feature removed
         }
 
         private frmItems items;
