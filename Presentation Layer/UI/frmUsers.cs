@@ -17,7 +17,7 @@ namespace RMS_Project
         {
             InitializeComponent();
             LoadData();
-            btnAccount.Text = SharedData.CurrentUsername;
+            btnAccount.Visible = false; // Hide account button (login feature removed)
             txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
         }
 
@@ -64,7 +64,7 @@ namespace RMS_Project
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            FormHelper.AccountButton_Click(sender, e);
+            // Login feature removed - button disabled
         }
 
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)

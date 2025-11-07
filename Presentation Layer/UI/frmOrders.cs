@@ -30,7 +30,7 @@ namespace RMS_Project
             InitializeComponent();
 
             LoadData();
-            btnAccount.Text = SharedData.CurrentUsername;
+            btnAccount.Visible = false; // Hide account button (login feature removed)
 
         }
 

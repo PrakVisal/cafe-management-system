@@ -20,7 +20,7 @@ namespace RMS_Project
         public frmReport()
         {
             InitializeComponent();
-            btnAccount.Text = SharedData.CurrentUsername;
+            btnAccount.Visible = false; // Hide account button (login feature removed)
             reportManager = new ReportManager();
         }
         
@@ -313,7 +313,7 @@ namespace RMS_Project
 
         private void btnAccount_Click_1(object sender, EventArgs e)
         {
-            FormHelper.AccountButton_Click(sender, e);
+            // Login feature removed - button disabled
         }
     }
 

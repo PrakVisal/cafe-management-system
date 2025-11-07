@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using RMS_Project.Business_Layer;
 
 namespace RMS_Project
 {
@@ -12,16 +13,18 @@ namespace RMS_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Set default username (no login required)
+            SharedData.CurrentUsername = "User";
+
             // Determine which screen is primary
             var primaryScreen = Screen.AllScreens.FirstOrDefault(s => s.Primary);
             var secondaryScreen = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
 
-            // Create and configure login form
-            frmLogin loginForm = new frmLogin();
+            // Create and configure main menu form (replaces login)
+            frmMainMenu mainMenu = new frmMainMenu();
             if (primaryScreen != null)
             {
-                loginForm.StartPosition = FormStartPosition.CenterScreen;
-                loginForm.Location = primaryScreen.WorkingArea.Location;
+                mainMenu.StartPosition = FormStartPosition.CenterScreen;
             }
 
             // Create and configure invoice form
@@ -44,7 +47,7 @@ namespace RMS_Project
             }
 
             // Show both forms on the main UI thread
-            loginForm.Show();
+            mainMenu.Show();
             invoiceForm.Show();
 
             // Run the application message loop on the main thread
