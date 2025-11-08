@@ -32,10 +32,10 @@ namespace RMS_Project.Business_Layer
             return productsTable;
         }
 
-        public static void GetOrder(DateTime orderDate, decimal totalRiel, decimal totalDollar, decimal chargeRiel, decimal chargeDollar, int payment)
+        public static void GetOrder(DateTime orderDate, decimal totalRiel, decimal totalDollar, decimal chargeRiel, decimal chargeDollar)
         {
-            string insertQuery = @"INSERT INTO tbOrder (OrderDate, TotalRiel, TotalDollar, ChargeRiel, ChargeDollar, PaymentMethodID, Tax) 
-                           VALUES (@OrderDate, @TotalRiel, @TotalDollar,@ChargeRiel, @ChargeDollar, @PaymentMethod , 0.00 )";
+            string insertQuery = @"INSERT INTO tbOrder (OrderDate, TotalRiel, TotalDollar, ChargeRiel, ChargeDollar, Tax) 
+                           VALUES (@OrderDate, @TotalRiel, @TotalDollar, @ChargeRiel, @ChargeDollar, 0.00)";
 
             using (SqlConnection connection = new SqlConnection(DBConnection.path))
             {
@@ -46,7 +46,6 @@ namespace RMS_Project.Business_Layer
                 command.Parameters.AddWithValue("@TotalDollar", totalDollar);
                 command.Parameters.AddWithValue("@ChargeRiel", chargeRiel);
                 command.Parameters.AddWithValue("@ChargeDollar", chargeDollar);
-                command.Parameters.AddWithValue("@PaymentMethod", payment);
                 try
                 {
                     // Open the connection

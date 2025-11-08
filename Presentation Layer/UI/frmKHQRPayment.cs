@@ -64,9 +64,8 @@ namespace RMS_Project.Presentation_Layer.UI
             decimal totalDollar = decimal.Parse(txtTotalDollar.Text.Split('$')[1]);
             decimal chargeRiel = 0.00m;
             decimal chargeDollar = 0.00m;
-            int payment = 2;
 
-            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar, payment);
+            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar);
             this.Close();
         }
 

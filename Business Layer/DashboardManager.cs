@@ -58,24 +58,8 @@ namespace RMS_Project.Business_Layer
 
         public static decimal GetTotalExpense()
         {
-            string query = "SELECT ISNULL(SUM(Amount), 0) FROM tbStockIn";
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                try
-                {
-                    if (connection.State != ConnectionState.Open)
-                        connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        return Convert.ToDecimal(command.ExecuteScalar());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error retrieving total expense: " + ex.Message);
-                }
-            }
+            // Expense feature removed - stock feature no longer exists
+            return 0;
         }
 
         public static DataTable ExecuteQuery(string query)

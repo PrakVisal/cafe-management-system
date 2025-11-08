@@ -65,8 +65,7 @@ namespace RMS_Project.Presentation_Layer.UI
                 txtChangeRiel.Text = chargeRiel.ToString();
             }
 
-            int payment = 1;
-            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar, payment);
+            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar);
         }
 
 
