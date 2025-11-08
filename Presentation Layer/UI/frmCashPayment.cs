@@ -24,13 +24,13 @@ namespace RMS_Project.Presentation_Layer.UI
             txtTotalDollar.Text = totalDollar;
             txtTotalRiel.Text = totalRiel;
         }
-        
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         decimal usdAmount;
-        decimal  rielAmount;
+        decimal rielAmount;
         decimal chargeRiel = 0;
         decimal chargeDollar = 0;
         private void InsertOrderIntoDatabase()
@@ -41,14 +41,14 @@ namespace RMS_Project.Presentation_Layer.UI
 
             //totalDollar is total in dollar
             //
-            
+
             // Parse USD amount, default to 0 if parsing fails
             decimal.TryParse(txtUSDAmount.Text, out usdAmount);
             // Parse Riel amount, default to 0 if parsing fails
             decimal.TryParse(txtRielAmount.Text, out rielAmount);
 
-            
-           
+
+
             if (decimal.TryParse(txtUSDAmount.Text, out decimal usd) && decimal.TryParse(txtRielAmount.Text, out decimal riel))
             {
 
@@ -66,7 +66,7 @@ namespace RMS_Project.Presentation_Layer.UI
             }
 
             int payment = 1;
-            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar , payment );
+            OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar, payment);
         }
 
 
@@ -113,12 +113,12 @@ namespace RMS_Project.Presentation_Layer.UI
                 txtChangeDollar.Text = "0.00";
             }
             else
-            {             
+            {
                 txtChangeRiel.Text = "";
             }
 
-           
+
         }
     }
-    
+
 }

@@ -45,7 +45,7 @@ namespace RMS_Project.Business_Layer
                 command.Parameters.AddWithValue("@TotalRiel", totalRiel);
                 command.Parameters.AddWithValue("@TotalDollar", totalDollar);
                 command.Parameters.AddWithValue("@ChargeRiel", chargeRiel);
-                command.Parameters.AddWithValue("@ChargeDollar",chargeDollar);
+                command.Parameters.AddWithValue("@ChargeDollar", chargeDollar);
                 command.Parameters.AddWithValue("@PaymentMethod", payment);
                 try
                 {

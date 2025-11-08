@@ -79,20 +79,6 @@ namespace RMS_Project
                     Item item = CreateItem();
                     ItemManager.AddItem(item);
                     MessageBox.Show("Item added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    byte[] itemImage = ImageConverter.ConvertImageToBytes(ptrImage);
-                    if (cboCategory.SelectedItem.ToString() == "Others")
-                    {
-                        // Create stock entry if category is "Others"
-                        if (CreateStockManager.CreateStockEntry(txtName.Text, decimal.Parse(txtPrice.Text), itemImage))
-                        {
-                            MessageBox.Show("Stock entry created successfully!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to create stock entry.");
-                        }
-                    }
                     this.Close();
                 }
                 else

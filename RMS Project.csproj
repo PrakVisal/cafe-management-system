@@ -291,14 +291,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\CategoryFilterStrategy.cs" />
-    <Compile Include="Business Layer\CreateStockManager.cs" />
     <Compile Include="Business Layer\DashboardManager.cs" />
     <Compile Include="Business Layer\DBConnection.cs" />
-    <Compile Include="Business Layer\DeleteStocManager.cs" />
     <Compile Include="Business Layer\FinanceManager.cs" />
     <Compile Include="Business Layer\FormHelper.cs" />
     <Compile Include="Business Layer\ImageConverter.cs" />
-    <Compile Include="Business Layer\CRUDStockManager.cs" />
     <Compile Include="Business Layer\IStrategyItem.cs" />
     <Compile Include="Business Layer\Item.cs" />
     <Compile Include="Business Layer\ItemCategory.cs" />
@@ -309,8 +306,6 @@
     <Compile Include="Business Layer\Receipt.cs" />
     <Compile Include="Business Layer\ReportManager.cs" />
     <Compile Include="Business Layer\SharedData.cs" />
-    <Compile Include="Business Layer\Stock.cs" />
-    <Compile Include="Business Layer\StockManager.cs" />
     <Compile Include="Business Layer\User.cs" />
     <Compile Include="Business Layer\UserAccountClickedEventArgs.cs" />
     <Compile Include="Business Layer\UserManager.cs" />
@@ -325,12 +320,6 @@
     </Compile>
     <Compile Include="Presentation Layer\UI\frmCRUD_Item.Designer.cs">
       <DependentUpon>frmCRUD_Item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmCRUD_Stock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmCRUD_Stock.Designer.cs">
-      <DependentUpon>frmCRUD_Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\UI\frmCRUD_User.cs">
       <SubType>Form</SubType>
@@ -392,12 +381,6 @@
     <Compile Include="Presentation Layer\UI\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\UI\frmStocks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmStocks.Designer.cs">
-      <DependentUpon>frmStocks.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation Layer\UI\frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,12 +422,6 @@
     <Compile Include="Presentation Layer\User Control\UC_ItemAction.Designer.cs">
       <DependentUpon>UC_ItemAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\User Control\UC_Item_Stock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\User Control\UC_Item_Stock.Designer.cs">
-      <DependentUpon>UC_Item_Stock.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation Layer\User Control\UC_UserAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -468,9 +445,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmCRUD_Item.resx">
       <DependentUpon>frmCRUD_Item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmCRUD_Stock.resx">
-      <DependentUpon>frmCRUD_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmCRUD_User.resx">
       <DependentUpon>frmCRUD_User.cs</DependentUpon>
@@ -502,9 +476,6 @@
     <EmbeddedResource Include="Presentation Layer\UI\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmStocks.resx">
-      <DependentUpon>frmStocks.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -527,9 +498,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\User Control\UC_ItemAction.resx">
       <DependentUpon>UC_ItemAction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\User Control\UC_Item_Stock.resx">
-      <DependentUpon>UC_Item_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\User Control\UC_UserAccount.resx">
       <DependentUpon>UC_UserAccount.cs</DependentUpon>
