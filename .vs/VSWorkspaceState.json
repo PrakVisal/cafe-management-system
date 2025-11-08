@@ -3,8 +3,11 @@
     "",
     "\\Cafe Managment System- Project",
     "\\Cafe Managment System- Project\\RMS-Project",
+    "\\Cafe Managment System- Project\\RMS-Project\\Business Layer",
+    "\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer",
+    "\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI",
     "\\Cafe Managment System- Project\\RMS-Project\\RMS Photo"
   ],
-  "SelectedNode": "\\Cafe Managment System- Project\\RMS-Project\\Program.cs",
+  "SelectedNode": "\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmUsers.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs",
+              "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs",
+              "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmUsers.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwCQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T11:00:03.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmCRUD_User.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs",
+              "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs",
+              "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_User.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T10:56:30.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmItems.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs",
+              "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs",
+              "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmItems.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T10:55:18.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmCRUD_Item.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs",
+              "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs",
+              "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Presentation Layer\\UI\\frmCRUD_Item.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAwwPUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T10:52:59.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBConnection.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs",
+              "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs",
+              "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Business Layer\\DBConnection.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwCsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T10:50:39.368Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +105,7 @@
               "RelativeDocumentMoniker": "Cafe Managment System- Project\\RMS-Project\\Program.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Downloads\\Telegram Desktop\\Cafe Managment System- Project\\Cafe Managment System- Project\\RMS-Project\\Program.cs",
               "RelativeToolTip": "Cafe Managment System- Project\\RMS-Project\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T09:25:13.128Z",
               "EditorCaption": ""
