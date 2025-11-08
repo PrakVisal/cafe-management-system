@@ -27,8 +27,7 @@ namespace RMS_Project
             // Retrieve and display Total Sale
             DisplayTotalSale();
 
-            // Retrieve and display Total Expense
-            DisplayTotalExpense();
+            // Total Expense feature removed - no longer needed
         }
 
         private void LoadCharts()
@@ -39,8 +38,7 @@ namespace RMS_Project
             // Load chart for total sale in months
             LoadTotalSaleChart();
 
-            // Load pie chart to compare total sale and expense in percentage
-            LoadPieChart();
+            // Pie chart removed - expense feature no longer exists
         }
 
         private void LoadTotalOrderChart()
@@ -107,41 +105,7 @@ namespace RMS_Project
             }
         }
 
-        private void LoadPieChart()
-        {
-            try
-            {
-                // Retrieve total sale value from UC_Total2
-                decimal totalSale = decimal.Parse(uC_Total2.lblValue.Text, System.Globalization.NumberStyles.Currency);
-
-                // Retrieve total expense value from UC_Total3
-                decimal totalExpense = decimal.Parse(uC_Total3.lblValue.Text, System.Globalization.NumberStyles.Currency);
-
-                decimal total = totalSale + totalExpense;
-
-                chart3.Series.Clear(); // Clear existing series
-                chart3.Series.Add("Comparison"); // Add new series
-
-                // Add data points for total sale and total expense
-                DataPoint salePoint = new DataPoint();
-                salePoint.SetValueXY("Total Sale", totalSale);
-                salePoint.Label = "Total Sale: " + ((totalSale / total) * 100).ToString("0.##") + "%";
-                chart3.Series["Comparison"].Points.Add(salePoint);
-
-                DataPoint expensePoint = new DataPoint();
-                expensePoint.SetValueXY("Total Expense", totalExpense);
-                expensePoint.Label = "Total Expense: " + ((totalExpense / total) * 100).ToString("0.##") + "%";
-                chart3.Series["Comparison"].Points.Add(expensePoint);
-
-                chart3.Series["Comparison"].ChartType = SeriesChartType.Pie;
-                chart3.Series["Comparison"].Label = "#PERCENT{P0}";
-                chart3.Titles.Add("Total Sale vs Total Expense");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading Pie Chart: " + ex.Message);
-            }
-        }
+        // Pie chart removed - expense feature no longer exists
 
         private void DisplayTotalOrder()
         {
@@ -171,19 +135,7 @@ namespace RMS_Project
             }
         }
 
-        private void DisplayTotalExpense()
-        {
-            try
-            {
-                decimal totalExpense = DashboardManager.GetTotalExpense();
-                uC_Total3.lblTitle.Text = "Total Expense";
-                uC_Total3.lblValue.Text = totalExpense.ToString("C");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Display Total Expense: " + ex.Message);
-            }
-        }
+        // DisplayTotalExpense method removed - expense feature no longer exists
 
     }
 }

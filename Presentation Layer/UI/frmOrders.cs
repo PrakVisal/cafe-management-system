@@ -268,16 +268,6 @@ namespace RMS_Project
         }
         frmInvoice invoiceForm = new frmInvoice();
 
-        private void btnKHQR_Click_1(object sender, EventArgs e)
-        {
-            ActiveButton(sender);
-            using (var frmKHQR = new frmKHQRPayment(invoiceForm, lblSubTotal.Text, lblTax.Text, lblGrandTotalDollor.Text, lblGrandTotalRiel.Text))
-            {
-                frmKHQR.ShowDialog(); 
-
-            }
-        }
-
         private void btnAll_Click_1(object sender, EventArgs e)
         {
             ShowAllItems();

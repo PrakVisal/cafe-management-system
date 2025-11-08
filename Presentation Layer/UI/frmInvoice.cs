@@ -19,30 +19,8 @@ namespace RMS_Project
         public frmInvoice()
         {
             InitializeComponent();
-            LoadPaymentImage();
-            
-        }
-        private void SetImageOnUIThread(Image image)
-        {
-            if (ptrQRCode.InvokeRequired)
-            {
-                // If we're not on the UI thread, invoke this method on the UI thread
-                ptrQRCode.Invoke(new Action<Image>(SetImageOnUIThread), image);
-            }
-            else
-            {
-                // Set the image on the UI thread
-                ptrQRCode.Image = image;
-            }
-        }
-        
-        private void LoadPaymentImage()
-        {
-            // Get your image from your resources
-            Image yourImage = RMS_Project.Properties.Resources.usd1;
-
-            // Set the image on the UI thread
-            SetImageOnUIThread(yourImage);
+            // Hide QR code and bank logos panels (KHQR payment removed)
+            // Note: These controls should not exist in Designer, but hiding them as a safety measure
         }
         private decimal subTotal = 0.00m;
 

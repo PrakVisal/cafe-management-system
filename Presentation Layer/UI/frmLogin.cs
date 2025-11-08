@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS_Project.Business_Layer;
 using RMS_Project.Class;
-using System.Drawing;
 
 namespace RMS_Project
 {
@@ -48,24 +46,8 @@ namespace RMS_Project
         }
         private void LoadUserAccounts()
         {
-            // Get the list of users from the database
-            List<User> users = UserManager.ReadUser();
-
-            // Check if users list is not null or empty
-            if (users != null && users.Any())
-            {
-                foreach (User user in users)
-                {
-                    UC_UserAccount uc = new UC_UserAccount(user);
-                    // Wire up the click event for each user account
-                    uc.UserAccountClicked += UC_UserAccountClicked;
-                    flowLayoutPanel1.Controls.Add(uc);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No users found in the database.");
-            }
+            // User feature removed - login form no longer loads user accounts
+            // This method is kept for compatibility but does nothing
         }
 
         private void txtPasscode1_TextChanged(object sender, EventArgs e)
@@ -117,19 +99,7 @@ namespace RMS_Project
         {
             this.Close();
         }
-        private void UC_UserAccountClicked(object sender, UserAccountClickedEventArgs e)
-        {
-            selectedUsername = e.Username;
-
-            // Clear entered password when a user account is clicked
-            ClearPassword();
-            // Enable textboxes to enter password
-            EnablePasswordTextBoxes();            // Focus on the first textbox
-            txtPasscode1.Focus();
-            // Set user selected flag to true
-            isUserSelected = true;
-
-        }
+        // UserAccountClicked event handler removed - user feature no longer exists
         private void ClearPassword()
         {
             // Clear the entered password
@@ -193,16 +163,9 @@ namespace RMS_Project
         }
         private string GetStoredPassword(string username)
         {
-
-            string query = "SELECT Password FROM tbUser WHERE UserName = @Username;";
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Username", username);
-                    return (string)command.ExecuteScalar();
-                }
-            }
+            // User feature removed - tbUser table no longer exists
+            // This method is kept for compatibility but returns null
+            return null;
         }
 
     }

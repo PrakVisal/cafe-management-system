@@ -293,12 +293,7 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount1);
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount7);
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount6);
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount5);
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount2);
-            this.flowLayoutPanel1.Controls.Add(this.uC_UserAccount4);
+            // User account controls removed - user feature no longer exists
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 266);
@@ -427,12 +422,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label3;
-        private UC_UserAccount uC_UserAccount1;
-        private UC_UserAccount uC_UserAccount2;
-        private UC_UserAccount uC_UserAccount7;
-        private UC_UserAccount uC_UserAccount6;
-        private UC_UserAccount uC_UserAccount5;
-        private UC_UserAccount uC_UserAccount4;
+        // User account controls removed - user feature no longer exists
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;

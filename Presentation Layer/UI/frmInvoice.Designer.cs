@@ -55,11 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlnvoiceItem = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnlBank = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ptrQRCode = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblAbaAccountName = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -67,10 +62,6 @@
             this.guna2ContainerControl2.SuspendLayout();
             this.guna2ContainerControl1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.pnlBank.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -358,72 +349,12 @@
             this.guna2Panel1.Size = new System.Drawing.Size(935, 1041);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // pnlBank
-            // 
-            this.pnlBank.BackColor = System.Drawing.Color.White;
-            this.pnlBank.Controls.Add(this.guna2PictureBox1);
-            this.pnlBank.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBank.Location = new System.Drawing.Point(935, 0);
-            this.pnlBank.Name = "pnlBank";
-            this.pnlBank.Size = new System.Drawing.Size(969, 328);
-            this.pnlBank.TabIndex = 1;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(969, 328);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel5.Controls.Add(this.ptrQRCode);
-            this.guna2Panel5.Controls.Add(this.lblAbaAccountName);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel5.Location = new System.Drawing.Point(935, 328);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(969, 713);
-            this.guna2Panel5.TabIndex = 2;
-            // 
-            // ptrQRCode
-            // 
-            this.ptrQRCode.BorderRadius = 20;
-            this.ptrQRCode.Image = ((System.Drawing.Image)(resources.GetObject("ptrQRCode.Image")));
-            this.ptrQRCode.ImageLocation = "";
-            this.ptrQRCode.ImageRotate = 0F;
-            this.ptrQRCode.Location = new System.Drawing.Point(180, 18);
-            this.ptrQRCode.Name = "ptrQRCode";
-            this.ptrQRCode.Size = new System.Drawing.Size(648, 593);
-            this.ptrQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptrQRCode.TabIndex = 6;
-            this.ptrQRCode.TabStop = false;
-            // 
-            // lblAbaAccountName
-            // 
-            this.lblAbaAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbaAccountName.Location = new System.Drawing.Point(174, 642);
-            this.lblAbaAccountName.Name = "lblAbaAccountName";
-            this.lblAbaAccountName.Size = new System.Drawing.Size(654, 43);
-            this.lblAbaAccountName.TabIndex = 5;
-            this.lblAbaAccountName.Text = "ABA Account Name";
-            this.lblAbaAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.pnlBank);
+            this.ClientSize = new System.Drawing.Size(935, 1041);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -441,10 +372,6 @@
             this.guna2ContainerControl1.ResumeLayout(false);
             this.guna2ContainerControl1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.pnlBank.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptrQRCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,12 +400,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        public Guna.UI2.WinForms.Guna2Panel pnlBank;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label lblAbaAccountName;
         public System.Windows.Forms.FlowLayoutPanel pnlnvoiceItem;
-        public Guna.UI2.WinForms.Guna2PictureBox ptrQRCode;
         public System.Windows.Forms.Label lblChange;
         public System.Windows.Forms.Label lblRecievedRiel;
         public System.Windows.Forms.Label lblRecievedDollar;

@@ -49,7 +49,7 @@
       <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>D:\Noxius-UIBypass-main\Noxius-UIBypass-main\Guna.UI2.dll</HintPath>
+      <HintPath>lib\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="itext.barcodes, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\itext.8.0.3\lib\net461\itext.barcodes.dll</HintPath>
@@ -293,7 +293,6 @@
     <Compile Include="Business Layer\CategoryFilterStrategy.cs" />
     <Compile Include="Business Layer\DashboardManager.cs" />
     <Compile Include="Business Layer\DBConnection.cs" />
-    <Compile Include="Business Layer\FinanceManager.cs" />
     <Compile Include="Business Layer\FormHelper.cs" />
     <Compile Include="Business Layer\ImageConverter.cs" />
     <Compile Include="Business Layer\IStrategyItem.cs" />
@@ -304,11 +303,7 @@
     <Compile Include="Business Layer\OrderManager.cs" />
     <Compile Include="Business Layer\ProductNameSearchStrategy.cs" />
     <Compile Include="Business Layer\Receipt.cs" />
-    <Compile Include="Business Layer\ReportManager.cs" />
     <Compile Include="Business Layer\SharedData.cs" />
-    <Compile Include="Business Layer\User.cs" />
-    <Compile Include="Business Layer\UserAccountClickedEventArgs.cs" />
-    <Compile Include="Business Layer\UserManager.cs" />
     <Compile Include="Presentation Layer\UI\frmCashPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,19 +316,11 @@
     <Compile Include="Presentation Layer\UI\frmCRUD_Item.Designer.cs">
       <DependentUpon>frmCRUD_Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\UI\frmCRUD_User.cs" />
-    <Compile Include="Presentation Layer\UI\frmCRUD_User.Designer.cs">
-      <DependentUpon>frmCRUD_User.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation Layer\UI\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\UI\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmFinance.cs" />
-    <Compile Include="Presentation Layer\UI\frmFinance.Designer.cs">
-      <DependentUpon>frmFinance.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\UI\frmInvoice.cs">
       <SubType>Form</SubType>
@@ -346,12 +333,6 @@
     </Compile>
     <Compile Include="Presentation Layer\UI\frmItems.Designer.cs">
       <DependentUpon>frmItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmKHQRPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmKHQRPayment.Designer.cs">
-      <DependentUpon>frmKHQRPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\UI\frmLogin.cs">
       <SubType>Form</SubType>
@@ -370,14 +351,6 @@
     </Compile>
     <Compile Include="Presentation Layer\UI\frmOrders.Designer.cs">
       <DependentUpon>frmOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmReport.cs" />
-    <Compile Include="Presentation Layer\UI\frmReport.Designer.cs">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmUsers.cs" />
-    <Compile Include="Presentation Layer\UI\frmUsers.Designer.cs">
-      <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -414,14 +387,6 @@
     <Compile Include="Presentation Layer\User Control\UC_ItemAction.Designer.cs">
       <DependentUpon>UC_ItemAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\User Control\UC_UserAccount.cs" />
-    <Compile Include="Presentation Layer\User Control\UC_UserAccount.Designer.cs">
-      <DependentUpon>UC_UserAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\User Control\UC_Users.cs" />
-    <Compile Include="Presentation Layer\User Control\UC_Users.Designer.cs">
-      <DependentUpon>UC_Users.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation Layer\User Control\UC_Total.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -434,23 +399,14 @@
     <EmbeddedResource Include="Presentation Layer\UI\frmCRUD_Item.resx">
       <DependentUpon>frmCRUD_Item.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmCRUD_User.resx">
-      <DependentUpon>frmCRUD_User.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmFinance.resx">
-      <DependentUpon>frmFinance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmInvoice.resx">
       <DependentUpon>frmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmItems.resx">
       <DependentUpon>frmItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmKHQRPayment.resx">
-      <DependentUpon>frmKHQRPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -460,12 +416,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmOrders.resx">
       <DependentUpon>frmOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmUsers.resx">
-      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -486,12 +436,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\User Control\UC_ItemAction.resx">
       <DependentUpon>UC_ItemAction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\User Control\UC_UserAccount.resx">
-      <DependentUpon>UC_UserAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\User Control\UC_Users.resx">
-      <DependentUpon>UC_Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\User Control\UC_Total.resx">
       <DependentUpon>UC_Total.cs</DependentUpon>
@@ -542,7 +486,7 @@
     <None Include="Icon\Sales POS Icon-2\money-notes-receiving-cambodian-riel-color-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icon\Sales POS Icon-2\KHQR.png" />
+    <Folder Include="Icon\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon\Sales POS Icon-2\no_image.png" />
@@ -630,9 +574,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Icon\Payment\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\QR_USD.png" />
   </ItemGroup>
