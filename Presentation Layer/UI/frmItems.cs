@@ -30,7 +30,7 @@ namespace RMS_Project
             cboFilterCategory.SelectedIndex = 0;
             txtSearchProduct.TextChanged += txtSearchProduct_TextChanged_1;
             filterStrategy = new CategoryFilterStrategy();
-            btnAccount.Text = SharedData.CurrentUsername;
+            btnAccount.Visible = false; // Hide account button (login feature removed)
         }
 
         private void btnNewItem_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace RMS_Project
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            FormHelper.AccountButton_Click(sender, e);
+            // Login feature removed - button disabled
         }
         private void FilterItems(string criterion)
         {

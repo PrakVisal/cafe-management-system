@@ -49,7 +49,6 @@
             this.guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.pnlPayment = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.btnKHQR = new Guna.UI2.WinForms.Guna2Button();
             this.btnCash = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label10 = new System.Windows.Forms.Label();
@@ -534,7 +533,6 @@
             // 
             this.pnlPayment.BackColor = System.Drawing.Color.White;
             this.pnlPayment.BorderRadius = 10;
-            this.pnlPayment.Controls.Add(this.btnKHQR);
             this.pnlPayment.Controls.Add(this.btnCash);
             this.pnlPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.pnlPayment.Location = new System.Drawing.Point(110, 305);
@@ -542,38 +540,6 @@
             this.pnlPayment.Size = new System.Drawing.Size(294, 90);
             this.pnlPayment.TabIndex = 4;
             this.pnlPayment.Text = "guna2ContainerControl3";
-            // 
-            // btnKHQR
-            // 
-            this.btnKHQR.Animated = true;
-            this.btnKHQR.BackColor = System.Drawing.Color.Transparent;
-            this.btnKHQR.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.btnKHQR.BorderRadius = 10;
-            this.btnKHQR.BorderThickness = 2;
-            this.btnKHQR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnKHQR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnKHQR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnKHQR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnKHQR.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.btnKHQR.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
-            this.btnKHQR.ForeColor = System.Drawing.Color.Black;
-            this.btnKHQR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.btnKHQR.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnKHQR.Image = ((System.Drawing.Image)(resources.GetObject("btnKHQR.Image")));
-            this.btnKHQR.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnKHQR.ImageOffset = new System.Drawing.Point(50, -12);
-            this.btnKHQR.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnKHQR.Location = new System.Drawing.Point(147, 0);
-            this.btnKHQR.Name = "btnKHQR";
-            this.btnKHQR.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.btnKHQR.ShadowDecoration.BorderRadius = 10;
-            this.btnKHQR.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.btnKHQR.Size = new System.Drawing.Size(147, 91);
-            this.btnKHQR.TabIndex = 12;
-            this.btnKHQR.Text = "KHQR";
-            this.btnKHQR.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnKHQR.TextOffset = new System.Drawing.Point(4, 23);
-            this.btnKHQR.Click += new System.EventHandler(this.btnKHQR_Click_1);
             // 
             // btnCash
             // 
@@ -605,7 +571,7 @@
             this.btnCash.Text = "Cash";
             this.btnCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCash.TextOffset = new System.Drawing.Point(0, 20);
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click_1);
+            // btnCash_Click_1 removed - button is hidden, payment opens automatically
             // 
             // guna2Separator1
             // 
@@ -825,7 +791,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblGrandTotalDollor;
         private Guna.UI2.WinForms.Guna2ContainerControl pnlPayment;
-        private Guna.UI2.WinForms.Guna2Button btnKHQR;
         private Guna.UI2.WinForms.Guna2Button btnCash;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

@@ -34,6 +34,30 @@ namespace RMS_Project.Business_Layer
             }
         }
 
+        public static int GetTotalOrdersThisMonth()
+        {
+            string query = @"SELECT ISNULL(COUNT(*), 0) FROM tbOrder 
+                            WHERE MONTH(OrderDate) = MONTH(GETDATE()) 
+                            AND YEAR(OrderDate) = YEAR(GETDATE())";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                try
+                {
+                    if (connection.State != ConnectionState.Open)
+                        connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error retrieving total orders this month: " + ex.Message);
+                }
+            }
+        }
+
         public static decimal GetTotalSale()
         {
             string query = "SELECT ISNULL(SUM(TotalDollar), 0) + ISNULL(SUM(TotalRiel) / 4100, 0) FROM tbOrder";
@@ -58,24 +82,8 @@ namespace RMS_Project.Business_Layer
 
         public static decimal GetTotalExpense()
         {
-            string query = "SELECT ISNULL(SUM(Amount), 0) FROM tbStockIn";
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                try
-                {
-                    if (connection.State != ConnectionState.Open)
-                        connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        return Convert.ToDecimal(command.ExecuteScalar());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error retrieving total expense: " + ex.Message);
-                }
-            }
+            // Expense feature removed - stock feature no longer exists
+            return 0;
         }
 
         public static DataTable ExecuteQuery(string query)

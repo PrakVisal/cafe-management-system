@@ -32,10 +32,11 @@ namespace RMS_Project.Business_Layer
             return productsTable;
         }
 
-        public static void GetOrder(DateTime orderDate, decimal totalRiel, decimal totalDollar, decimal chargeRiel, decimal chargeDollar, int payment)
+        public static int GetOrder(DateTime orderDate, decimal totalRiel, decimal totalDollar, decimal chargeRiel, decimal chargeDollar)
         {
-            string insertQuery = @"INSERT INTO tbOrder (OrderDate, TotalRiel, TotalDollar, ChargeRiel, ChargeDollar, PaymentMethodID, Tax) 
-                           VALUES (@OrderDate, @TotalRiel, @TotalDollar,@ChargeRiel, @ChargeDollar, @PaymentMethod , 0.00 )";
+            string insertQuery = @"INSERT INTO tbOrder (OrderDate, TotalRiel, TotalDollar, ChargeRiel, ChargeDollar, Tax) 
+                           VALUES (@OrderDate, @TotalRiel, @TotalDollar, @ChargeRiel, @ChargeDollar, 0.00);
+                           SELECT SCOPE_IDENTITY();";
 
             using (SqlConnection connection = new SqlConnection(DBConnection.path))
             {
@@ -45,27 +46,55 @@ namespace RMS_Project.Business_Layer
                 command.Parameters.AddWithValue("@TotalRiel", totalRiel);
                 command.Parameters.AddWithValue("@TotalDollar", totalDollar);
                 command.Parameters.AddWithValue("@ChargeRiel", chargeRiel);
-                command.Parameters.AddWithValue("@ChargeDollar",chargeDollar);
-                command.Parameters.AddWithValue("@PaymentMethod", payment);
+                command.Parameters.AddWithValue("@ChargeDollar", chargeDollar);
                 try
                 {
                     // Open the connection
                     connection.Open();
-                    // Execute the INSERT command
-                    int rowsAffected = command.ExecuteNonQuery();
-                    // Check if the data was inserted successfully
-                    if (rowsAffected > 0)
+                    // Execute the INSERT command and get the OrderID
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
                     {
-                        //MessageBox.Show("inserted into the database successfully.");
+                        int orderId = Convert.ToInt32(result);
+                        return orderId;
                     }
                     else
                     {
                         MessageBox.Show("Failed to insert into the database.");
+                        return -1;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occurred while insert: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+
+        public static void InsertOrderDetail(int orderId, int productId, int orderQty, decimal unitPrice, decimal amount, string size = null)
+        {
+            string insertQuery = @"INSERT INTO tbOrderDetail (OrderID, ProductID, Size, OrderQty, UnitPrice, Amount) 
+                           VALUES (@OrderID, @ProductID, @Size, @OrderQty, @UnitPrice, @Amount)";
+
+            using (SqlConnection connection = new SqlConnection(DBConnection.path))
+            {
+                SqlCommand command = new SqlCommand(insertQuery, connection);
+                command.Parameters.AddWithValue("@OrderID", orderId);
+                command.Parameters.AddWithValue("@ProductID", productId);
+                command.Parameters.AddWithValue("@Size", (object)size ?? DBNull.Value);
+                command.Parameters.AddWithValue("@OrderQty", orderQty);
+                command.Parameters.AddWithValue("@UnitPrice", unitPrice);
+                command.Parameters.AddWithValue("@Amount", amount);
+                
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while inserting order detail: " + ex.Message);
                 }
             }
         }

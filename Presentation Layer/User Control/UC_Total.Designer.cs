@@ -114,7 +114,7 @@
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private System.Windows.Forms.Label lblAllTime;
+        public System.Windows.Forms.Label lblAllTime;
         public System.Windows.Forms.Label lblValue;
         public System.Windows.Forms.Label lblTitle;
     }

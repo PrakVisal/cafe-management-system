@@ -89,10 +89,10 @@
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Image = global::RMS_Project.Properties.Resources.Logo;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(74, 31);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(60, 20);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(200, 200);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 3;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -267,7 +267,7 @@
             this.btnItems.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnItems.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnItems.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnItems.Location = new System.Drawing.Point(21, 442);
+            this.btnItems.Location = new System.Drawing.Point(21, 410);
             this.btnItems.Name = "btnItems";
             this.btnItems.PressedColor = System.Drawing.Color.Transparent;
             this.btnItems.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
@@ -331,7 +331,7 @@
             this.btnOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOrders.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnOrders.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnOrders.Location = new System.Drawing.Point(21, 300);
+            this.btnOrders.Location = new System.Drawing.Point(21, 330);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.PressedColor = System.Drawing.Color.Transparent;
             this.btnOrders.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
@@ -363,7 +363,7 @@
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashboard.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDashboard.Location = new System.Drawing.Point(21, 229);
+            this.btnDashboard.Location = new System.Drawing.Point(21, 250);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.PressedColor = System.Drawing.Color.Transparent;
             this.btnDashboard.PressedDepth = 1;

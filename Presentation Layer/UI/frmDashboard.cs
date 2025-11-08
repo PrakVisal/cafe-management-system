@@ -17,18 +17,37 @@ namespace RMS_Project
             InitializeComponent();
             LoadData();
             LoadCharts();
+            // Refresh dashboard when it becomes visible
+            this.Activated += FrmDashboard_Activated;
+        }
+
+        private void FrmDashboard_Activated(object sender, EventArgs e)
+        {
+            // Refresh data when dashboard form is activated (becomes visible)
+            RefreshData();
+        }
+
+        /// <summary>
+        /// Public method to refresh dashboard data - can be called from other forms
+        /// </summary>
+        public void RefreshData()
+        {
+            LoadData();
+            LoadCharts();
         }
 
         private void LoadData()
         {
-            // Retrieve and display Total Order
-            DisplayTotalOrder();
+            // Retrieve and display Total Order (All Time)
+            DisplayTotalOrderAllTime();
+
+            // Retrieve and display Total Order (This Month)
+            DisplayTotalOrderThisMonth();
 
             // Retrieve and display Total Sale
             DisplayTotalSale();
 
-            // Retrieve and display Total Expense
-            DisplayTotalExpense();
+            // Total Expense feature removed - no longer needed
         }
 
         private void LoadCharts()
@@ -39,8 +58,7 @@ namespace RMS_Project
             // Load chart for total sale in months
             LoadTotalSaleChart();
 
-            // Load pie chart to compare total sale and expense in percentage
-            LoadPieChart();
+            // Pie chart removed - expense feature no longer exists
         }
 
         private void LoadTotalOrderChart()
@@ -107,53 +125,37 @@ namespace RMS_Project
             }
         }
 
-        private void LoadPieChart()
-        {
-            try
-            {
-                // Retrieve total sale value from UC_Total2
-                decimal totalSale = decimal.Parse(uC_Total2.lblValue.Text, System.Globalization.NumberStyles.Currency);
+        // Pie chart removed - expense feature no longer exists
 
-                // Retrieve total expense value from UC_Total3
-                decimal totalExpense = decimal.Parse(uC_Total3.lblValue.Text, System.Globalization.NumberStyles.Currency);
-
-                decimal total = totalSale + totalExpense;
-
-                chart3.Series.Clear(); // Clear existing series
-                chart3.Series.Add("Comparison"); // Add new series
-
-                // Add data points for total sale and total expense
-                DataPoint salePoint = new DataPoint();
-                salePoint.SetValueXY("Total Sale", totalSale);
-                salePoint.Label = "Total Sale: " + ((totalSale / total) * 100).ToString("0.##") + "%";
-                chart3.Series["Comparison"].Points.Add(salePoint);
-
-                DataPoint expensePoint = new DataPoint();
-                expensePoint.SetValueXY("Total Expense", totalExpense);
-                expensePoint.Label = "Total Expense: " + ((totalExpense / total) * 100).ToString("0.##") + "%";
-                chart3.Series["Comparison"].Points.Add(expensePoint);
-
-                chart3.Series["Comparison"].ChartType = SeriesChartType.Pie;
-                chart3.Series["Comparison"].Label = "#PERCENT{P0}";
-                chart3.Titles.Add("Total Sale vs Total Expense");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading Pie Chart: " + ex.Message);
-            }
-        }
-
-        private void DisplayTotalOrder()
+        private void DisplayTotalOrderAllTime()
         {
             try
             {
                 int totalOrders = DashboardManager.GetTotalOrders();
                 uC_Total1.lblTitle.Text = "Total Order";
                 uC_Total1.lblValue.Text = totalOrders.ToString();
+                // Set the time period label
+                uC_Total1.TimePeriodLabel.Text = "All Time";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Display Total Order: " + ex.Message);
+                MessageBox.Show("Error Display Total Order All Time: " + ex.Message);
+            }
+        }
+
+        private void DisplayTotalOrderThisMonth()
+        {
+            try
+            {
+                int totalOrdersThisMonth = DashboardManager.GetTotalOrdersThisMonth();
+                uC_Total3.lblTitle.Text = "Total Order";
+                uC_Total3.lblValue.Text = totalOrdersThisMonth.ToString();
+                // Set the time period label
+                uC_Total3.TimePeriodLabel.Text = "This Month";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Display Total Order This Month: " + ex.Message);
             }
         }
 
@@ -171,19 +173,7 @@ namespace RMS_Project
             }
         }
 
-        private void DisplayTotalExpense()
-        {
-            try
-            {
-                decimal totalExpense = DashboardManager.GetTotalExpense();
-                uC_Total3.lblTitle.Text = "Total Expense";
-                uC_Total3.lblValue.Text = totalExpense.ToString("C");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Display Total Expense: " + ex.Message);
-            }
-        }
+        // DisplayTotalExpense method removed - expense feature no longer exists
 
     }
 }

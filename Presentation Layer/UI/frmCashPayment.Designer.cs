@@ -325,6 +325,7 @@
             this.txtRielAmount.SelectedText = "";
             this.txtRielAmount.Size = new System.Drawing.Size(200, 36);
             this.txtRielAmount.TabIndex = 2;
+            this.txtRielAmount.TextChanged += new System.EventHandler(this.txtRielAmount_TextChanged);
             // 
             // txtUSDAmount
             // 

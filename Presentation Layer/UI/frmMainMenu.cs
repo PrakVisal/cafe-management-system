@@ -18,6 +18,18 @@ namespace RMS_Project
         public frmMainMenu()
         {
             InitializeComponent();
+            // Hide Users and Logout buttons (login feature removed)
+            btnUsers.Visible = false;
+            btnLogout.Visible = false;
+            // Hide Account label and separator (login feature removed)
+            label1.Visible = false;
+            guna2Separator1.Visible = false;
+            // Hide Finances button (feature removed)
+            btnFinances.Visible = false;
+            // Hide Stocks button (feature removed)
+            btnStocks.Visible = false;
+            // Hide Reports button (feature removed)
+            btnReports.Visible = false;
         }
 
         public static frmMainMenu Instance //add new
@@ -96,8 +108,9 @@ namespace RMS_Project
                 }
                 else
                 {
-                    // If the form is not disposed, bring it to the front
+                    // If the form is not disposed, bring it to the front and refresh data
                     dashboard.BringToFront();
+                    dashboard.RefreshData();
                 }
             }
             catch (Exception ex)
@@ -166,43 +179,10 @@ namespace RMS_Project
             }
         }
 
-        private frmFinance finance;
+        // Finances feature removed
         private void btnFinances_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            try
-            {
-                if (finance == null || finance.IsDisposed)
-                {
-                    // Dispose of the previous form
-                    var oldForm = this.pnlSubForm.Controls[0] as Form;
-                    if (oldForm != null)
-                    {
-                        oldForm.Dispose();
-                    }
-
-                    // Check if the control still exists before trying to remove it
-                    if (this.pnlSubForm.Controls.Count > 0)
-                    {
-                        this.pnlSubForm.Controls.RemoveAt(0);
-                    }
-
-                    finance = new frmFinance() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    pnlSubForm.BringToFront();
-                    this.pnlSubForm.Controls.Add(finance);
-                    this.pnlSubForm.Tag = finance;
-                    finance.Show();
-                }
-                else
-                {
-                    // If the form is not disposed, bring it to the front
-                    finance.BringToFront();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Feature removed
         }
 
         private frmItems items;
@@ -244,128 +224,27 @@ namespace RMS_Project
             }
         }
 
-        private frmReport report;
+        // Reports feature removed
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            try
-            {
-                if (report == null || report.IsDisposed)
-                {
-                    // Dispose of the previous form
-                    var oldForm = this.pnlSubForm.Controls[0] as Form;
-                    if (oldForm != null)
-                    {
-                        oldForm.Dispose();
-                    }
-
-                    // Check if the control still exists before trying to remove it
-                    if (this.pnlSubForm.Controls.Count > 0)
-                    {
-                        this.pnlSubForm.Controls.RemoveAt(0);
-                    }
-
-                    report = new frmReport() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    pnlSubForm.BringToFront();
-                    this.pnlSubForm.Controls.Add(report);
-                    this.pnlSubForm.Tag = report;
-                    report.Show();
-                }
-                else
-                {
-                    // If the form is not disposed, bring it to the front
-                    report.BringToFront();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Feature removed
         }
 
-        private frmStocks stocks;
+        // Stocks feature removed
         private void btnStocks_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            try
-            {
-                if (stocks == null || stocks.IsDisposed)
-                {
-                    // Dispose of the previous form
-                    var oldForm = this.pnlSubForm.Controls[0] as Form;
-                    if (oldForm != null)
-                    {
-                        oldForm.Dispose();
-                    }
-
-                    // Check if the control still exists before trying to remove it
-                    if (this.pnlSubForm.Controls.Count > 0)
-                    {
-                        this.pnlSubForm.Controls.RemoveAt(0);
-                    }
-
-                    stocks = new frmStocks() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    pnlSubForm.BringToFront();
-                    this.pnlSubForm.Controls.Add(stocks);
-                    this.pnlSubForm.Tag = stocks;
-                    stocks.Show();
-                }
-                else
-                {
-                    // If the form is not disposed, bring it to the front
-                    stocks.BringToFront();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Feature removed
         }
 
-        private frmUsers users;
+        // Users and Logout features removed - buttons hidden
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            try
-            {
-                if (users == null || users.IsDisposed)
-                {
-                    // Dispose of the previous form
-                    var oldForm = this.pnlSubForm.Controls[0] as Form;
-                    if (oldForm != null)
-                    {
-                        oldForm.Dispose();
-                    }
-
-                    // Check if the control still exists before trying to remove it
-                    if (this.pnlSubForm.Controls.Count > 0)
-                    {
-                        this.pnlSubForm.Controls.RemoveAt(0);
-                    }
-
-                    users = new frmUsers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    pnlSubForm.BringToFront();
-                    this.pnlSubForm.Controls.Add(users);
-                    this.pnlSubForm.Tag = users;
-                    users.Show();
-                }
-                else
-                {
-                    // If the form is not disposed, bring it to the front
-                    users.BringToFront();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Feature removed
         }
 
-        
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-            this.Close();
+            // Feature removed
         }
     }
 }

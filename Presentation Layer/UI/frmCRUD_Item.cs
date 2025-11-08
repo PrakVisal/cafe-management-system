@@ -65,7 +65,7 @@ namespace RMS_Project
         {
             this.Close();
         }
-       
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             try
@@ -79,21 +79,7 @@ namespace RMS_Project
                     Item item = CreateItem();
                     ItemManager.AddItem(item);
                     MessageBox.Show("Item added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                    byte[] itemImage = ImageConverter.ConvertImageToBytes(ptrImage);
-                    if (cboCategory.SelectedItem.ToString() == "Others")
-                    {
-                        // Create stock entry if category is "Others"
-                        if (CreateStockManager.CreateStockEntry(txtName.Text, decimal.Parse(txtPrice.Text), itemImage))
-                        {
-                            MessageBox.Show("Stock entry created successfully!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to create stock entry.");
-                        }
-                    }
-                    this.Close(); 
+                    this.Close();
                 }
                 else
                 {
@@ -232,33 +218,48 @@ namespace RMS_Project
                     throw new Exception("Error converting image to byte array", ex);
                 }
             }
-        }      
+        }
 
-        private async void btnImage_Click(object sender, EventArgs e)
+        private void btnImage_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"D:\"; // Set initial directory
-            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
-
-            DialogResult result = await Task.Run(() => ofd.ShowDialog(this));
-            if (result == DialogResult.OK)
+            // Ensure this runs on the UI thread
+            if (this.InvokeRequired)
             {
-                try
+                this.Invoke(new Action(() => btnImage_Click(sender, e)));
+                return;
+            }
+
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.InitialDirectory = @"D:\"; // Set initial directory
+                ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
+
+                // ShowDialog must be called on the UI thread
+                DialogResult result = ofd.ShowDialog(this);
+                if (result == DialogResult.OK)
                 {
-                    ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    // Load the image using Image.FromFile to handle potential errors
-                    using (Image img = Image.FromFile(ofd.FileName))
+                    try
                     {
-                        ptrImage.Image = new Bitmap(img);
+                        ptrImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                        // Load the image using Image.FromFile to handle potential errors
+                        using (Image img = Image.FromFile(ofd.FileName))
+                        {
+                            ptrImage.Image = new Bitmap(img);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading image: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening file dialog: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         public class ProductDeletedEventArgs : EventArgs
         {
             public int ProductId { get; }
@@ -285,6 +286,6 @@ namespace RMS_Project
         {
             ProductUpdated?.Invoke(this, e);
         }
-      
+
     }
 }
