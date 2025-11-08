@@ -17,12 +17,32 @@ namespace RMS_Project
             InitializeComponent();
             LoadData();
             LoadCharts();
+            // Refresh dashboard when it becomes visible
+            this.Activated += FrmDashboard_Activated;
+        }
+
+        private void FrmDashboard_Activated(object sender, EventArgs e)
+        {
+            // Refresh data when dashboard form is activated (becomes visible)
+            RefreshData();
+        }
+
+        /// <summary>
+        /// Public method to refresh dashboard data - can be called from other forms
+        /// </summary>
+        public void RefreshData()
+        {
+            LoadData();
+            LoadCharts();
         }
 
         private void LoadData()
         {
-            // Retrieve and display Total Order
-            DisplayTotalOrder();
+            // Retrieve and display Total Order (All Time)
+            DisplayTotalOrderAllTime();
+
+            // Retrieve and display Total Order (This Month)
+            DisplayTotalOrderThisMonth();
 
             // Retrieve and display Total Sale
             DisplayTotalSale();
@@ -107,17 +127,35 @@ namespace RMS_Project
 
         // Pie chart removed - expense feature no longer exists
 
-        private void DisplayTotalOrder()
+        private void DisplayTotalOrderAllTime()
         {
             try
             {
                 int totalOrders = DashboardManager.GetTotalOrders();
                 uC_Total1.lblTitle.Text = "Total Order";
                 uC_Total1.lblValue.Text = totalOrders.ToString();
+                // Set the time period label
+                uC_Total1.TimePeriodLabel.Text = "All Time";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Display Total Order: " + ex.Message);
+                MessageBox.Show("Error Display Total Order All Time: " + ex.Message);
+            }
+        }
+
+        private void DisplayTotalOrderThisMonth()
+        {
+            try
+            {
+                int totalOrdersThisMonth = DashboardManager.GetTotalOrdersThisMonth();
+                uC_Total3.lblTitle.Text = "Total Order";
+                uC_Total3.lblValue.Text = totalOrdersThisMonth.ToString();
+                // Set the time period label
+                uC_Total3.TimePeriodLabel.Text = "This Month";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Display Total Order This Month: " + ex.Message);
             }
         }
 

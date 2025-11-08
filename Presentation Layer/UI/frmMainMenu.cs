@@ -108,8 +108,9 @@ namespace RMS_Project
                 }
                 else
                 {
-                    // If the form is not disposed, bring it to the front
+                    // If the form is not disposed, bring it to the front and refresh data
                     dashboard.BringToFront();
+                    dashboard.RefreshData();
                 }
             }
             catch (Exception ex)

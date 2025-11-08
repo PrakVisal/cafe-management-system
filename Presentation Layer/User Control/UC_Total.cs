@@ -33,5 +33,10 @@ namespace RMS_Project
             get { return lblValue; }
         }
 
+        public Label TimePeriodLabel
+        {
+            get { return lblAllTime; }
+        }
+
     }
 }

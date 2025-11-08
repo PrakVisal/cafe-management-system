@@ -571,7 +571,7 @@
             this.btnCash.Text = "Cash";
             this.btnCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCash.TextOffset = new System.Drawing.Point(0, 20);
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click_1);
+            // btnCash_Click_1 removed - button is hidden, payment opens automatically
             // 
             // guna2Separator1
             // 

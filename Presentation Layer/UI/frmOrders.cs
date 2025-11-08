@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS_Project.Business_Layer;
 using RMS_Project.Presentation_Layer.UI;
+using frmCashPayment = RMS_Project.Presentation_Layer.UI.frmCashPayment;
 using System.Drawing.Printing;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
@@ -31,6 +32,10 @@ namespace RMS_Project
 
             LoadData();
             btnAccount.Visible = false; // Hide account button (login feature removed)
+            
+            // Hide Cash button and payment panel - payment opens automatically
+            btnCash.Visible = false;
+            pnlPayment.Visible = false;
 
         }
 
@@ -179,11 +184,140 @@ namespace RMS_Project
             FormHelper.AccountButton_Click(sender, e);
         }
 
+        private frmCashPayment cashPaymentForm = null;
+        
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            PrintReceipt();
-
+            // Check if cart has items
+            if (pnlCartItem.Controls.Count == 0)
+            {
+                MessageBox.Show("Please add items to cart before placing an order.", "No Items", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            // Automatically open cash payment form
+            cashPaymentForm = new frmCashPayment(lblSubTotal.Text, lblTax.Text,
+                lblGrandTotalDollor.Text, lblGrandTotalRiel.Text);
+            
+            // Show payment form and wait for result
+            if (cashPaymentForm.ShowDialog() == DialogResult.OK)
+            {
+                // Payment validated, now place the order
+                PlaceOrder();
+            }
         }
+        
+        private void PlaceOrder()
+        {
+            try
+            {
+                if (cashPaymentForm == null || !cashPaymentForm.IsPaymentValid)
+                {
+                    MessageBox.Show("Payment validation failed. Please try again.", "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                DateTime orderDate = DateTime.Now;
+                decimal totalRiel = cashPaymentForm.TotalRiel;
+                decimal totalDollar = cashPaymentForm.TotalDollar;
+                decimal chargeRiel = cashPaymentForm.ChangeRiel;
+                decimal chargeDollar = cashPaymentForm.ChangeDollar;
+                
+                // Insert order and get the OrderID
+                int orderId = OrderManager.GetOrder(orderDate, totalRiel, totalDollar, chargeRiel, chargeDollar);
+                
+                // Insert order details if order was successfully created
+                if (orderId > 0)
+                {
+                    InsertOrderDetails(orderId);
+                    
+                    // Update invoice form
+                    if (invoiceForm != null)
+                    {
+                        invoiceForm = GetForm<frmInvoice>();
+                        if (invoiceForm != null)
+                        {
+                            invoiceForm.lblRecievedRiel.Text = "Riel " + cashPaymentForm.ReceivedRiel.ToString("N0");
+                            invoiceForm.lblRecievedDollar.Text = "$" + cashPaymentForm.ReceivedUSD.ToString("0.00");
+                            invoiceForm.lblChange.Text = $"Riel {cashPaymentForm.ChangeRiel:N0} / ${cashPaymentForm.ChangeDollar:F2}";
+                        }
+                    }
+                    
+                    // Refresh dashboard
+                    RefreshDashboard();
+                    
+                    // Print receipt BEFORE clearing cart (so receipt has data)
+                    PrintReceipt();
+                    
+                    // Clear cart after successful order and receipt printed
+                    pnlCartItem.Controls.Clear();
+                    CalculateSubTotal();
+                    
+                    // Update invoice
+                    if (invoiceForm != null)
+                    {
+                        invoiceForm = GetForm<frmInvoice>();
+                        if (invoiceForm != null)
+                        {
+                            invoiceForm.pnlnvoiceItem.Controls.Clear();
+                            invoiceForm.CalculateSubTotal();
+                        }
+                    }
+                    
+                    MessageBox.Show("Order placed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to place order. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error placing order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void InsertOrderDetails(int orderId)
+        {
+            try
+            {
+                // Get all cart items
+                var cartItems = pnlCartItem.Controls.OfType<UC_CartItem>();
+                
+                foreach (var cartItem in cartItems)
+                {
+                    int productId = cartItem.ItemId;
+                    int orderQty = cartItem.TxtAmount;
+                    decimal unitPrice = cartItem.LblPriceText;
+                    decimal amount = unitPrice * orderQty;
+                    
+                    // Insert order detail
+                    OrderManager.InsertOrderDetail(orderId, productId, orderQty, unitPrice, amount);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inserting order details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void RefreshDashboard()
+        {
+            try
+            {
+                // Find the dashboard form and refresh it
+                frmDashboard dashboard = GetForm<frmDashboard>();
+                if (dashboard != null && !dashboard.IsDisposed)
+                {
+                    dashboard.RefreshData();
+                }
+            }
+            catch
+            {
+                // Silently fail if dashboard is not open
+            }
+        }
+        
         private decimal subTotal = 0.00m;
         public void CalculateSubTotal()
         {
@@ -240,32 +374,37 @@ namespace RMS_Project
         {
             string header = Receipt.HeaderReceipt();
             string body = "";
-            foreach (UC_CartItem cartItem in pnlCartItem.Controls)
+            
+            // Calculate subtotal from cart items for receipt
+            decimal receiptSubTotal = 0.00m;
+            
+            // Get all cart items and build receipt body
+            var cartItems = pnlCartItem.Controls.OfType<UC_CartItem>();
+            foreach (UC_CartItem cartItem in cartItems)
             {
+                decimal itemTotal = cartItem.LblPriceText * cartItem.TxtAmount;
+                receiptSubTotal += itemTotal;
+                
                 if (cartItem.LabelName == "BBQ Spicy")
-                    body += $"{cartItem.LabelName}\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{cartItem.LblPriceText * cartItem.TxtAmount}\n";
+                    body += $"{cartItem.LabelName}\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{itemTotal}\n";
                 else
-
-                    body += $"{cartItem.LabelName}\t\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{cartItem.LblPriceText * cartItem.TxtAmount}\n";
+                    body += $"{cartItem.LabelName}\t\t{cartItem.LblPriceText}\t\t{cartItem.TxtAmount}\t{itemTotal}\n";
             }
-            string footer = Receipt.FooterReceipt(subTotal);
+            
+            // Use calculated subtotal for footer
+            string footer = Receipt.FooterReceipt(receiptSubTotal);
             string receiptText = header + "DESCRIPTION\tUNIT PRICE\tQTY\tAMOUNT\n\n" + body + "\n" + footer;
+            
             // Define font and brush
             Font font = new Font("Arial", 20, FontStyle.Bold);
             Brush brush = Brushes.Black;
+            
             // Draw receipt text on the PrintPageEventArgs
             e.Graphics.DrawString(receiptText, font, brush, 50, 50);
         }
        
 
-        private void btnCash_Click_1(object sender, EventArgs e)
-        {
-            ActiveButton(sender);
-            frmCashPayment frmcash = new frmCashPayment(lblSubTotal.Text, lblTax.Text,
-                lblGrandTotalDollor.Text, lblGrandTotalRiel.Text);
-            frmcash.ShowDialog();
-
-        }
+        // Cash button removed - payment form opens automatically when placing order
         frmInvoice invoiceForm = new frmInvoice();
 
         private void btnAll_Click_1(object sender, EventArgs e)
