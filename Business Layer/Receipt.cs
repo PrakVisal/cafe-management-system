@@ -16,7 +16,7 @@ namespace RMS_Project.Business_Layer
         {
             string header = "";
             // Define receipt header
-           return header = "\t\tសង្ក្រានអាយធី-RUPP\n\n" +
+           return header = "\t\tRUPP CAFE\n\n" +
                             $"OrderDate: {DateTime.Now.ToString("dd-MMM-yyyy, hh:mm tt")}\n" +
                             "*************************************************************\n" +
                             "\n\t\tCASH RECEIPT\n" +

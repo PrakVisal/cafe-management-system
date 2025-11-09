@@ -62,7 +62,7 @@
             this.txtSearchProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearchProduct.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearchProduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.txtSearchProduct.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(181)))), ((int)(((byte)(160)))));
             this.txtSearchProduct.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.IconLeft")));
             this.txtSearchProduct.IconLeftOffset = new System.Drawing.Point(10, 0);
@@ -92,8 +92,6 @@
             this.btnAccount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
             this.btnAccount.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(181)))), ((int)(((byte)(160)))));
             this.btnAccount.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.HoverState.Image = global::RMS_Project.Properties.Resources.icons8_male_user_501;
-            this.btnAccount.Image = global::RMS_Project.Properties.Resources.icons8_male_user_502;
             this.btnAccount.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAccount.Location = new System.Drawing.Point(1285, 24);
             this.btnAccount.Name = "btnAccount";
@@ -121,10 +119,10 @@
             this.btnNewItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNewItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNewItem.FillColor = System.Drawing.Color.White;
-            this.btnNewItem.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
             this.btnNewItem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.btnNewItem.Location = new System.Drawing.Point(1347, 110);
+            this.btnNewItem.Location = new System.Drawing.Point(433, 110);
             this.btnNewItem.Name = "btnNewItem";
             this.btnNewItem.Size = new System.Drawing.Size(165, 54);
             this.btnNewItem.TabIndex = 7;
@@ -162,7 +160,7 @@
             this.cboFilterCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFilterCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
             this.cboFilterCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
-            this.cboFilterCategory.Font = new System.Drawing.Font("Poppins", 12F);
+            this.cboFilterCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cboFilterCategory.ForeColor = System.Drawing.Color.Black;
             this.cboFilterCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(92)))), ((int)(((byte)(79)))));
             this.cboFilterCategory.ItemHeight = 40;
@@ -176,10 +174,10 @@
             "Others",
             "Snack",
             "Promotion Set"});
-            this.cboFilterCategory.ItemsAppearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFilterCategory.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFilterCategory.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
             this.cboFilterCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
-            this.cboFilterCategory.ItemsAppearance.SelectedFont = new System.Drawing.Font("Poppins", 12F);
+            this.cboFilterCategory.ItemsAppearance.SelectedFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cboFilterCategory.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black;
             this.cboFilterCategory.Location = new System.Drawing.Point(192, 118);
             this.cboFilterCategory.Name = "cboFilterCategory";

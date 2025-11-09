@@ -48,8 +48,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlPayment = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.btnCash = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,7 +67,6 @@
             this.pnlBanner.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2ContainerControl2.SuspendLayout();
-            this.pnlPayment.SuspendLayout();
             this.guna2ContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +119,7 @@
             this.txtSearchProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearchProduct.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearchProduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.txtSearchProduct.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(181)))), ((int)(((byte)(160)))));
             this.txtSearchProduct.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.IconLeft")));
             this.txtSearchProduct.IconLeftOffset = new System.Drawing.Point(10, 0);
@@ -483,7 +480,6 @@
             // 
             this.guna2ContainerControl2.BorderRadius = 10;
             this.guna2ContainerControl2.Controls.Add(this.btnConfirm);
-            this.guna2ContainerControl2.Controls.Add(this.pnlPayment);
             this.guna2ContainerControl2.Controls.Add(this.guna2Separator1);
             this.guna2ContainerControl2.Controls.Add(this.label10);
             this.guna2ContainerControl2.Controls.Add(this.label9);
@@ -513,7 +509,7 @@
             this.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnConfirm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
             this.btnConfirm.HoverState.ForeColor = System.Drawing.Color.White;
@@ -528,50 +524,6 @@
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Place An Order";
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // pnlPayment
-            // 
-            this.pnlPayment.BackColor = System.Drawing.Color.White;
-            this.pnlPayment.BorderRadius = 10;
-            this.pnlPayment.Controls.Add(this.btnCash);
-            this.pnlPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.pnlPayment.Location = new System.Drawing.Point(110, 305);
-            this.pnlPayment.Name = "pnlPayment";
-            this.pnlPayment.Size = new System.Drawing.Size(294, 90);
-            this.pnlPayment.TabIndex = 4;
-            this.pnlPayment.Text = "guna2ContainerControl3";
-            // 
-            // btnCash
-            // 
-            this.btnCash.Animated = true;
-            this.btnCash.BackColor = System.Drawing.Color.Transparent;
-            this.btnCash.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.btnCash.BorderRadius = 10;
-            this.btnCash.BorderThickness = 2;
-            this.btnCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCash.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCash.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.btnCash.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCash.ForeColor = System.Drawing.Color.Black;
-            this.btnCash.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.btnCash.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnCash.Image = ((System.Drawing.Image)(resources.GetObject("btnCash.Image")));
-            this.btnCash.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCash.ImageOffset = new System.Drawing.Point(50, -15);
-            this.btnCash.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnCash.Location = new System.Drawing.Point(1, 0);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.btnCash.ShadowDecoration.BorderRadius = 10;
-            this.btnCash.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.btnCash.Size = new System.Drawing.Size(147, 91);
-            this.btnCash.TabIndex = 11;
-            this.btnCash.Text = "Cash";
-            this.btnCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCash.TextOffset = new System.Drawing.Point(0, 20);
-            // btnCash_Click_1 removed - button is hidden, payment opens automatically
             // 
             // guna2Separator1
             // 
@@ -745,7 +697,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrders";
             this.Text = "frmOrders";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrders_FormClosed);
             this.panel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -754,7 +705,6 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2ContainerControl2.ResumeLayout(false);
             this.guna2ContainerControl2.PerformLayout();
-            this.pnlPayment.ResumeLayout(false);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -790,8 +740,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblGrandTotalDollor;
-        private Guna.UI2.WinForms.Guna2ContainerControl pnlPayment;
-        private Guna.UI2.WinForms.Guna2Button btnCash;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label10;

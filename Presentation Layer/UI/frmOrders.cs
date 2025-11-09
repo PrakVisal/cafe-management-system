@@ -34,8 +34,8 @@ namespace RMS_Project
             btnAccount.Visible = false; // Hide account button (login feature removed)
             
             // Hide Cash button and payment panel - payment opens automatically
-            btnCash.Visible = false;
-            pnlPayment.Visible = false;
+            // btnCash.Visible = false; // Control removed
+            // pnlPayment.Visible = false; // Control removed
 
         }
 
@@ -442,6 +442,11 @@ namespace RMS_Project
                 
             }
             
-        }   
+        }
+
+        private void pnlPayment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

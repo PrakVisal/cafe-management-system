@@ -334,12 +334,6 @@
     <Compile Include="Presentation Layer\UI\frmItems.Designer.cs">
       <DependentUpon>frmItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\UI\frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\UI\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation Layer\UI\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,9 +401,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmItems.resx">
       <DependentUpon>frmItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\UI\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\UI\frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
@@ -574,7 +565,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\n_cafe.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\n_cafe.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\QR_USD.png" />
   </ItemGroup>

@@ -246,5 +246,10 @@ namespace RMS_Project
         {
             // Feature removed
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
