@@ -58,7 +58,7 @@ namespace RMS_Project
             }
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             // Clear the flow panel first
             flowLayoutPanel2.Controls.Clear();
@@ -117,7 +117,7 @@ namespace RMS_Project
         private void btnFrappes_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            FilterItemsByCategory("Beverages");
+            FilterItemsByCategory("Frappes");
         }
 
         private void btnJuices_Click(object sender, EventArgs e)
@@ -138,6 +138,12 @@ namespace RMS_Project
             FilterItemsByCategory("Breakfast");
         }
 
+        private void btnMeat_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+            FilterItemsByCategory("Breakfast");
+        }
+
         private void btnLunch_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
@@ -153,7 +159,7 @@ namespace RMS_Project
         private void btnPromotionSet_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-            FilterItemsByCategory("Promotion Set");
+            FilterItemsByCategory("PromotionSet");
         }
         
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)

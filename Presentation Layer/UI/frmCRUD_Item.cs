@@ -79,7 +79,6 @@ namespace RMS_Project
                     Item item = CreateItem();
                     ItemManager.AddItem(item);
                     MessageBox.Show("Item added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
                 else
                 {
@@ -87,17 +86,32 @@ namespace RMS_Project
                     ItemManager.UpdateItem(item);
                     MessageBox.Show("Item updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                this.Close(); return;
+                
+                // Refresh parent forms before closing
+                RefreshParentForms();
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while saving the item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            frmItems parentForm = Application.OpenForms["frmItems"] as frmItems;
-            parentForm?.ReloadItemControls();
-            this.Close();
-
+        }
+        
+        private void RefreshParentForms()
+        {
+            // Refresh frmItems if it's open
+            frmItems itemsForm = Application.OpenForms.OfType<frmItems>().FirstOrDefault();
+            if (itemsForm != null)
+            {
+                itemsForm.ReloadItemControls();
+            }
+            
+            // Refresh frmOrders if it's open
+            frmOrders ordersForm = Application.OpenForms.OfType<frmOrders>().FirstOrDefault();
+            if (ordersForm != null)
+            {
+                ordersForm.LoadData();
+            }
         }
         private Item CreateItem()
         {
@@ -155,8 +169,8 @@ namespace RMS_Project
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
-                "Are you sure you want to delete this user?",
-                "Delete User",
+                "Are you sure you want to delete this item?",
+                "Delete Item",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
@@ -165,12 +179,15 @@ namespace RMS_Project
                 try
                 {
                     ItemManager.DeleteItem(item.ItemID);
-                    MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Item deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    // Refresh parent forms before closing
+                    RefreshParentForms();
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurred while deleting the user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred while deleting the item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -178,9 +195,9 @@ namespace RMS_Project
         private bool ValidateInput()
         {
 
-            if (string.IsNullOrWhiteSpace(txtName.Text) || cboCategory.SelectedIndex == 0 || string.IsNullOrWhiteSpace(txtPrice.Text) || string.IsNullOrWhiteSpace(txtDescription.Text) || ptrImage.Image == null)
+            if (string.IsNullOrWhiteSpace(txtName.Text) || cboCategory.SelectedIndex == 0 || string.IsNullOrWhiteSpace(txtPrice.Text) || ptrImage.Image == null)
             {
-                MessageBox.Show("Please fill all fields and select a category.");
+                MessageBox.Show("Please fill all required fields (Name, Price, Category, and Image). Description is optional.");
                 return false;
             }
 

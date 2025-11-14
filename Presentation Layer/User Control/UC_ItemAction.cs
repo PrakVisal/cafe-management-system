@@ -27,7 +27,7 @@ namespace RMS_Project
             ItemCategory = item.ItemCategory;
             ItemName = item.ItemName;
             lblItemName.Text = item.ItemName;
-            lblPrice.Text = item.ItemPrice.ToString();
+            lblPrice.Text = "$" + item.ItemPrice.ToString("F2");
             lblDescription.Text = item.ItemDescription;
             
 

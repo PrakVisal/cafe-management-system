@@ -69,9 +69,15 @@ namespace RMS_Project
         {
             try
             {
-                frmDashboard dashboard = new frmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                // Activate Dashboard button on startup
+                ActiveButton(btnDashboard);
+
+                // Create and show dashboard
+                dashboard = new frmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                pnlSubForm.BringToFront();
                 pnlSubForm.Controls.Add(dashboard);
-                //dashboard.Show();
+                pnlSubForm.Tag = dashboard;
+                dashboard.Show();
             }
             catch (Exception ex)
             {

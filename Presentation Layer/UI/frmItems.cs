@@ -24,7 +24,7 @@ namespace RMS_Project
     {
         private IStrategyItem filterStrategy;
         public frmItems()
-        {            
+        {
             InitializeComponent();
             LoadData();
             cboFilterCategory.SelectedIndex = 0;
@@ -45,7 +45,7 @@ namespace RMS_Project
         }
         private void LoadData()
         {
-            
+
             pnlItem.Controls.Clear();
 
             // Get the list of users from the database
@@ -55,13 +55,13 @@ namespace RMS_Project
             if (items != null && items.Any())
             {
                 foreach (Item item in items)
-                {                 
-                    UC_ItemAction uc = new UC_ItemAction(item);                  
+                {
+                    UC_ItemAction uc = new UC_ItemAction(item);
                     pnlItem.Controls.Add(uc);
                 }
             }
             else
-            {               
+            {
                 MessageBox.Show("No items found in the database.");
             }
         }
@@ -69,7 +69,7 @@ namespace RMS_Project
         {
             LoadData();
         }
-        
+
 
         private void txtSearchProduct_TextChanged_1(object sender, EventArgs e)
         {
@@ -85,13 +85,30 @@ namespace RMS_Project
             string selectedCategory = cboFilterCategory.SelectedItem.ToString();
             if (selectedCategory == "All")
             {
-                filterStrategy = null; 
+                filterStrategy = null;
             }
             else
             {
                 filterStrategy = new CategoryFilterStrategy();
+                // Normalize category name to match database values
+                if (selectedCategory == "Promotion Set")
+                {
+                    selectedCategory = "PromotionSet";
+                }
+                else if (selectedCategory == "Frappe")
+                {
+                    selectedCategory = "Frappes";
+                }
+                else if (selectedCategory == "Juice")
+                {
+                    selectedCategory = "Juices";
+                }
+                else if (selectedCategory == "Snack")
+                {
+                    selectedCategory = "Snacks";
+                }
             }
-           
+
             FilterItems(selectedCategory);
 
         }

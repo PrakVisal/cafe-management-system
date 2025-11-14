@@ -41,13 +41,14 @@ namespace RMS_Project
             // Retrieve and display Total Order (All Time)
             DisplayTotalOrderAllTime();
 
+            // Retrieve and display Total Sale (All Time)
+            DisplayTotalSale();
+
             // Retrieve and display Total Order (This Month)
             DisplayTotalOrderThisMonth();
 
-            // Retrieve and display Total Sale
-            DisplayTotalSale();
-
-            // Total Expense feature removed - no longer needed
+            // Retrieve and display Total Sale (This Month)
+            DisplayTotalSaleThisMonth();
         }
 
         private void LoadCharts()
@@ -65,22 +66,36 @@ namespace RMS_Project
         {
             try
             {
-                DataTable dataTable = DashboardManager.ExecuteQuery("SELECT MONTH(OrderDate) AS Month, COUNT(*) AS TotalOrders FROM tbOrder GROUP BY MONTH(OrderDate)");
+                DataTable dataTable = DashboardManager.GetTotalOrdersByMonth();
 
                 if (dataTable != null && dataTable.Rows.Count > 0)
                 {
                     chart1.Series.Clear(); // Clear existing series
                     chart1.Series.Add("TotalOrders"); // Add new series
-                    chart1.Series["TotalOrders"].XValueMember = "Month";
-                    chart1.Series["TotalOrders"].YValueMembers = "TotalOrders";
-                    chart1.DataSource = dataTable;
-                    chart1.DataBind();
+                    chart1.Series["TotalOrders"].ChartType = SeriesChartType.Column;
 
-                    // Add label for chart1
+                    // Clear existing data points
+                    chart1.Series["TotalOrders"].Points.Clear();
+
+                    // Manually add data points to ensure all months are shown
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        int month = Convert.ToInt32(row["Month"]);
+                        int totalOrders = Convert.ToInt32(row["TotalOrders"]);
+                        chart1.Series["TotalOrders"].Points.AddXY(month, totalOrders);
+                    }
+
+                    // Configure chart appearance
                     chart1.ChartAreas[0].AxisX.Title = "Month";
                     chart1.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Poppins", 10);
                     chart1.ChartAreas[0].AxisY.Title = "Total Orders";
                     chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Poppins", 10);
+
+                    // Set X-axis to show all 12 months
+                    chart1.ChartAreas[0].AxisX.Minimum = 1;
+                    chart1.ChartAreas[0].AxisX.Maximum = 12;
+                    chart1.ChartAreas[0].AxisX.Interval = 1;
+                    chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Number;
                 }
                 else
                 {
@@ -97,22 +112,36 @@ namespace RMS_Project
         {
             try
             {
-                DataTable dataTable = DashboardManager.ExecuteQuery("SELECT MONTH(OrderDate) AS Month, SUM(TotalDollar) + SUM(TotalRiel)/4100  AS TotalSales FROM tbOrder GROUP BY MONTH(OrderDate)");
+                DataTable dataTable = DashboardManager.GetTotalSalesByMonth();
 
                 if (dataTable != null && dataTable.Rows.Count > 0)
                 {
                     chart2.Series.Clear(); // Clear existing series
                     chart2.Series.Add("TotalSales"); // Add new series
-                    chart2.Series["TotalSales"].XValueMember = "Month";
-                    chart2.Series["TotalSales"].YValueMembers = "TotalSales";
-                    chart2.DataSource = dataTable;
-                    chart2.DataBind();
+                    chart2.Series["TotalSales"].ChartType = SeriesChartType.Column;
 
-                    // Add label for chart2
+                    // Clear existing data points
+                    chart2.Series["TotalSales"].Points.Clear();
+
+                    // Manually add data points to ensure all months are shown
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        int month = Convert.ToInt32(row["Month"]);
+                        decimal totalSales = Convert.ToDecimal(row["TotalSales"]);
+                        chart2.Series["TotalSales"].Points.AddXY(month, totalSales);
+                    }
+
+                    // Configure chart appearance
                     chart2.ChartAreas[0].AxisX.Title = "Month";
                     chart2.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Poppins", 10);
                     chart2.ChartAreas[0].AxisY.Title = "Total Sales($)";
                     chart2.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Poppins", 10);
+
+                    // Set X-axis to show all 12 months
+                    chart2.ChartAreas[0].AxisX.Minimum = 1;
+                    chart2.ChartAreas[0].AxisX.Maximum = 12;
+                    chart2.ChartAreas[0].AxisX.Interval = 1;
+                    chart2.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Number;
                 }
                 else
                 {
@@ -166,10 +195,26 @@ namespace RMS_Project
                 decimal totalSale = DashboardManager.GetTotalSale();
                 uC_Total2.lblTitle.Text = "Total Sale";
                 uC_Total2.lblValue.Text = totalSale.ToString("C");
+                uC_Total2.TimePeriodLabel.Text = "All Time";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Display Total Sale: " + ex.Message);
+            }
+        }
+
+        private void DisplayTotalSaleThisMonth()
+        {
+            try
+            {
+                decimal totalSaleThisMonth = DashboardManager.GetTotalSaleThisMonth();
+                uC_Total4.lblTitle.Text = "Total Sale";
+                uC_Total4.lblValue.Text = totalSaleThisMonth.ToString("C");
+                uC_Total4.TimePeriodLabel.Text = "This Month";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Display Total Sale This Month: " + ex.Message);
             }
         }
 

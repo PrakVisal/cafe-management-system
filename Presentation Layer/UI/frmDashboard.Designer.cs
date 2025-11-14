@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.uC_Total4 = new RMS_Project.UC_Total();
             this.uC_Total3 = new RMS_Project.UC_Total();
             this.uC_Total2 = new RMS_Project.UC_Total();
             this.uC_Total1 = new RMS_Project.UC_Total();
@@ -73,7 +74,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(90, 357);
+            this.chart1.Location = new System.Drawing.Point(90, 300);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -92,7 +93,7 @@
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(90, 701);
+            this.chart2.Location = new System.Drawing.Point(90, 644);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series2.ChartArea = "ChartArea1";
@@ -103,12 +104,22 @@
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chart2";
             // 
+            // uC_Total4
+            // 
+            this.uC_Total4.BackColor = System.Drawing.Color.Transparent;
+            this.uC_Total4.Location = new System.Drawing.Point(1200, 106);
+            this.uC_Total4.Name = "uC_Total4";
+            this.uC_Total4.Size = new System.Drawing.Size(350, 169);
+            this.uC_Total4.TabIndex = 1;
+            this.uC_Total4.Title = "Total Sale";
+            this.uC_Total4.Value = "$0.00";
+            // 
             // uC_Total3
             // 
             this.uC_Total3.BackColor = System.Drawing.Color.Transparent;
-            this.uC_Total3.Location = new System.Drawing.Point(983, 106);
+            this.uC_Total3.Location = new System.Drawing.Point(825, 106);
             this.uC_Total3.Name = "uC_Total3";
-            this.uC_Total3.Size = new System.Drawing.Size(410, 169);
+            this.uC_Total3.Size = new System.Drawing.Size(350, 169);
             this.uC_Total3.TabIndex = 1;
             this.uC_Total3.Title = "Total Order";
             this.uC_Total3.Value = "24";
@@ -116,19 +127,19 @@
             // uC_Total2
             // 
             this.uC_Total2.BackColor = System.Drawing.Color.Transparent;
-            this.uC_Total2.Location = new System.Drawing.Point(525, 106);
+            this.uC_Total2.Location = new System.Drawing.Point(450, 106);
             this.uC_Total2.Name = "uC_Total2";
-            this.uC_Total2.Size = new System.Drawing.Size(410, 169);
+            this.uC_Total2.Size = new System.Drawing.Size(350, 169);
             this.uC_Total2.TabIndex = 1;
-            this.uC_Total2.Title = "Total Order";
-            this.uC_Total2.Value = "24";
+            this.uC_Total2.Title = "Total Sale";
+            this.uC_Total2.Value = "$0.00";
             // 
             // uC_Total1
             // 
             this.uC_Total1.BackColor = System.Drawing.Color.Transparent;
             this.uC_Total1.Location = new System.Drawing.Point(75, 106);
             this.uC_Total1.Name = "uC_Total1";
-            this.uC_Total1.Size = new System.Drawing.Size(410, 169);
+            this.uC_Total1.Size = new System.Drawing.Size(350, 169);
             this.uC_Total1.TabIndex = 1;
             this.uC_Total1.Title = "Total Order";
             this.uC_Total1.Value = "24";
@@ -141,6 +152,7 @@
             this.ClientSize = new System.Drawing.Size(1584, 1041);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
+            this.Controls.Add(this.uC_Total4);
             this.Controls.Add(this.uC_Total3);
             this.Controls.Add(this.uC_Total2);
             this.Controls.Add(this.uC_Total1);
@@ -163,6 +175,7 @@
         private UC_Total uC_Total1;
         private UC_Total uC_Total2;
         private UC_Total uC_Total3;
+        private UC_Total uC_Total4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }

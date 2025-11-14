@@ -32,7 +32,6 @@
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.btnUC_Item = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.ptrImage = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -45,7 +44,6 @@
             this.guna2ContainerControl1.BorderRadius = 10;
             this.guna2ContainerControl1.Controls.Add(this.btnUC_Item);
             this.guna2ContainerControl1.Controls.Add(this.lblDescription);
-            this.guna2ContainerControl1.Controls.Add(this.lblStatus);
             this.guna2ContainerControl1.Controls.Add(this.lblPrice);
             this.guna2ContainerControl1.Controls.Add(this.lblItemName);
             this.guna2ContainerControl1.Controls.Add(this.ptrImage);
@@ -88,17 +86,6 @@
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = resources.GetString("lblDescription.Text");
             // 
-            // label2
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.White;
-            this.lblStatus.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblStatus.Location = new System.Drawing.Point(214, 103);
-            this.lblStatus.Name = "label2";
-            this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblStatus.Size = new System.Drawing.Size(121, 36);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Status";
             // 
             // label1
             // 
@@ -143,6 +130,8 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2ContainerControl1);
             this.Margin = new System.Windows.Forms.Padding(10);
+            this.MaximumSize = new System.Drawing.Size(338, 152);
+            this.MinimumSize = new System.Drawing.Size(338, 152);
             this.Name = "UC_ItemAction";
             this.Size = new System.Drawing.Size(338, 152);
             this.guna2ContainerControl1.ResumeLayout(false);
@@ -156,7 +145,6 @@
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblItemName;
         private Guna.UI2.WinForms.Guna2PictureBox ptrImage;

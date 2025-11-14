@@ -37,7 +37,9 @@
             this.pnlItem = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cboFilterCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +69,8 @@
             this.txtSearchProduct.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.IconLeft")));
             this.txtSearchProduct.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.txtSearchProduct.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearchProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProduct.Location = new System.Drawing.Point(100, 24);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchProduct.Name = "txtSearchProduct";
@@ -91,6 +95,7 @@
             this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
             this.btnAccount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
             this.btnAccount.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(181)))), ((int)(((byte)(160)))));
+            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAccount.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAccount.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAccount.Location = new System.Drawing.Point(1285, 24);
@@ -103,48 +108,28 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(95, 204);
+            this.guna2Separator1.Location = new System.Drawing.Point(95, 70);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(1381, 11);
             this.guna2Separator1.TabIndex = 5;
             // 
-            // btnNewItem
+            // panel2
             // 
-            this.btnNewItem.Animated = true;
-            this.btnNewItem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
-            this.btnNewItem.BorderRadius = 10;
-            this.btnNewItem.BorderThickness = 2;
-            this.btnNewItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNewItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNewItem.FillColor = System.Drawing.Color.White;
-            this.btnNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.btnNewItem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
-            this.btnNewItem.Location = new System.Drawing.Point(433, 110);
-            this.btnNewItem.Name = "btnNewItem";
-            this.btnNewItem.Size = new System.Drawing.Size(165, 54);
-            this.btnNewItem.TabIndex = 7;
-            this.btnNewItem.Text = "New Item";
-            this.btnNewItem.Click += new System.EventHandler(this.btnNewItem_Click);
-            // 
-            // pnlItem
-            // 
-            this.pnlItem.AutoScroll = true;
-            this.pnlItem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlItem.Location = new System.Drawing.Point(0, 167);
-            this.pnlItem.Margin = new System.Windows.Forms.Padding(0, 30, 30, 0);
-            this.pnlItem.Name = "pnlItem";
-            this.pnlItem.Padding = new System.Windows.Forms.Padding(90, 0, 0, 0);
-            this.pnlItem.Size = new System.Drawing.Size(1584, 874);
-            this.pnlItem.TabIndex = 8;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.cboFilterCategory);
+            this.panel2.Controls.Add(this.btnNewItem);
+            this.panel2.Controls.Add(this.guna2Separator1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 107);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1584, 80);
+            this.panel2.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(95, 129);
+            this.label1.Location = new System.Drawing.Point(95, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 10;
@@ -179,7 +164,7 @@
             this.cboFilterCategory.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(207)))));
             this.cboFilterCategory.ItemsAppearance.SelectedFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cboFilterCategory.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Black;
-            this.cboFilterCategory.Location = new System.Drawing.Point(192, 118);
+            this.cboFilterCategory.Location = new System.Drawing.Point(192, 11);
             this.cboFilterCategory.Name = "cboFilterCategory";
             this.cboFilterCategory.Size = new System.Drawing.Size(213, 46);
             this.cboFilterCategory.StartIndex = 0;
@@ -187,23 +172,53 @@
             this.cboFilterCategory.Tag = "Role";
             this.cboFilterCategory.SelectedIndexChanged += new System.EventHandler(this.cboFilterCategory_SelectedIndexChanged);
             // 
+            // btnNewItem
+            // 
+            this.btnNewItem.Animated = true;
+            this.btnNewItem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.btnNewItem.BorderRadius = 10;
+            this.btnNewItem.BorderThickness = 2;
+            this.btnNewItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNewItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNewItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNewItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNewItem.FillColor = System.Drawing.Color.White;
+            this.btnNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
+            this.btnNewItem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
+            this.btnNewItem.Location = new System.Drawing.Point(433, 3);
+            this.btnNewItem.Name = "btnNewItem";
+            this.btnNewItem.Size = new System.Drawing.Size(165, 54);
+            this.btnNewItem.TabIndex = 7;
+            this.btnNewItem.Text = "New Item";
+            this.btnNewItem.Click += new System.EventHandler(this.btnNewItem_Click);
+            // 
+            // pnlItem
+            // 
+            this.pnlItem.AutoScroll = true;
+            this.pnlItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlItem.Location = new System.Drawing.Point(0, 187);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(0, 30, 30, 0);
+            this.pnlItem.Name = "pnlItem";
+            this.pnlItem.Padding = new System.Windows.Forms.Padding(90, 20, 0, 0);
+            this.pnlItem.Size = new System.Drawing.Size(1584, 854);
+            this.pnlItem.TabIndex = 8;
+            // 
             // frmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 1041);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboFilterCategory);
             this.Controls.Add(this.pnlItem);
-            this.Controls.Add(this.btnNewItem);
-            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmItems";
             this.Text = "frmItems";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -217,5 +232,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearchProduct;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cboFilterCategory;
+        private System.Windows.Forms.Panel panel2;
     }
 }

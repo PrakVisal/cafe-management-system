@@ -87,7 +87,7 @@ namespace RMS_Project.Business_Layer
             List<Item> items = new List<Item>();
             string query = "SELECT p.ProductID, p.ProductName, p.Price, p.Description, p.Image, c.FoodCategoryName " +
                        "FROM tbProduct p " +
-                       "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID where p.FoodCategoryID != 7";
+                       "INNER JOIN tbFoodCategory c ON p.FoodCategoryID = c.FoodCategoryID";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -138,14 +138,6 @@ namespace RMS_Project.Business_Layer
                 "FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategoryName), " +
                 "Image = @Image WHERE ProductID = @ProductID";
 
-
-            string stockCountQuery = "UPDATE tbStockCount " +
-                "SET StockName = @ProductName, UnitPrice = @Price, Photo = @Image," +
-                " FoodCategoryID = (SELECT FoodCategoryID FROM tbFoodCategory WHERE FoodCategoryName = @FoodCategoryName)," +
-                " FoodCategory = @FoodCategoryName " +
-                "WHERE FoodCategoryID = 7";
-
-
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 using (SqlCommand productCommand = new SqlCommand(productQuery, connection))
@@ -159,46 +151,18 @@ namespace RMS_Project.Business_Layer
 
                     productCommand.ExecuteNonQuery();
                 }
-
-
-                using (SqlCommand stockCountCommand = new SqlCommand(stockCountQuery, connection))
-                {
-
-                    stockCountCommand.Parameters.AddWithValue("@ProductName", item.ItemName);
-                    stockCountCommand.Parameters.AddWithValue("@Price", item.ItemPrice);
-                    stockCountCommand.Parameters.AddWithValue("@FoodCategoryName", item.ItemCategory);
-                    stockCountCommand.Parameters.AddWithValue("@Image", item.itemImage);
-
-                    stockCountCommand.ExecuteNonQuery();
-                }
-
-
-
             }
         }
         public static void DeleteItem(int itemID)
         {
-            string query = "DELETE FROM tbProduct WHERE ProductID = @ProductID";
-            string deleteStockQuery = "DELETE FROM tbStockCount WHERE StockName = " +
-                "(SELECT ProductName FROM tbProduct WHERE ProductID = @ProductID)";
-
             using (SqlConnection connection = DBConnection.GetConnection())
             {
-                using (SqlCommand deleteStockCommand = new SqlCommand(deleteStockQuery, connection))
-                {
-                    MessageBox.Show("Reach Command delete tbStockCount");
-                    deleteStockCommand.Parameters.AddWithValue("@ProductID", itemID);
-                    deleteStockCommand.ExecuteNonQuery();
-                }
-
+                string query = "DELETE FROM tbProduct WHERE ProductID = @ProductID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    MessageBox.Show("Reach Command delete tbProduct");
                     command.Parameters.AddWithValue("@ProductID", itemID);
                     command.ExecuteNonQuery();
                 }
-
-
             }
         }
 

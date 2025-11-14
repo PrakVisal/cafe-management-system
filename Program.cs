@@ -27,7 +27,7 @@ namespace RMS_Project
                 mainMenu.StartPosition = FormStartPosition.CenterScreen;
             }
 
-            // Create and configure invoice form
+            // Create and configure invoice form (hidden initially, shown when needed)
             frmInvoice invoiceForm = new frmInvoice();
             if (secondaryScreen != null)
             {
@@ -46,9 +46,14 @@ namespace RMS_Project
                 }
             }
 
-            // Show both forms on the main UI thread
+            // Show main menu (Dashboard) first and bring to front
             mainMenu.Show();
+            mainMenu.BringToFront();
+            mainMenu.Activate();
+
+            // Initialize invoice form but keep it hidden (will be shown when orders are placed)
             invoiceForm.Show();
+            invoiceForm.Hide();
 
             // Run the application message loop on the main thread
             Application.Run();

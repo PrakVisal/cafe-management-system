@@ -94,7 +94,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtName.PlaceholderText = "Enter Item Name";
+            this.txtName.PlaceholderText = "e.g., Cappuccino, Latte, Burger";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(264, 43);
             this.txtName.TabIndex = 1;
@@ -143,7 +143,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtPrice.PlaceholderText = "Enter Item Name";
+            this.txtPrice.PlaceholderText = "Enter Price (e.g., 5.50)";
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(264, 43);
             this.txtPrice.TabIndex = 3;
@@ -219,7 +219,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtDescription.PlaceholderText = "Description";
+            this.txtDescription.PlaceholderText = "Enter item description (optional)";
             this.txtDescription.SelectedText = "";
             this.txtDescription.Size = new System.Drawing.Size(264, 85);
             this.txtDescription.TabIndex = 4;
@@ -392,7 +392,7 @@
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.PasswordChar = '\0';
             this.txtProductID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtProductID.PlaceholderText = "Enter Item Name";
+            this.txtProductID.PlaceholderText = "Auto-generated";
             this.txtProductID.SelectedText = "";
             this.txtProductID.Size = new System.Drawing.Size(264, 43);
             this.txtProductID.TabIndex = 2;

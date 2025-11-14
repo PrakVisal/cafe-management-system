@@ -98,6 +98,7 @@
             this.btnAccount.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAccount.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
+            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAccount.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAccount.Location = new System.Drawing.Point(1337, 32);
             this.btnAccount.Name = "btnAccount";
@@ -124,6 +125,8 @@
             this.txtSearchProduct.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.IconLeft")));
             this.txtSearchProduct.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.txtSearchProduct.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearchProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProduct.Location = new System.Drawing.Point(42, 32);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchProduct.Name = "txtSearchProduct";
@@ -224,9 +227,10 @@
             this.btnMeat.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btnMeat.Size = new System.Drawing.Size(220, 81);
             this.btnMeat.TabIndex = 7;
-            this.btnMeat.Text = "Meat";
+            this.btnMeat.Text = "Breakfast";
             this.btnMeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMeat.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnMeat.Click += new System.EventHandler(this.btnMeat_Click);
             // 
             // btnAll
             // 
@@ -516,6 +520,8 @@
             this.btnConfirm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnConfirm.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnConfirm.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirm.Location = new System.Drawing.Point(34, 407);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnConfirm.Name = "btnConfirm";
@@ -688,7 +694,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1584, 1041);
             this.Controls.Add(this.guna2Panel3);

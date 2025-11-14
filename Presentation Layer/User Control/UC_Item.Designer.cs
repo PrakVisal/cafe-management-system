@@ -146,6 +146,8 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2ContainerControl1);
             this.Margin = new System.Windows.Forms.Padding(10);
+            this.MaximumSize = new System.Drawing.Size(300, 152);
+            this.MinimumSize = new System.Drawing.Size(300, 152);
             this.Name = "UC_Item";
             this.Size = new System.Drawing.Size(300, 152);
             this.guna2ContainerControl1.ResumeLayout(false);
