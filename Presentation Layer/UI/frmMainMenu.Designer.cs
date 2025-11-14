@@ -396,7 +396,6 @@
             this.Controls.Add(this.pnlSubForm);
             this.Controls.Add(this.pnlNavigation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = true;
             this.MinimizeBox = true;

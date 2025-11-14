@@ -95,4 +95,4 @@ C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Ma
 C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.exe
 C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.pdb
 C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\RMS Project.pdb
-C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\obj\Debug\RMS Project.exe.config
+C:\Users\ADMIN\Downloads\Telegram Desktop\Cafe Managment System- Project\Cafe Managment System- Project\RMS-Project\bin\Debug\Resources\n_cafe.ico

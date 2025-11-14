@@ -69,6 +69,13 @@ namespace RMS_Project
         {
             try
             {
+                // Load icon from file (copied to output directory)
+                string iconPath = System.IO.Path.Combine(Application.StartupPath, "Resources", "n_cafe.ico");
+                if (System.IO.File.Exists(iconPath))
+                {
+                    this.Icon = new System.Drawing.Icon(iconPath);
+                }
+
                 // Activate Dashboard button on startup
                 ActiveButton(btnDashboard);
 
