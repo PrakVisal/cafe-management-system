@@ -34,13 +34,80 @@ namespace RMS_Project
         private void InitializeUI()
         {
             lblItemName.Text = item.ItemName;
-            lblPrice.Text = item.ItemPrice.ToString();
+            lblPrice.Text = item.ItemPrice.ToString("F2");
             lblDescription.Text = item.ItemDescription;
             Category = item.ItemCategory;
 
             ptrImage.Image = item.itemImage != null
                 ? ImageConverter.ConvertByteArrayToImage(item.itemImage)
                 : Properties.Resources.no_image;
+
+            // Adjust price badge size dynamically
+            AdjustPriceBadgeSize();
+
+            // Setup cool hover animations
+            SetupHoverAnimations();
+        }
+
+        private void AdjustPriceBadgeSize()
+        {
+            // Measure the text width
+            using (Graphics g = this.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString("$" + lblPrice.Text, lblPrice.Font);
+                int badgeWidth = (int)textSize.Width + 16; // Add padding
+                if (badgeWidth < 80) badgeWidth = 80; // Minimum width
+                if (badgeWidth > 120) badgeWidth = 120; // Maximum width
+                priceBadge.Size = new Size(badgeWidth, 32);
+            }
+        }
+
+        private void SetupHoverAnimations()
+        {
+            // Attach hover events to button (since it covers the entire card)
+            btnUC_Item.MouseEnter += (s, e) =>
+            {
+                AnimateCardHover(true);
+            };
+
+            btnUC_Item.MouseLeave += (s, e) =>
+            {
+                AnimateCardHover(false);
+            };
+
+            // Also attach to UserControl for edge cases
+            this.MouseEnter += (s, e) =>
+            {
+                AnimateCardHover(true);
+            };
+
+            this.MouseLeave += (s, e) =>
+            {
+                AnimateCardHover(false);
+            };
+        }
+
+        private void AnimateCardHover(bool isHover)
+        {
+            if (isHover)
+            {
+                // Cool hover effect - lift and glow
+                guna2ContainerControl1.ShadowDecoration.Depth = 25;
+                guna2ContainerControl1.ShadowDecoration.Shadow = new Padding(0, -3, 0, 12);
+                guna2ContainerControl1.BorderColor = Color.FromArgb(75, 103, 89);
+                guna2ContainerControl1.BorderThickness = 2;
+                guna2ContainerControl1.FillColor = Color.White;
+            }
+            else
+            {
+                // Reset to normal state
+                guna2ContainerControl1.ShadowDecoration.Depth = 12;
+                guna2ContainerControl1.ShadowDecoration.Shadow = new Padding(0, 0, 0, 6);
+                guna2ContainerControl1.BorderColor = Color.FromArgb(240, 240, 240);
+                guna2ContainerControl1.BorderThickness = 1;
+                guna2ContainerControl1.FillColor = Color.White;
+            }
+            guna2ContainerControl1.Invalidate();
         }
         private void btnUC_Item_Click(object sender, EventArgs e)
         {

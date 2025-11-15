@@ -85,17 +85,46 @@ namespace RMS_Project
                         chart1.Series["TotalOrders"].Points.AddXY(month, totalOrders);
                     }
 
-                    // Configure chart appearance
+                    // Configure chart appearance - Modern Gen Z Style
+                    chart1.ChartAreas[0].BackColor = System.Drawing.Color.White;
+                    chart1.ChartAreas[0].BorderColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                    chart1.ChartAreas[0].BorderWidth = 1;
+                    chart1.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+
+                    // Modern axis styling
                     chart1.ChartAreas[0].AxisX.Title = "Month";
-                    chart1.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Poppins", 10);
+                    chart1.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+                    chart1.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.FromArgb(60, 60, 60);
+                    chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.FromArgb(220, 220, 220);
+                    chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(245, 245, 245);
+                    chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 1;
+                    chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+
                     chart1.ChartAreas[0].AxisY.Title = "Total Orders";
-                    chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Poppins", 10);
+                    chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+                    chart1.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.FromArgb(60, 60, 60);
+                    chart1.ChartAreas[0].AxisY.LineColor = System.Drawing.Color.FromArgb(220, 220, 220);
+                    chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(245, 245, 245);
+                    chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 1;
+                    chart1.ChartAreas[0].AxisY.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    chart1.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+
+                    // Modern bar styling with gradient
+                    chart1.Series["TotalOrders"].Color = System.Drawing.Color.FromArgb(75, 103, 89);
+                    chart1.Series["TotalOrders"].BorderColor = System.Drawing.Color.FromArgb(75, 103, 89);
+                    chart1.Series["TotalOrders"].BorderWidth = 0;
+                    chart1.Series["TotalOrders"]["PointWidth"] = "0.6";
+                    chart1.Series["TotalOrders"].IsValueShownAsLabel = false;
 
                     // Set X-axis to show all 12 months
                     chart1.ChartAreas[0].AxisX.Minimum = 1;
                     chart1.ChartAreas[0].AxisX.Maximum = 12;
                     chart1.ChartAreas[0].AxisX.Interval = 1;
                     chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Number;
+
+                    // Remove legend or style it
+                    chart1.Legends.Clear();
                 }
                 else
                 {
@@ -131,17 +160,46 @@ namespace RMS_Project
                         chart2.Series["TotalSales"].Points.AddXY(month, totalSales);
                     }
 
-                    // Configure chart appearance
+                    // Configure chart appearance - Modern Gen Z Style
+                    chart2.ChartAreas[0].BackColor = System.Drawing.Color.White;
+                    chart2.ChartAreas[0].BorderColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                    chart2.ChartAreas[0].BorderWidth = 1;
+                    chart2.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+
+                    // Modern axis styling
                     chart2.ChartAreas[0].AxisX.Title = "Month";
-                    chart2.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Poppins", 10);
+                    chart2.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+                    chart2.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.FromArgb(60, 60, 60);
+                    chart2.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.FromArgb(220, 220, 220);
+                    chart2.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(245, 245, 245);
+                    chart2.ChartAreas[0].AxisX.MajorGrid.LineWidth = 1;
+                    chart2.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    chart2.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+
                     chart2.ChartAreas[0].AxisY.Title = "Total Sales($)";
-                    chart2.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Poppins", 10);
+                    chart2.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+                    chart2.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.FromArgb(60, 60, 60);
+                    chart2.ChartAreas[0].AxisY.LineColor = System.Drawing.Color.FromArgb(220, 220, 220);
+                    chart2.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(245, 245, 245);
+                    chart2.ChartAreas[0].AxisY.MajorGrid.LineWidth = 1;
+                    chart2.ChartAreas[0].AxisY.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    chart2.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+
+                    // Modern bar styling with gradient
+                    chart2.Series["TotalSales"].Color = System.Drawing.Color.FromArgb(75, 103, 89);
+                    chart2.Series["TotalSales"].BorderColor = System.Drawing.Color.FromArgb(75, 103, 89);
+                    chart2.Series["TotalSales"].BorderWidth = 0;
+                    chart2.Series["TotalSales"]["PointWidth"] = "0.6";
+                    chart2.Series["TotalSales"].IsValueShownAsLabel = false;
 
                     // Set X-axis to show all 12 months
                     chart2.ChartAreas[0].AxisX.Minimum = 1;
                     chart2.ChartAreas[0].AxisX.Maximum = 12;
                     chart2.ChartAreas[0].AxisX.Interval = 1;
                     chart2.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Number;
+
+                    // Remove legend or style it
+                    chart2.Legends.Clear();
                 }
                 else
                 {

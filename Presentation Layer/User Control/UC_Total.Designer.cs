@@ -47,13 +47,21 @@
             // 
             // guna2ContainerControl1
             // 
-            this.guna2ContainerControl1.BorderRadius = 30;
+            this.guna2ContainerControl1.BackColor = System.Drawing.Color.White;
+            this.guna2ContainerControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2ContainerControl1.BorderRadius = 25;
+            this.guna2ContainerControl1.BorderThickness = 1;
             this.guna2ContainerControl1.Controls.Add(this.lblAllTime);
             this.guna2ContainerControl1.Controls.Add(this.lblValue);
             this.guna2ContainerControl1.Controls.Add(this.lblTitle);
+            this.guna2ContainerControl1.FillColor = System.Drawing.Color.White;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(14, 7);
             this.guna2ContainerControl1.Name = "guna2ContainerControl1";
-            this.guna2ContainerControl1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(20);
+            this.guna2ContainerControl1.ShadowDecoration.BorderRadius = 25;
+            this.guna2ContainerControl1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(12)))));
+            this.guna2ContainerControl1.ShadowDecoration.Depth = 20;
+            this.guna2ContainerControl1.ShadowDecoration.Enabled = true;
+            this.guna2ContainerControl1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.guna2ContainerControl1.Size = new System.Drawing.Size(384, 159);
             this.guna2ContainerControl1.TabIndex = 0;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
@@ -62,10 +70,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("League Spartan", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(30, 23);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.lblTitle.Location = new System.Drawing.Point(30, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(196, 37);
+            this.lblTitle.Size = new System.Drawing.Size(108, 25);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Total Order";
             // 
@@ -73,11 +82,11 @@
             // 
             this.lblValue.AutoSize = true;
             this.lblValue.BackColor = System.Drawing.Color.Transparent;
-            this.lblValue.Font = new System.Drawing.Font("League Spartan", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValue.ForeColor = System.Drawing.Color.DimGray;
-            this.lblValue.Location = new System.Drawing.Point(31, 78);
+            this.lblValue.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
+            this.lblValue.Location = new System.Drawing.Point(30, 65);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(53, 33);
+            this.lblValue.Size = new System.Drawing.Size(70, 59);
             this.lblValue.TabIndex = 0;
             this.lblValue.Text = "24";
             // 
@@ -85,11 +94,11 @@
             // 
             this.lblAllTime.AutoSize = true;
             this.lblAllTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllTime.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllTime.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAllTime.Location = new System.Drawing.Point(101, 130);
+            this.lblAllTime.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.lblAllTime.Location = new System.Drawing.Point(30, 130);
             this.lblAllTime.Name = "lblAllTime";
-            this.lblAllTime.Size = new System.Drawing.Size(76, 20);
+            this.lblAllTime.Size = new System.Drawing.Size(60, 19);
             this.lblAllTime.TabIndex = 0;
             this.lblAllTime.Text = "All Time";
             // 
@@ -102,7 +111,7 @@
             this.Name = "UC_Total";
             this.Size = new System.Drawing.Size(410, 169);
             //this.Load += new System.EventHandler(this.UC_Total_Load);
-            
+
 
             this.guna2ContainerControl1.ResumeLayout(false);
             this.guna2ContainerControl1.PerformLayout();

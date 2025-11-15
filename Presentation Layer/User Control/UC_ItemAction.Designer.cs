@@ -32,24 +32,35 @@
             this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.btnUC_Item = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.priceBadge = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.ptrImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ContainerControl1.SuspendLayout();
+            this.priceBadge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ContainerControl1
             // 
-            this.guna2ContainerControl1.BorderRadius = 10;
+            this.guna2ContainerControl1.BackColor = System.Drawing.Color.White;
+            this.guna2ContainerControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2ContainerControl1.BorderRadius = 20;
+            this.guna2ContainerControl1.BorderThickness = 1;
             this.guna2ContainerControl1.Controls.Add(this.btnUC_Item);
+            this.guna2ContainerControl1.Controls.Add(this.priceBadge);
             this.guna2ContainerControl1.Controls.Add(this.lblDescription);
-            this.guna2ContainerControl1.Controls.Add(this.lblPrice);
             this.guna2ContainerControl1.Controls.Add(this.lblItemName);
             this.guna2ContainerControl1.Controls.Add(this.ptrImage);
             this.guna2ContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2ContainerControl1.FillColor = System.Drawing.Color.White;
             this.guna2ContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2ContainerControl1.Name = "guna2ContainerControl1";
+            this.guna2ContainerControl1.ShadowDecoration.BorderRadius = 20;
+            this.guna2ContainerControl1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(8)))));
+            this.guna2ContainerControl1.ShadowDecoration.Depth = 12;
+            this.guna2ContainerControl1.ShadowDecoration.Enabled = true;
+            this.guna2ContainerControl1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.guna2ContainerControl1.Size = new System.Drawing.Size(338, 152);
             this.guna2ContainerControl1.TabIndex = 0;
             this.guna2ContainerControl1.Text = "guna2ContainerControl1";
@@ -57,7 +68,7 @@
             // btnUC_Item
             // 
             this.btnUC_Item.Animated = true;
-            this.btnUC_Item.BorderRadius = 10;
+            this.btnUC_Item.BorderRadius = 20;
             this.btnUC_Item.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUC_Item.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUC_Item.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -66,6 +77,7 @@
             this.btnUC_Item.FillColor = System.Drawing.Color.Transparent;
             this.btnUC_Item.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUC_Item.ForeColor = System.Drawing.Color.White;
+            this.btnUC_Item.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnUC_Item.Location = new System.Drawing.Point(0, 0);
             this.btnUC_Item.Name = "btnUC_Item";
             this.btnUC_Item.PressedColor = System.Drawing.Color.Transparent;
@@ -77,49 +89,69 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.BackColor = System.Drawing.Color.White;
-            this.lblDescription.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDescription.Location = new System.Drawing.Point(115, 37);
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.lblDescription.Location = new System.Drawing.Point(110, 45);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(220, 73);
+            this.lblDescription.Size = new System.Drawing.Size(215, 55);
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = resources.GetString("lblDescription.Text");
             // 
+            // priceBadge
+            // 
+            this.priceBadge.BackColor = System.Drawing.Color.Transparent;
+            this.priceBadge.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
+            this.priceBadge.BorderRadius = 12;
+            this.priceBadge.BorderThickness = 0;
+            this.priceBadge.Controls.Add(this.lblPrice);
+            this.priceBadge.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.priceBadge.Location = new System.Drawing.Point(7, 110);
+            this.priceBadge.Name = "priceBadge";
+            this.priceBadge.Size = new System.Drawing.Size(100, 32);
+            this.priceBadge.TabIndex = 6;
+            this.priceBadge.Text = "priceBadge";
             // 
             // label1
             // 
-            this.lblPrice.BackColor = System.Drawing.Color.White;
-            this.lblPrice.Font = new System.Drawing.Font("SF Pro Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblPrice.Location = new System.Drawing.Point(7, 104);
+            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(103)))), ((int)(((byte)(89)))));
+            this.lblPrice.Location = new System.Drawing.Point(4, 3);
             this.lblPrice.Name = "label1";
-            this.lblPrice.Size = new System.Drawing.Size(142, 36);
-            this.lblPrice.TabIndex = 6;
+            this.lblPrice.Size = new System.Drawing.Size(92, 32);
+            this.lblPrice.TabIndex = 0;
             this.lblPrice.Text = "$50.50";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
-            this.lblItemName.BackColor = System.Drawing.Color.White;
-            this.lblItemName.Font = new System.Drawing.Font("SF Pro Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(114, 7);
+            this.lblItemName.BackColor = System.Drawing.Color.Transparent;
+            this.lblItemName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lblItemName.Location = new System.Drawing.Point(110, 12);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(104, 23);
+            this.lblItemName.Size = new System.Drawing.Size(110, 28);
             this.lblItemName.TabIndex = 7;
             this.lblItemName.Text = "Item Name";
             // 
             // guna2PictureBox1
             // 
-            this.ptrImage.BorderRadius = 10;
+            this.ptrImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ptrImage.BorderRadius = 16;
+            this.ptrImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ptrImage.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.ptrImage.ImageRotate = 0F;
-            this.ptrImage.Location = new System.Drawing.Point(13, 15);
+            this.ptrImage.Location = new System.Drawing.Point(15, 20);
             this.ptrImage.Name = "guna2PictureBox1";
-            this.ptrImage.Size = new System.Drawing.Size(85, 79);
-            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrImage.Size = new System.Drawing.Size(90, 90);
+            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptrImage.ShadowDecoration.BorderRadius = 16;
+            this.ptrImage.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(8)))));
+            this.ptrImage.ShadowDecoration.Depth = 8;
+            this.ptrImage.ShadowDecoration.Enabled = true;
+            this.ptrImage.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.ptrImage.TabIndex = 4;
             this.ptrImage.TabStop = false;
             // 
@@ -136,6 +168,7 @@
             this.Size = new System.Drawing.Size(338, 152);
             this.guna2ContainerControl1.ResumeLayout(false);
             this.guna2ContainerControl1.PerformLayout();
+            this.priceBadge.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -149,5 +182,6 @@
         private System.Windows.Forms.Label lblItemName;
         private Guna.UI2.WinForms.Guna2PictureBox ptrImage;
         private Guna.UI2.WinForms.Guna2Button btnUC_Item;
+        private Guna.UI2.WinForms.Guna2ContainerControl priceBadge;
     }
 }
